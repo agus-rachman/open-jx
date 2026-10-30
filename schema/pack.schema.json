@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/open-jx/open-jx/schema/pack.schema.json",
+  "$id": "https://github.com/agus-rachman/open-jx/schema/pack.schema.json",
   "title": "open-jx jurisdiction pack files",
   "description": "One definition per pack file. tools/validate_packs.py selects the definition by file name.",
   "$defs": {
