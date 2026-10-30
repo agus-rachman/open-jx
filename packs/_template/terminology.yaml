@@ -1,0 +1,5 @@
+spelling: en-XX
+terms:
+  - use: local term
+    instead_of: foreign term
+    note: optional explanation

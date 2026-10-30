@@ -1,0 +1,47 @@
+entries:
+- id: au-act.exec.deed-individual
+  applies_to:
+  - individual
+  - deed
+  observe: A deed by an individual shows signature and witnessing as required in the ACT.
+  authority: Civil Law (Property) Act 2006 (ACT)
+  source_url: https://www.legislation.act.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: au-act.exec.electronic
+  applies_to:
+  - individual
+  - electronic
+  - deed
+  observe: The document is signed electronically, or a deed is executed electronically or witnessed by
+    audio-visual link.
+  authority: Electronic Transactions Act 2001 (ACT)
+  source_url: https://www.legislation.act.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: au-act.exec.poa
+  applies_to:
+  - attorney
+  observe: A party signs by an attorney; the power of attorney and its form are governed by state or territory
+    law.
+  authority: Powers of Attorney Act 2006 (ACT)
+  source_url: https://www.legislation.act.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: au-act.exec.duty
+  applies_to:
+  - company
+  - individual
+  observe: The document may be dutiable (for example transfers of land or business assets); duty and stamping
+    are state matters.
+  authority: Duties Act 1999 (ACT)
+  source_url: https://www.legislation.act.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Observation only; whether duty is payable is a counsel decision.

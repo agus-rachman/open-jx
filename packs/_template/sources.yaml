@@ -1,0 +1,7 @@
+sources:
+  - id: xx.src.legislation
+    name: Official legislation register
+    url: https://example.gov/legislation/
+    type: legislation   # legislation | case-law | court | regulator | register | secondary
+    rank: 1             # 1 = official text, 2 = free reprint, 3 = secondary
+    note: Point-in-time versions available.

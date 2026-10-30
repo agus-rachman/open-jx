@@ -1,0 +1,11 @@
+business_day: []
+time_computation: []
+holidays:
+  - id: xx.cal.holidays
+    observe: Where official public holidays are published, and any regional holidays.
+    authority: Public holidays Act
+    source_url: https://example.gov/holidays/
+    status: in-force
+    verified: null
+    verified_by: null
+limitation: []

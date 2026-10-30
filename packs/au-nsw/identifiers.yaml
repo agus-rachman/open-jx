@@ -1,0 +1,11 @@
+personal:
+- id: au-nsw.id.driver-licence
+  name: New South Wales driver licence number
+  pattern_hint: format set by the issuing authority; near 'licence no' or 'driver licence'
+  authority: Road Transport Act 2013 (NSW)
+  source_url: https://legislation.nsw.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+organisational: []
+privacy_context: []

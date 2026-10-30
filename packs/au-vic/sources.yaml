@@ -1,0 +1,36 @@
+sources:
+- id: au-vic.src.legislation
+  name: Victoria legislation (official)
+  url: https://www.legislation.vic.gov.au/
+  type: legislation
+  rank: 1
+  note: Official register with point-in-time versions.
+  consolidated_term: authorised version
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/point-in-time-method.md
+    upstream_checked: null
+    upstream_state: method
+    note: Consolidated-text terminology
+- id: au-vic.src.1
+  name: Supreme Court of Victoria
+  url: https://www.supremecourt.vic.gov.au/
+  type: court
+  rank: 1
+  note: Practice notes and AI guidelines.
+- id: au-vic.src.2
+  name: County Court of Victoria
+  url: https://www.countycourt.vic.gov.au/
+  type: court
+  rank: 1
+- id: au-vic.src.3
+  name: State Revenue Office Victoria
+  url: https://www.sro.vic.gov.au/
+  type: regulator
+  rank: 1
+- id: au-vic.src.4
+  name: Consumer Affairs Victoria
+  url: https://www.consumer.vic.gov.au/
+  type: regulator
+  rank: 1

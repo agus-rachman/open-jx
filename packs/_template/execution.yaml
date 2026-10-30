@@ -1,0 +1,11 @@
+# One observation per entry: something to look for in a document, never advice.
+entries:
+  - id: xx.exec.company-signing
+    applies_to: [company]   # company | individual | attorney | deed | electronic | trust | partnership
+    observe: What a correctly completed company signature block shows.
+    authority: Act, section
+    source_url: https://example.gov/legislation/
+    status: in-force        # in-force | pending | repealed | guidance
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed

@@ -1,0 +1,72 @@
+business_day: []
+time_computation:
+- id: au-nt.cal.interp
+  observe: 'Periods in Northern Territory legislation are counted under the interpretation provision:
+    the trigger day is excluded and a last day on a weekend or holiday moves to the next business day,
+    subject to its terms.'
+  authority: Interpretation Act 1978 (NT) ss 4 and 28
+  source_url: https://legislation.nt.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/computation-rules/nt-courts.json
+    upstream_checked: '2026-08-26'
+    upstream_state: verified
+- id: au-nt.cal.rules
+  observe: Time limits in proceedings are counted under the court's own rules, which may displace the
+    interpretation Act.
+  authority: Supreme Court Rules 1987 (NT) rr 3.01 and 3.07
+  source_url: https://legislation.nt.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/computation-rules/nt-courts.json
+    upstream_checked: '2026-08-26'
+    upstream_state: verified
+- id: au-nt.cal.court-rule-table
+  observe: Candidate court and tribunal deadlines for this jurisdiction can be computed from the rule
+    and holiday tables in deadlines.yaml; computation refuses when a rule or holiday table is not verified
+    or the date is outside coverage.
+  authority: Supreme Court Rules 1987 (NT) rr 3.01 and 3.07
+  source_url: https://legislation.nt.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/computation-rules/nt-courts.json
+    upstream_checked: '2026-08-26'
+    upstream_state: verified
+holidays:
+- id: au-nt.cal.holidays
+  observe: May Day and Picnic Day (August) are NT-specific; Christmas Eve and New Year's Eve are part-day
+    public holidays (evening).
+  authority: Public Holidays Act 1981 (NT)
+  source_url: https://www.fairwork.gov.au/employment-conditions/public-holidays
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Dated holiday table (with coverage dates and caveats) is in deadlines.yaml; use it, not memory.
+limitation:
+- id: au-nt.cal.limitation
+  observe: 'Candidate general limitation period for contract and tort claims governed by Northern Territory
+    law: 3 years, subject to the special regimes in the au pack and any extension or postponement provision.'
+  authority: Limitation Act 1981 (NT) s 12
+  source_url: https://legislation.nt.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Candidate only; the applicable period is a counsel decision.
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/map-limitation-periods/references/limitation-registry.json
+    upstream_checked: null
+    upstream_state: pending-verification

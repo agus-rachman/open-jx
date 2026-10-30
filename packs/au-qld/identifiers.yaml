@@ -1,0 +1,11 @@
+personal:
+- id: au-qld.id.driver-licence
+  name: Queensland driver licence number
+  pattern_hint: format set by the issuing authority; near 'licence no' or 'driver licence'
+  authority: Transport Operations (Road Use Management) Act 1995 (Qld)
+  source_url: https://www.legislation.qld.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+organisational: []
+privacy_context: []

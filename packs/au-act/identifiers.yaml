@@ -1,0 +1,11 @@
+personal:
+- id: au-act.id.driver-licence
+  name: Australian Capital Territory driver licence number
+  pattern_hint: format set by the issuing authority; near 'licence no' or 'driver licence'
+  authority: Road Transport (Driver Licensing) Act 1999 (ACT)
+  source_url: https://www.legislation.act.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+organisational: []
+privacy_context: []

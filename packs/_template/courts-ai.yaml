@@ -1,0 +1,11 @@
+courts_ai:
+  - id: xx.ai.check-current
+    court: All courts
+    instrument: Current practice notes on generative AI
+    observe: What the instrument restricts or requires.
+    restricted_content: []   # affidavit-content | witness-statement-content | character-reference-content | expert-report-without-leave | expert-opinion
+    authority: Practice note name and paragraph
+    source_url: https://example.gov/courts/
+    status: guidance
+    verified: null
+    verified_by: null

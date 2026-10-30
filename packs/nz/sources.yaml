@@ -1,0 +1,61 @@
+sources:
+- id: nz.src.legislation
+  name: New Zealand Legislation (Parliamentary Counsel Office)
+  url: https://www.legislation.govt.nz/
+  type: legislation
+  rank: 1
+  note: Official versions of Acts and secondary legislation, with point-in-time versions.
+  consolidated_term: version (as at date)
+- id: nz.src.courts
+  name: Courts of New Zealand
+  url: https://www.courtsofnz.govt.nz/
+  type: court
+  rank: 1
+  note: Judgments of senior courts, practice notes and AI guidelines.
+- id: nz.src.nzlii
+  name: NZLII
+  url: https://www.nzlii.org/
+  type: case-law
+  rank: 2
+  note: Free reprints; confirm currency against legislation.govt.nz.
+- id: nz.src.companies
+  name: Companies Office (Companies Register)
+  url: https://www.companiesoffice.govt.nz/
+  type: register
+  rank: 1
+- id: nz.src.nzbn
+  name: New Zealand Business Number register
+  url: https://www.nzbn.govt.nz/
+  type: register
+  rank: 1
+- id: nz.src.opc
+  name: Office of the Privacy Commissioner
+  url: https://www.privacy.org.nz/
+  type: regulator
+  rank: 1
+- id: nz.src.fma
+  name: Financial Markets Authority
+  url: https://www.fma.govt.nz/
+  type: regulator
+  rank: 1
+- id: nz.src.comcom
+  name: Commerce Commission
+  url: https://comcom.govt.nz/
+  type: regulator
+  rank: 1
+- id: nz.src.ird
+  name: Inland Revenue
+  url: https://www.ird.govt.nz/
+  type: regulator
+  rank: 1
+- id: nz.src.employment
+  name: Employment New Zealand (MBIE)
+  url: https://www.employment.govt.nz/
+  type: regulator
+  rank: 1
+  note: Includes official public holiday and anniversary day dates.
+- id: nz.src.linz
+  name: Land Information New Zealand
+  url: https://www.linz.govt.nz/
+  type: register
+  rank: 1

@@ -1,0 +1,16 @@
+personal:
+  - id: xx.id.national-id
+    name: National identity number
+    pattern_hint: format and the words it usually appears near
+    authority: Act that creates the identifier
+    source_url: https://example.gov/legislation/
+    status: in-force
+    verified: null
+    verified_by: null
+organisational:
+  - id: xx.org.company-number
+    name: Company registration number
+    format: format
+    authority: Companies Act
+    source_url: https://example.gov/registry/
+privacy_context: []

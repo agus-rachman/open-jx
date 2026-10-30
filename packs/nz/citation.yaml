@@ -1,0 +1,24 @@
+citation:
+  name: New Zealand Law Style Guide
+  edition: 3rd edition (2018)
+  publisher: Thomson Reuters / New Zealand Law Foundation
+  url: https://www.lawfoundation.org.nz/style-guide/
+rules:
+  - id: nz.cite.legislation
+    observe: Cite New Zealand Acts by title and year without a jurisdiction tag, and pinpoint with "s" and a space.
+    example: "Companies Act 1993, s 180"
+    authority: New Zealand Law Style Guide (3rd ed) ch 3
+    source_url: https://www.lawfoundation.org.nz/style-guide/
+    status: guidance
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed
+  - id: nz.cite.cases
+    observe: Cite judgments by neutral citation where available, followed by a report citation if reported.
+    example: "[2020] NZSC 1"
+    authority: New Zealand Law Style Guide (3rd ed) ch 2
+    source_url: https://www.lawfoundation.org.nz/style-guide/
+    status: guidance
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed

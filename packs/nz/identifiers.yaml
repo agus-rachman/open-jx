@@ -1,0 +1,74 @@
+personal:
+  - id: nz.id.ird
+    name: IRD number
+    pattern_hint: 8 or 9 digits, often written 123-456-789, near "IRD" or "tax number".
+    authority: Tax Administration Act 1994
+    source_url: https://www.legislation.govt.nz/
+    note: Tax information is subject to statutory confidentiality; record the field, never the number.
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: nz.id.nhi
+    name: National Health Index (NHI) number
+    pattern_hint: 3 letters followed by 4 characters (for example ABC1234), near "NHI".
+    authority: Health Information Privacy Code 2020
+    source_url: https://www.privacy.org.nz/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: nz.id.driver-licence
+    name: New Zealand driver licence number
+    pattern_hint: 2 letters followed by 6 digits, near "licence number".
+    authority: Land Transport Act 1998
+    source_url: https://www.legislation.govt.nz/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: nz.id.passport
+    name: New Zealand passport number
+    pattern_hint: 2 letters followed by 6 digits, near "passport".
+    authority: Passports Act 1992
+    source_url: https://www.legislation.govt.nz/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: nz.id.msd
+    name: Ministry of Social Development client number
+    pattern_hint: 9 digits near "MSD" or "client number".
+    authority: Social Security Act 2018
+    source_url: https://www.legislation.govt.nz/
+    status: in-force
+    verified: null
+    verified_by: null
+organisational:
+  - id: nz.org.company-number
+    name: New Zealand company number
+    format: up to 7 digits, issued by the Companies Office
+    authority: Companies Act 1993
+    source_url: https://www.companiesoffice.govt.nz/
+  - id: nz.org.nzbn
+    name: New Zealand Business Number (NZBN)
+    format: 13 digits, usually starting 94
+    authority: New Zealand Business Number Act 2016
+    source_url: https://www.nzbn.govt.nz/
+  - id: nz.org.fsp
+    name: Financial Service Provider (FSP) number
+    format: "FSP followed by digits"
+    authority: Financial Service Providers (Registration and Dispute Resolution) Act 2008
+    source_url: https://www.fma.govt.nz/
+privacy_context:
+  - id: nz.priv.ipp
+    observe: Agencies handling personal information follow the information privacy principles; IPP 13 restricts how unique identifiers are assigned and used.
+    authority: Privacy Act 2020, s 22 (IPP 13)
+    source_url: https://www.legislation.govt.nz/act/public/2020/0031/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: nz.priv.ipp3a
+    observe: An agency collecting personal information indirectly (from someone other than the individual) must take reasonable steps to tell the individual, subject to exceptions.
+    authority: Privacy Act 2020, IPP 3A (inserted by the Privacy Amendment Act 2025)
+    source_url: https://www.legislation.govt.nz/act/public/2025/53/en/latest/
+    status: in-force
+    note: In force from 1 May 2026.
+    verified: null
+    verified_by: null

@@ -1,0 +1,32 @@
+id: au-sa
+name: South Australia
+country: AU
+parent: au
+level: state
+locale: en-AU
+legal_system: common law
+version: 0.2.0
+status: draft
+maintainers:
+- '@au-reviewer'
+last_reviewed: null
+detection:
+  names:
+  - South Australia
+  - SA
+  governing_law_patterns:
+  - laws of South Australia
+  - laws in force in South Australia
+  - courts of South Australia
+  courts:
+  - Supreme Court of South Australia
+  - District Court of South Australia
+  - Magistrates Court of South Australia
+  - South Australian Civil and Administrative Tribunal (SACAT)
+  identifiers: []
+  other_signals:
+  - Adelaide
+  - SA in an address with a four-digit postcode
+  note: '''SA'' can also mean South Africa or a company form (Sociedad Anónima, Société Anonyme); require
+    another Australian signal.'
+law_checked_as_at: '2026-08-26'

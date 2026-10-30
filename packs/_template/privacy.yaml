@@ -1,0 +1,8 @@
+privacy_regimes:
+  - id: xx.privacy.general-privacy
+    observe: "General privacy law: Example Privacy Act — who it covers (current legislation)."
+    authority: Example Privacy Act 2020
+    source_url: https://example.gov/legislation/
+    status: in-force
+    verified: null
+    verified_by: null

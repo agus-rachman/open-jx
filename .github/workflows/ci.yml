@@ -1,0 +1,35 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 21 * * 0"   # weekly freshness and link check
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml jsonschema pillow python-docx
+      - name: Validate packs
+        run: python tools/validate_packs.py
+      - name: Build plugin
+        run: python tools/build_plugin.py --no-validate
+      - name: Check package
+        run: python evals/check_package.py dist/open-jx-$(python -c "import json;print(json.load(open('build.config.json'))['version'])").zip
+      - name: Test bundled scripts
+        run: python -m unittest discover -s tests
+      - name: Lint eval cases
+        run: python evals/score.py lint
+      - name: Scorer self-test
+        run: python evals/selftest/selftest.py
+      - name: Check pack source links
+        if: github.event_name == 'schedule'
+        run: python tools/check_links.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: open-jx-package
+          path: dist/*.zip

@@ -1,0 +1,30 @@
+id: au-tas
+name: Tasmania
+country: AU
+parent: au
+level: state
+locale: en-AU
+legal_system: common law
+version: 0.2.0
+status: draft
+maintainers:
+- '@au-reviewer'
+last_reviewed: null
+detection:
+  names:
+  - Tasmania
+  - Tasmanian
+  - TAS
+  governing_law_patterns:
+  - laws of Tasmania
+  - laws in force in Tasmania
+  - courts of Tasmania
+  courts:
+  - Supreme Court of Tasmania
+  - Magistrates Court of Tasmania
+  - Tasmanian Civil and Administrative Tribunal (TASCAT)
+  identifiers: []
+  other_signals:
+  - Hobart
+  - TAS in an address with a four-digit postcode
+law_checked_as_at: '2026-08-26'

@@ -1,0 +1,76 @@
+entries:
+  - id: au.exec.s127-methods
+    applies_to: [company]
+    observe: >-
+      A company signature block shows signing without a common seal by two
+      directors, by a director and a company secretary, or (for a proprietary
+      company with a sole director who is also its sole secretary, or has no
+      secretary) by that director.
+    authority: Corporations Act 2001 (Cth) s 127(1)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: If the block does not match a s 127 method, the document may rely on an agent or attorney instead; that is a counsel question.
+  - id: au.exec.s127-seal
+    applies_to: [company]
+    observe: A common seal is used and its fixing is witnessed by the officers the section names.
+    authority: Corporations Act 2001 (Cth) s 127(2)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.exec.s127-deed
+    applies_to: [company, deed]
+    observe: A company executing a deed under s 127(1) or (2) has the document expressed to be executed as a deed.
+    authority: Corporations Act 2001 (Cth) s 127(3)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.exec.s129-assumptions
+    applies_to: [company]
+    observe: A counterparty may be entitled to statutory assumptions where a document appears to be executed under s 127; note which method the block shows.
+    authority: Corporations Act 2001 (Cth) s 129(5)–(6)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.exec.electronic
+    applies_to: [company, electronic]
+    observe: >-
+      The document refers to electronic signing, signing on separate copies or
+      counterparts, or electronic deeds by a company.
+    authority: Corporations Act 2001 (Cth) pt 1.2AA
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed (sections within Part 1.2AA)
+  - id: au.exec.eta
+    applies_to: [individual, electronic]
+    observe: An electronic signature is used for a signature required by a Commonwealth law.
+    authority: Electronic Transactions Act 1999 (Cth) s 10
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: Transactions under state law fall under the state Electronic Transactions Act; see the state pack.
+  - id: au.exec.agent
+    applies_to: [company, attorney]
+    observe: A person signs for a company as agent or under a power of attorney rather than under s 127.
+    authority: Corporations Act 2001 (Cth) s 126
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: Powers of attorney are governed by state and territory law; see the state pack.
+  - id: au.exec.state-deeds
+    applies_to: [individual, deed]
+    observe: Deed formalities for individuals (witnessing, sealing, delivery, electronic deeds) are set by state and territory law.
+    authority: State and territory property law and electronic transactions Acts
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: Load the state or territory pack for the governing law.

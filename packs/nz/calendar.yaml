@@ -1,0 +1,59 @@
+business_day:
+  - id: nz.cal.working-day
+    observe: Many New Zealand Acts define "working day" and exclude a period over Christmas and New Year; the excluded period differs between Acts. Check the definition in the Act that sets the deadline.
+    authority: For example Companies Act 1993, s 2 (definition of "working day"); Property Law Act 2007, s 4
+    source_url: https://www.legislation.govt.nz/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed
+  - id: nz.cal.bd-contract
+    observe: If a contract does not define "Business Day" or names no city, regional anniversary days create uncertainty about which days count.
+    authority: Contract construction (no statutory default)
+    source_url: https://www.employment.govt.nz/
+    status: guidance
+    verified: null
+    verified_by: null
+time_computation:
+  - id: nz.cal.legislation-act
+    observe: Periods in legislation are counted under the general time rules in the Legislation Act 2019.
+    authority: Legislation Act 2019
+    source_url: https://www.legislation.govt.nz/act/public/2019/0058/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed
+  - id: nz.cal.hcr
+    observe: Time limits in High Court proceedings are counted under the High Court Rules 2016.
+    authority: High Court Rules 2016
+    source_url: https://www.legislation.govt.nz/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed
+holidays:
+  - id: nz.cal.holidays
+    observe: National public holidays include Waitangi Day, ANZAC Day and Te Rā Aro ki a Matariki (Matariki); Waitangi Day and ANZAC Day may be Mondayised.
+    authority: Holidays Act 2003, s 44; Te Kīngitanga o Matariki Public Holiday Act 2022
+    source_url: https://www.employment.govt.nz/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: Use the official list for the year; do not list dates from memory.
+  - id: nz.cal.anniversary
+    observe: Each region observes its own anniversary day (for example Wellington, Auckland, Canterbury), which changes business days by region.
+    authority: Holidays Act 2003, s 44(1)
+    source_url: https://www.employment.govt.nz/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed
+limitation:
+  - id: nz.cal.limitation
+    observe: Limitation periods for most civil claims, including the general six-year period for money claims, are in the Limitation Act 2010.
+    authority: Limitation Act 2010
+    source_url: https://www.legislation.govt.nz/act/public/2010/0110/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: The applicable period is a counsel decision.

@@ -1,0 +1,26 @@
+courts_ai:
+- id: au-qld.ai.qld-guidelines
+  court: Queensland courts
+  instrument: Queensland Courts guidelines on the use of generative AI, and Supreme Court practice directions
+    on accuracy of references
+  observe: Queensland courts publish guidance on responsible use of generative AI and expect references
+    in submissions to be checked for accuracy; check the current guideline and any practice direction
+    for the court concerned.
+  restricted_content: []
+  authority: Queensland Courts guidelines on the use of generative AI, and Supreme Court practice directions
+    on accuracy of references
+  source_url: https://www.courts.qld.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: au-qld.ai.check-current
+  court: All Queensland courts and QCAT
+  instrument: Current practice notes or directions on generative AI
+  observe: Check the court's or tribunal's current practice notes for generative AI rules; contributors
+    should add each instrument as its own entry.
+  restricted_content: []
+  authority: Court and tribunal practice notes
+  source_url: https://www.courts.qld.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null

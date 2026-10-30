@@ -1,0 +1,11 @@
+personal:
+- id: au-wa.id.driver-licence
+  name: Western Australia driver licence number
+  pattern_hint: format set by the issuing authority; near 'licence no' or 'driver licence'
+  authority: Road Traffic (Authorisation to Drive) Act 2008 (WA)
+  source_url: https://www.legislation.wa.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+organisational: []
+privacy_context: []

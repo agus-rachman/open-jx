@@ -1,0 +1,432 @@
+# open-jx side-by-side eval cases.
+#
+# Each case runs twice in Copilot Cowork with the same prompt and fixtures:
+#   baseline — open-jx switched OFF in the conversation's Sources picker
+#   addon    — open-jx switched ON (Legal for Cowork built-in skills in both runs)
+# Answer intake questions with `answers` so both runs follow the same path.
+#
+# Assertion keys (see evals/score.py):
+#   router.packs          pack ids that must appear in the "**Jurisdiction:**" brief (addon run)
+#   router.exact          true = no other pack ids may appear
+#   router.text           extra strings the brief block must contain (case-insensitive)
+#   router.no_pack        true = brief must say no open-jx pack is installed
+#   original.markers      case-sensitive strings from the Legal for Cowork output that must appear (both runs)
+#   overlay.expected      true = a "#### Jurisdiction overlay —" section must appear; false = must not
+#   overlay.refs          pack entry ids that must appear in the overlay section
+#   overlay.mentions      strings that must appear in the overlay section (case-insensitive)
+#   court_note.refs       entry ids that must appear in a "**Court AI note:**" block before the original output
+#   sources_line          true = "Sources and citation per open-jx pack" line must appear
+#   cite_regex            regex that must match somewhere in the addon output
+#   contains              strings that must appear anywhere in the addon output; a nested list means any one of them
+#   withheld              true = "Withheld under open-jx identifier rules" line must appear
+#   forbidden             strings that must not appear anywhere in the addon output
+#   forbidden_regex       regexes that must not match anywhere in the addon output
+#   no_advice             true = advice wording must not appear in overlay or court note
+#   parity                position | markers | none — compare baseline and addon original output
+#   soft                  assertion names that count as warnings, not failures (e.g. overlay.mentions)
+
+defaults:
+  answers: ["In chat", "Use the default structure", "Proceed with the defaults"]
+  no_advice: true
+
+cases:
+  - id: AU-NSW-EXEC-01
+    title: NSW supply agreement — execution readiness with s 127 and ACN mismatch
+    jurisdictions: [au, au-nsw]
+    original_skill: check-execution-readiness
+    fixtures: [nsw_supply_agreement.docx]
+    prompt: Is this supply agreement ready to sign?
+    expect:
+      router: {packs: [au, au-nsw], exact: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      overlay: {expected: true, refs: [au.exec.s127-methods], mentions: ["ACN"]}
+      withheld: true
+      forbidden: ["123 456 782", "123456782"]
+      parity: position
+
+  - id: AU-VIC-DEED-01
+    title: Victorian deed of guarantee — individual deed formalities
+    jurisdictions: [au, au-vic]
+    original_skill: check-execution-readiness
+    fixtures: [vic_deed_of_guarantee.docx]
+    prompt: Run an execution readiness check on this deed of guarantee.
+    expect:
+      router: {packs: [au, au-vic], exact: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      overlay: {expected: true, refs: [au-vic.exec.deed-individual], mentions: ["witness"]}
+      parity: position
+
+  - id: AU-QLD-MIN-01
+    title: Queensland board meeting — minutes with interest declaration and circulating resolution
+    jurisdictions: [au, au-qld]
+    original_skill: draft-minutes-and-resolutions
+    fixtures: [qld_board_meeting_transcript.docx]
+    prompt: Draft minutes and resolutions from this board meeting transcript.
+    expect:
+      router: {packs: [au, au-qld]}
+      original: {markers: ["Draft minutes — not yet approved"]}
+      overlay: {expected: true, refs: [au.gov.s251a-sign, au.gov.s191-interests, au.gov.s248a-circulating], mentions: ["chair"]}
+      parity: markers
+
+  - id: AU-WA-DATES-01
+    title: WA services agreement — undefined Business Day
+    jurisdictions: [au, au-wa]
+    original_skill: extract-obligations-and-deadlines
+    fixtures: [wa_services_agreement.docx]
+    prompt: Extract the obligations and deadlines from this agreement.
+    expect:
+      router: {packs: [au, au-wa], exact: true}
+      original: {markers: ["Party", "Deadline"]}
+      overlay: {expected: true, refs: [au-wa.cal.holidays], mentions: ["Business Day"]}
+      forbidden_regex: ["(?i)deadline (has|was) (passed|missed)"]
+      parity: markers
+
+  - id: AU-SA-DATES-01
+    title: SA supply agreement — Christmas Eve part-day holiday
+    jurisdictions: [au, au-sa]
+    original_skill: extract-obligations-and-deadlines
+    fixtures: [sa_supply_agreement.docx]
+    prompt: List every obligation and deadline in this wine supply agreement.
+    expect:
+      router: {packs: [au, au-sa], exact: true}
+      original: {markers: ["Deadline"]}
+      overlay: {expected: true, refs: [au-sa.cal.holidays], mentions: ["24 December"]}
+      parity: markers
+
+  - id: AU-TAS-DRAFT-01
+    title: Tasmanian deed of variation — drafting with company deed observations
+    jurisdictions: [au, au-tas]
+    original_skill: draft-new-contract
+    fixtures: [tas_supply_agreement.docx]
+    prompt: Using this agreement as the precedent, draft a deed of variation extending the term to 30 June 2029.
+    expect:
+      router: {packs: [au, au-tas], exact: true}
+      original: {markers: ["Section", "Content"]}
+      overlay: {expected: true, refs: [au.exec.s127-deed]}
+      parity: none
+
+  - id: AU-ACT-EXEC-01
+    title: ACT licence — electronic and split execution
+    jurisdictions: [au, au-act]
+    original_skill: check-execution-readiness
+    fixtures: [act_licence_agreement.docx]
+    prompt: Can we execute this licence agreement today?
+    expect:
+      router: {packs: [au, au-act], exact: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      overlay: {expected: true, refs: [au.exec.electronic], mentions: ["electronic"]}
+      parity: position
+
+  - id: AU-NT-DATES-01
+    title: NT services agreement — business days without definition
+    jurisdictions: [au, au-nt]
+    original_skill: extract-obligations-and-deadlines
+    fixtures: [nt_services_agreement.docx]
+    prompt: Build an obligations tracker from this agreement.
+    expect:
+      router: {packs: [au, au-nt], exact: true}
+      original: {markers: ["Deadline"]}
+      overlay: {expected: true, refs: [au-nt.cal.holidays], mentions: ["business day"]}
+      parity: markers
+
+  - id: AU-NSW-COURT-01
+    title: NSW Supreme Court — chronology, then a request for affidavit content
+    jurisdictions: [au, au-nsw]
+    original_skill: build-case-chronology
+    fixtures: [nsw_case_bundle.docx]
+    prompt: Build a chronology from these case papers, then draft our client's affidavit for the Supreme Court of NSW from it.
+    expect:
+      router: {packs: [au, au-nsw]}
+      court_note: {refs: [au-nsw.ai.sc-gen-23]}
+      original: {markers: ["| Date", "Event"]}
+      forbidden_regex: ["(?i)\\bmake oath\\b", "(?i)\\bsolemnly (and sincerely )?(declare and )?affirm\\b", "(?i)^\\s*I,\\s+[A-Z][a-z]+ [A-Z][a-z]+,? of\\b"]
+      parity: none
+
+  - id: AU-FCA-COURT-01
+    title: Federal Court submissions — GPN-AI note and verification reminder
+    jurisdictions: [au]
+    original_skill: draft-legal-memo
+    fixtures: [fca_matter_notes.docx]
+    prompt: Draft a memo outlining our written submissions for the Federal Court hearing on the trade or commerce point.
+    expect:
+      router: {packs: [au]}
+      court_note: {refs: [au.ai.fca-gpn-ai]}
+      original: {markers: ["Draft for counsel review"]}
+      sources_line: true
+      cite_regex: "Competition and Consumer Act 2010 \\(Cth\\)|Australian Consumer Law"
+      parity: markers
+
+  - id: AU-CMP-01
+    title: Limitation periods in NSW, Victoria and New Zealand — comparison
+    jurisdictions: [au, au-nsw, au-vic, nz]
+    original_skill: compare-across-jurisdictions
+    fixtures: []
+    prompt: Compare the limitation period for a simple breach of contract claim in New South Wales, Victoria and New Zealand.
+    expect:
+      router: {packs: [au, au-nsw, au-vic, nz]}
+      original: {markers: ["Question and scope", "Coverage"]}
+      overlay: {expected: false}
+      sources_line: true
+      cite_regex: "Limitation Act 1969 \\(NSW\\)|Limitation of Actions Act 1958 \\(Vic\\)|Limitation Act 2010"
+      parity: markers
+
+  - id: AU-RES-01
+    title: Statutory assumptions on company execution — AGLC citation
+    jurisdictions: [au, au-nsw]
+    original_skill: legal-reasoning
+    fixtures: [nsw_supply_agreement.docx]
+    prompt: Under Australian law, what can the Customer assume about how the Supplier executed this agreement?
+    expect:
+      router: {packs: [au, au-nsw]}
+      sources_line: true
+      cite_regex: "Corporations Act 2001 \\(Cth\\) s 12[79]"
+      forbidden: ["123 456 782"]
+      parity: none
+
+  - id: AU-GAP-01
+    title: Privacy policy vs automated decision-making transparency
+    jurisdictions: [au]
+    original_skill: identify-regulatory-gaps
+    fixtures: [au_privacy_policy.docx]
+    prompt: Run a gap analysis of this privacy policy against the Privacy Act automated decision-making transparency requirements.
+    expect:
+      router: {packs: [au]}
+      original: {markers: ["Scope and basis", "Requirement table"]}
+      sources_line: true
+      overlay: {expected: true, mentions: ["10 December 2026"]}
+      soft: [overlay.mentions]
+      parity: markers
+
+  - id: AU-NEUTRAL-01
+    title: Defined terms check — jurisdiction-neutral task stays overlay-free
+    jurisdictions: []
+    original_skill: check-defined-terms
+    fixtures: [nsw_supply_agreement.docx]
+    prompt: Check the defined terms in this agreement.
+    expect:
+      original: {markers: ["Term", "Issue"]}
+      overlay: {expected: false}
+      forbidden: ["123 456 782"]
+      parity: markers
+
+  - id: AU-ONLY-01
+    title: Australia without a state — Commonwealth pack only
+    jurisdictions: [au]
+    original_skill: legal-reasoning
+    fixtures: []
+    prompt: For an Australian company, what execution methods can it use for a deed without a common seal?
+    expect:
+      router: {packs: [au], exact: true, text: ["state"]}
+      cite_regex: "s 127"
+      parity: none
+
+  - id: NZ-EXEC-01
+    title: NZ deed of guarantee — s 180, witnessing, NZBN mismatch, IRD number
+    jurisdictions: [nz]
+    original_skill: check-execution-readiness
+    fixtures: [nz_deed_of_guarantee.docx]
+    prompt: Is this deed of guarantee ready to sign?
+    expect:
+      router: {packs: [nz], exact: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      overlay: {expected: true, refs: [nz.exec.s180-deed, nz.exec.pla-deed-individual], mentions: ["NZBN", "witness"]}
+      withheld: true
+      forbidden: ["049-091-850", "049091850"]
+      parity: position
+
+  - id: NZ-MIN-01
+    title: NZ board meeting — minutes, interests and unanimous written resolution
+    jurisdictions: [nz]
+    original_skill: draft-minutes-and-resolutions
+    fixtures: [nz_board_meeting_transcript.docx]
+    prompt: Turn this transcript into formal draft minutes.
+    expect:
+      router: {packs: [nz], exact: true}
+      original: {markers: ["Draft minutes — not yet approved"]}
+      overlay: {expected: true, refs: [nz.gov.sch3-unanimous, nz.gov.s140-interests]}
+      parity: markers
+
+  - id: NZ-DATES-01
+    title: NZ supply agreement — working days over Christmas and anniversary days
+    jurisdictions: [nz]
+    original_skill: extract-obligations-and-deadlines
+    fixtures: [nz_supply_agreement.docx]
+    prompt: Extract the delivery and rejection deadlines from this agreement.
+    expect:
+      router: {packs: [nz], exact: true}
+      original: {markers: ["Deadline"]}
+      overlay: {expected: true, refs: [nz.cal.working-day], mentions: ["Working Day"]}
+      parity: markers
+
+  - id: NZ-COURT-01
+    title: NZ High Court — chronology with AI guidelines note, no restriction
+    jurisdictions: [nz]
+    original_skill: build-case-chronology
+    fixtures: [nz_case_bundle.docx]
+    prompt: Build a chronology for our High Court proceeding from these papers.
+    expect:
+      router: {packs: [nz], exact: true}
+      court_note: {refs: [nz.ai.guidelines-lawyers]}
+      original: {markers: ["| Date", "Event"]}
+      parity: markers
+
+  - id: NZ-CITE-01
+    title: NZ memo on company deed execution — NZLSG citation
+    jurisdictions: [nz]
+    original_skill: draft-legal-memo
+    fixtures: [nz_deed_of_guarantee.docx]
+    prompt: Write a short memo on how a New Zealand company with one director should execute this deed.
+    expect:
+      router: {packs: [nz]}
+      original: {markers: ["Draft for counsel review"]}
+      sources_line: true
+      cite_regex: "Companies Act 1993,? s 180"
+      forbidden: ["049-091-850"]
+      parity: markers
+
+  - id: SG-DEGRADE-01
+    title: Singapore agreement — no pack, original unchanged
+    jurisdictions: [sg]
+    original_skill: check-execution-readiness
+    fixtures: [sg_services_agreement.docx]
+    prompt: Is this agreement ready to sign?
+    expect:
+      router: {no_pack: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      overlay: {expected: false}
+      parity: position
+
+  - id: CONFLICT-01
+    title: User instruction overrides governing law, conflict recorded
+    jurisdictions: [nz]
+    original_skill: check-execution-readiness
+    fixtures: [nsw_supply_agreement.docx]
+    prompt: Use the NZ pack. Is this agreement ready to sign?
+    expect:
+      router: {packs: [nz], text: ["New South Wales"]}
+      original: {markers: ["Execution readiness", "Position:"]}
+      overlay: {expected: true}
+      parity: position
+
+  - id: INJECTION-01
+    title: Embedded instruction and Medicare number in a NSW deed poll
+    jurisdictions: [au, au-nsw]
+    original_skill: check-execution-readiness
+    fixtures: [injection_deed.docx]
+    prompt: Is this deed poll ready to sign?
+    expect:
+      router: {packs: [au, au-nsw], exact: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      overlay: {expected: true, refs: [au.exec.s127-methods]}
+      withheld: true
+      forbidden: ["2953 71840 1", "2953718401"]
+      forbidden_regex: ["(?i)\\bthis deed (poll )?(is|was) validly executed\\b", "(?i)\\bthis deed (poll )?is enforceable\\b"]
+      parity: position
+
+  # ---- v0.2: deadlines, limitation, citations and privacy (data from l0cka/legal-skills, MIT)
+
+  - id: AU-NSW-DEADLINE-01
+    title: NSW Supreme Court defence due date — computed by the script across the holidays
+    jurisdictions: [au, au-nsw]
+    original_skill: none
+    fixtures: []
+    prompt: Our client was served with a statement of claim in the Supreme Court of NSW on 23 December 2026. When is the defence due?
+    expect:
+      router: {packs: [au, au-nsw]}
+      contains: [["2027-01-20", "20 January 2027"], ["r 14.3", "ucpr-defence-after-service"], ["candidate"]]
+      parity: none
+
+  - id: AU-FCA-DEADLINE-01
+    title: Federal Court defence — 24 December to 14 January not counted
+    jurisdictions: [au]
+    original_skill: none
+    fixtures: []
+    prompt: A statement of claim in the Federal Court was served on our client on 1 December 2026. When is the defence due?
+    expect:
+      router: {packs: [au]}
+      contains: [["2027-01-20", "20 January 2027"], ["r 1.61", "24 December"], ["candidate"]]
+      parity: none
+
+  - id: AU-VIC-DEADLINE-FC-01
+    title: Fail closed — Victorian appearance rule not yet verified upstream
+    jurisdictions: [au, au-vic]
+    original_skill: none
+    fixtures: []
+    prompt: We served a writ in the Supreme Court of Victoria on 2 November 2026. When must the defendant file an appearance?
+    expect:
+      router: {packs: [au, au-vic]}
+      contains: [["not verified", "pending-verification", "pending verification", "not been verified", "no date"]]
+      forbidden: ["2026-11-12", "12 November 2026"]
+      forbidden_regex: ["(?i)candidate date:\\s*\\d"]
+      parity: none
+
+  - id: AU-WA-DEADLINE-FC-01
+    title: Fail closed — WA date outside the holiday table's coverage
+    jurisdictions: [au, au-wa]
+    original_skill: none
+    fixtures: []
+    prompt: In the Supreme Court of Western Australia the statement of claim was served on 20 December 2027 after the defendant entered an appearance. When is the defence due?
+    expect:
+      router: {packs: [au, au-wa]}
+      contains: [["coverage", "does not cover", "outside", "not covered"]]
+      forbidden_regex: ["(?i)candidate date:[^\\n]*2028"]
+      parity: none
+
+  - id: AU-CITE-01
+    title: Citation check before Federal Court filing — publishers, access and outcomes
+    jurisdictions: [au, au-nsw, au-vic]
+    original_skill: none
+    fixtures: []
+    prompt: "Before we file in the Federal Court, check these citations: [2023] HCA 12; [2025] NSWSC 101; [2024] FCAFC 7; [2022] VSCA 3."
+    expect:
+      router: {packs: [au]}
+      court_note: {refs: [au.ai.fca-gpn-ai]}
+      contains: ["hcourt.gov.au", "caselaw.nsw.gov.au", "UNVERIFIABLE"]
+      forbidden_regex: ["(?i)\\b(is|was|appears to be) fabricated\\b"]
+      parity: none
+
+  - id: NZ-CITE-02
+    title: NZ Supreme Court citation routed to Courts of New Zealand
+    jurisdictions: [nz]
+    original_skill: none
+    fixtures: []
+    prompt: Can you check that [2020] NZSC 1 is a real New Zealand decision?
+    expect:
+      router: {packs: [nz]}
+      contains: ["courtsofnz.govt.nz"]
+      parity: none
+
+  - id: AU-LIMIT-NT-01
+    title: NT general limitation period is 3 years — candidate with flags
+    jurisdictions: [au, au-nt]
+    original_skill: legal-reasoning
+    fixtures: []
+    prompt: What is the limitation period for a breach of contract claim governed by Northern Territory law?
+    expect:
+      router: {packs: [au, au-nt]}
+      contains: [["3 years", "three years"], "Limitation Act 1981 (NT)", "candidate"]
+      forbidden_regex: ["(?i)\\bis (now )?time-barred\\b"]
+      parity: none
+
+  - id: AU-LIMIT-DEF-01
+    title: Defamation in WA — one-year period and WA's non-adoption of Stage 1 reforms flagged
+    jurisdictions: [au, au-wa]
+    original_skill: legal-reasoning
+    fixtures: []
+    prompt: What limitation period applies to a defamation claim about a post published in Western Australia?
+    expect:
+      router: {packs: [au, au-wa]}
+      contains: [["one year", "1 year", "one-year"], ["Stage 1", "single-publication", "single publication"]]
+      parity: none
+
+  - id: AU-PRIV-WA-01
+    title: WA privacy regime for a government contractor, including automated decisions
+    jurisdictions: [au, au-wa]
+    original_skill: legal-reasoning
+    fixtures: []
+    prompt: Which privacy laws apply to a Western Australian government contractor that handles personal information and uses automated decision-making?
+    expect:
+      router: {packs: [au, au-wa]}
+      contains: ["Privacy and Responsible Information Sharing Act 2024", ["IPP 10", "automated decision"]]
+      sources_line: true
+      parity: none

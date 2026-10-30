@@ -1,0 +1,11 @@
+personal:
+- id: au-vic.id.driver-licence
+  name: Victoria driver licence number
+  pattern_hint: format set by the issuing authority; near 'licence no' or 'driver licence'
+  authority: Road Safety Act 1986 (Vic)
+  source_url: https://www.legislation.vic.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+organisational: []
+privacy_context: []

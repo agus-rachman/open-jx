@@ -1,0 +1,75 @@
+entries:
+  - id: au.gov.s251a-record
+    applies_to: [company-board, company-members]
+    observe: Minutes of meetings, and resolutions passed without a meeting, are to be recorded in the minute book within one month.
+    authority: Corporations Act 2001 (Cth) s 251A(1)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.gov.s251a-sign
+    applies_to: [company-board, company-members]
+    observe: The draft minutes provide for signature by the chair of the meeting (or the next meeting) within a reasonable time.
+    authority: Corporations Act 2001 (Cth) s 251A(2)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.gov.s248a-circulating
+    applies_to: [company-board]
+    observe: A directors' resolution passed without a meeting records that all directors entitled to vote signed a document containing a statement that they are in favour.
+    authority: Corporations Act 2001 (Cth) s 248A (replaceable rule)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: The company's constitution may displace or vary replaceable rules.
+  - id: au.gov.s248b-sole
+    applies_to: [company-board]
+    observe: A sole director passes a resolution by recording it and signing the record.
+    authority: Corporations Act 2001 (Cth) s 248B
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.gov.s248f-quorum
+    applies_to: [company-board]
+    observe: The minutes record who was present for quorum; the replaceable-rule quorum for directors' meetings is two unless the directors determine otherwise.
+    authority: Corporations Act 2001 (Cth) s 248F (replaceable rule)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.gov.s191-interests
+    applies_to: [company-board]
+    observe: Disclosures of directors' material personal interests are recorded in the minutes.
+    authority: Corporations Act 2001 (Cth) s 191
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.gov.s195-public
+    applies_to: [company-board]
+    observe: For a public company, the minutes show whether an interested director was present and voted on the matter.
+    authority: Corporations Act 2001 (Cth) s 195
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.gov.s249a-members
+    applies_to: [company-members]
+    observe: A members' resolution passed without a meeting records signature by all members entitled to vote; check whether this route is available to the company type.
+    authority: Corporations Act 2001 (Cth) s 249A
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.gov.technology-meetings
+    applies_to: [company-board, company-members]
+    observe: The minutes record how the meeting was held (in person, hybrid or virtual) and the technology used.
+    authority: Corporations Act 2001 (Cth) pt 1.2AA and pt 2G.2
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed

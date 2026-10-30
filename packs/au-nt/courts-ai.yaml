@@ -1,0 +1,12 @@
+courts_ai:
+- id: au-nt.ai.check-current
+  court: All Northern Territory courts and NTCAT
+  instrument: Current practice notes or directions on generative AI
+  observe: Check the court's or tribunal's current practice notes for generative AI rules; contributors
+    should add each instrument as its own entry.
+  restricted_content: []
+  authority: Court and tribunal practice notes
+  source_url: https://supremecourt.nt.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null

@@ -1,0 +1,11 @@
+personal:
+- id: au-tas.id.driver-licence
+  name: Tasmania driver licence number
+  pattern_hint: format set by the issuing authority; near 'licence no' or 'driver licence'
+  authority: Vehicle and Traffic Act 1999 (Tas)
+  source_url: https://www.legislation.tas.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+organisational: []
+privacy_context: []

@@ -1,0 +1,43 @@
+id: nz
+name: New Zealand
+country: NZ
+parent: null
+level: national
+locale: en-NZ
+legal_system: common law (unitary)
+version: 0.2.0
+status: draft
+maintainers:
+- '@nz-reviewer'
+last_reviewed: null
+detection:
+  names:
+  - New Zealand
+  - Aotearoa
+  - NZ
+  governing_law_patterns:
+  - laws of New Zealand
+  - New Zealand law
+  - courts of New Zealand
+  courts:
+  - Supreme Court of New Zealand
+  - Court of Appeal of New Zealand
+  - High Court of New Zealand
+  - District Court of New Zealand
+  - Employment Relations Authority
+  - Employment Court
+  - Disputes Tribunal
+  identifiers:
+  - NZBN
+  - NZ company number
+  - IRD number
+  - FSP number
+  other_signals:
+  - Limited (registered under the Companies Act 1993)
+  - NZD
+  - NZ$
+  - '+64'
+  - Auckland
+  - Wellington
+  - Christchurch
+law_checked_as_at: null

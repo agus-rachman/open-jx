@@ -1,0 +1,40 @@
+# Holiday and court computation-rule tables used by the jx-dates-and-deadlines script.
+# Structure follows l0cka/legal-skills (MIT). The script computes only from entries whose
+# evidence.state is "verified" and refuses dates outside coverage or inside uncertain windows.
+provenance:
+  source: describe where the data came from (official publisher pages, checked dates)
+holiday_table: null
+#  table_id: xx
+#  jurisdiction: XX
+#  description: Public holidays under the Example Holidays Act, as published by ...
+#  source_url: https://example.gov/holidays/
+#  checked: "2026-01-01"
+#  evidence: {state: verified, method: "Checked against the official page on the checked date."}
+#  coverage: {from: "2026-01-01", to: "2027-12-31"}
+#  holidays: ["2026-01-01", "2026-12-25"]
+#  uncertain_windows: []
+#  caveats: []
+court_rules: []
+#  - table_id: xx-courts
+#    jurisdiction: XX
+#    forums: [Supreme Court of Example]
+#    holiday_table: xx
+#    note: How time is reckoned and any registry-closure issues.
+#    computation_provisions:
+#      - id: xx-interp
+#        citation: Interpretation Act, s 1
+#        role: time_computation_and_rollover
+#        summary: What the provision does.
+#        source_url: https://example.gov/legislation/
+#        evidence: {state: verified, checked: "2026-01-01", method: "...", version: "..."}
+#    period_rules:
+#      - id: xx-defence-after-service
+#        label: Defence after service
+#        citation: Court Rules, r 1
+#        trigger: Service of the claim
+#        period: {length: 28, unit: calendar_days}   # calendar_days | clear_days | business_days | months | years
+#        rollover: next_business_day                  # none | next_business_day
+#        applies_provisions: [xx-interp]
+#        source_url: https://example.gov/legislation/
+#        warnings: []
+#        evidence: {state: verified, checked: "2026-01-01"}

@@ -1,0 +1,9 @@
+entries:
+  - id: xx.gov.minutes
+    applies_to: [company-board]   # company-board | company-members | association
+    observe: What the minutes record.
+    authority: Act, section
+    source_url: https://example.gov/legislation/
+    status: in-force
+    verified: null
+    verified_by: null

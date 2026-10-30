@@ -1,0 +1,56 @@
+entries:
+- id: au-qld.exec.deed-individual
+  applies_to:
+  - individual
+  - deed
+  observe: A deed by an individual shows the signing and witnessing formalities of the current Queensland
+    property law Act, including any electronic deed provisions.
+  authority: Property Law Act 2023 (Qld)
+  source_url: https://www.legislation.qld.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: The Property Law Act 2023 (Qld) replaced the Property Law Act 1974 (Qld); confirm commencement
+    and pinpoints.
+- id: au-qld.exec.electronic
+  applies_to:
+  - individual
+  - electronic
+  - deed
+  observe: The document is signed electronically, or a deed is executed electronically or witnessed by
+    audio-visual link.
+  authority: Electronic Transactions (Queensland) Act 2001
+  source_url: https://www.legislation.qld.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: au-qld.exec.duty
+  applies_to:
+  - company
+  - individual
+  observe: The document may be dutiable (for example transfers of land or business assets); duty and stamping
+    are state matters.
+  authority: Duties Act 2001 (Qld)
+  source_url: https://www.legislation.qld.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Observation only; whether duty is payable is a counsel decision.
+- id: au-qld.exec.poa
+  applies_to:
+  - attorney
+  observe: A party signs by an attorney. If the power is an enduring power of attorney, it is in the approved
+    form, signed before an eligible witness (justice of the peace, commissioner for declarations, notary
+    public or lawyer) who certifies, and accepted by the attorney.
+  authority: Powers of Attorney Act 1998 (Qld) ss 31, 44
+  source_url: https://www.legislation.qld.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/qld-execution-formalities.md
+    upstream_checked: '2026-08-26'
+    upstream_state: verified

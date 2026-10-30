@@ -1,0 +1,50 @@
+# Trigger set: does jx-router fire and pick the right packs?
+# Run each prompt once with open-jx ON, in a new conversation, with no files attached
+# unless `fixture` is given. Record only the reply's first lines (the brief).
+# expect.packs: exact set of pack ids; "none" = jurisdiction-neutral or not required;
+# "no_pack" = brief must say no open-jx pack is installed; "ask" = must ask which jurisdiction.
+prompts:
+  - {id: T01, prompt: "Is this NSW lease deed ready to sign?", expect: [au, au-nsw]}
+  - {id: T02, prompt: "Check this Victorian contract for execution issues.", expect: [au, au-vic]}
+  - {id: T03, prompt: "Draft minutes for our Queensland company's board meeting.", expect: [au, au-qld]}
+  - {id: T04, prompt: "What deadlines are in this Western Australian services agreement?", expect: [au, au-wa]}
+  - {id: T05, prompt: "Review this South Australian supply contract's deadlines.", expect: [au, au-sa]}
+  - {id: T06, prompt: "Is our Tasmanian salmon supply agreement properly signed?", expect: [au, au-tas]}
+  - {id: T07, prompt: "Can we sign this ACT government services contract electronically?", expect: [au, au-act]}
+  - {id: T08, prompt: "Track the obligations in this Northern Territory mining services contract.", expect: [au, au-nt]}
+  - {id: T09, prompt: "Is this New Zealand deed ready to sign?", expect: [nz]}
+  - {id: T10, prompt: "Draft minutes from this Auckland board meeting transcript.", expect: [nz]}
+  - {id: T11, prompt: "use the AU pack — check this agreement is ready to sign", expect: [au]}
+  - {id: T12, prompt: "use the NZ pack and extract deadlines from this contract", expect: [nz]}
+  - {id: T13, prompt: "This agreement is governed by the laws of New South Wales. Any blanks left?", expect: [au, au-nsw]}
+  - {id: T14, prompt: "Our counterparty is Bellbird Retail Pty Ltd ACN 444 555 666. Are the signature blocks right?", expect: [au]}
+  - {id: T15, prompt: "The supplier's NZBN is 9429041234567. Check execution.", expect: [nz]}
+  - {id: T16, prompt: "We're filing in the Supreme Court of Victoria next week. Build a chronology from these emails.", expect: [au, au-vic]}
+  - {id: T17, prompt: "Prepare a chronology for our Federal Court matter.", expect: [au]}
+  - {id: T18, prompt: "Prepare a chronology for our High Court of New Zealand proceeding.", expect: [nz]}
+  - {id: T19, prompt: "Compare unfair contract terms rules in Australia and New Zealand.", expect: [au, nz]}
+  - {id: T20, prompt: "Compare residential tenancy bond limits in NSW and Queensland.", expect: [au, au-nsw, au-qld]}
+  - {id: T21, prompt: "Write a memo on director duties under the Corporations Act.", expect: [au]}
+  - {id: T22, prompt: "Write a memo on director duties under the Companies Act 1993.", expect: [nz]}
+  - {id: T23, prompt: "Explain what a deed is to our sales team, for a contract governed by Queensland law.", expect: [au, au-qld]}
+  - {id: T24, prompt: "Gap analysis of our privacy policy against the Australian Privacy Principles.", expect: [au]}
+  - {id: T25, prompt: "Gap analysis of our privacy notice against New Zealand IPP 3A.", expect: [nz]}
+  - {id: T26, prompt: "When is the notice deadline if the contract says 5 working days and it's governed by NZ law?", expect: [nz]}
+  - {id: T27, prompt: "Does Melbourne Cup Day count as a business day under this contract?", expect: [au, au-vic]}
+  - {id: T28, prompt: "Is Matariki a working day for this NZ contract?", expect: [nz]}
+  - {id: T29, prompt: "Check the defined terms in this agreement.", expect: none}
+  - {id: T30, prompt: "Check the cross-references in this contract.", expect: none}
+  - {id: T31, prompt: "Summarise the redlines between these two drafts.", expect: none}
+  - {id: T32, prompt: "Is this Singapore-law agreement ready to sign?", expect: no_pack}
+  - {id: T33, prompt: "Is this English-law deed properly executed?", expect: no_pack}
+  - {id: T34, prompt: "Is this deed ready to sign?", expect: ask}
+  - {id: T35, prompt: "Draft minutes from this board meeting transcript.", expect: ask}
+  - {id: T36, prompt: "Review this Perth contractor agreement against our playbook.", expect: [au, au-wa]}
+  - {id: T37, prompt: "Our Darwin office signed this — are the signatures okay?", expect: [au, au-nt]}
+  - {id: T38, prompt: "Check this Hobart lease for blanks before signing.", expect: [au, au-tas]}
+  - {id: T39, prompt: "Is this Canberra consultancy agreement ready to execute?", expect: [au, au-act]}
+  - {id: T40, prompt: "Is this Adelaide distribution agreement ready to sign?", expect: [au, au-sa]}
+  - {id: T41, prompt: "When is the defence due in the Federal Court if the claim was served on 1 December 2026?", expect: [au]}
+  - {id: T42, prompt: "Check whether [2024] NSWCA 55 is a real case.", expect: [au, au-nsw]}
+  - {id: T43, prompt: "What's the limitation period for contract claims in the Northern Territory?", expect: [au, au-nt]}
+  - {id: T44, prompt: "Which privacy laws cover a Queensland council?", expect: [au, au-qld]}

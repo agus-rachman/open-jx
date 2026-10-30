@@ -1,0 +1,37 @@
+publishers:
+- id: au-nsw.case.caselaw
+  court_ids:
+  - NSWSC
+  - NSWCA
+  - NSWCCA
+  - NSWDC
+  - NSWLC
+  - NSWLEC
+  - NSWIC
+  - NSWCATAP
+  - NSWCATAD
+  court: NSW courts and tribunals
+  publisher: NSW Caselaw
+  url: https://www.caselaw.nsw.gov.au/
+  access: direct
+  note: Reproduce decisions accurately and in context, preserve restriction notations, and do not republish
+    party names into indexable contexts (Copyright in Judicial Decisions Notice 1995 (NSW)).
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/case-law-verification-method.md
+    upstream_checked: null
+    upstream_state: method
+report_series:
+- series: NSWLR
+  name: New South Wales Law Reports
+  resolve_via: au-nsw.case.caselaw
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/route-case-citation/scripts/parse_citation.py
+    upstream_checked: null
+    upstream_state: method

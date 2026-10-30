@@ -1,0 +1,13 @@
+{
+  "plugin_name": "open-jx",
+  "version": "0.1.0",
+  "app_id": "f8a9bb81-3331-5dc9-a74b-7c4b31d30dc5",
+  "repo_url": "https://github.com/agus-rachman/open-jx",
+  "developer_name": "open-jx contributors",
+  "short_name": "Open Jurisdiction Packs",
+  "full_name": "Open Jurisdiction Packs for Microsoft Copilot Legal for Cowork",
+  "short_description": "Jurisdiction packs for the legal skills",
+  "full_description": "Adds jurisdiction detection, official sources, citation style, local personal identifiers, execution and governance checklists, business-day and holiday rules, and court AI rules to the built-in legal skills in Microsoft Copilot Cowork. Ships with packs for the Commonwealth of Australia, every Australian state and territory, and New Zealand; anyone can contribute a new jurisdiction. Pack entries are checklists to verify against primary sources, not legal advice.",
+  "accent_color": "#1F5C99",
+  "max_companion_files": 20
+}

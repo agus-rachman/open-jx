@@ -1,0 +1,11 @@
+# Core: skills, schema, tooling, evals
+*                     @agus-rachman
+/plugin/              @agus-rachman
+/schema/              @agus-rachman
+/tools/               @agus-rachman
+/evals/               @agus-rachman
+
+# Packs: qualified reviewers per jurisdiction (replace with real handles)
+/packs/au/            @agus-rachman @au-reviewer
+/packs/au-*/          @agus-rachman @au-reviewer
+/packs/nz/            @agus-rachman @nz-reviewer

@@ -1,0 +1,72 @@
+business_day: []
+time_computation:
+- id: au-vic.cal.interp
+  observe: 'Periods in Victoria legislation are counted under the interpretation provision: the trigger
+    day is excluded and a last day on a weekend or holiday moves to the next business day, subject to
+    its terms.'
+  authority: Interpretation of Legislation Act 1984 (Vic) s 44
+  source_url: https://www.legislation.vic.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/computation-rules/vic-courts.json
+    upstream_checked: '2026-08-14'
+    upstream_state: verified
+- id: au-vic.cal.rules
+  observe: Time limits in proceedings are counted under the court's own rules, which may displace the
+    interpretation Act.
+  authority: Supreme Court (General Civil Procedure) Rules 2025 (Vic) r 3.01
+  source_url: https://www.legislation.vic.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/computation-rules/vic-courts.json
+    upstream_checked: '2026-08-14'
+    upstream_state: verified
+- id: au-vic.cal.court-rule-table
+  observe: Candidate court and tribunal deadlines for this jurisdiction can be computed from the rule
+    and holiday tables in deadlines.yaml; computation refuses when a rule or holiday table is not verified
+    or the date is outside coverage.
+  authority: Supreme Court (General Civil Procedure) Rules 2025 (Vic) r 3.01
+  source_url: https://www.legislation.vic.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/computation-rules/vic-courts.json
+    upstream_checked: '2026-08-14'
+    upstream_state: verified
+holidays:
+- id: au-vic.cal.holidays
+  observe: Melbourne Cup Day applies in metropolitan Melbourne (regional councils may substitute another
+    day); the Friday before the AFL Grand Final is a public holiday.
+  authority: Public Holidays Act 1993 (Vic)
+  source_url: https://www.fairwork.gov.au/employment-conditions/public-holidays
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Dated holiday table (with coverage dates and caveats) is in deadlines.yaml; use it, not memory.
+limitation:
+- id: au-vic.cal.limitation
+  observe: 'Candidate general limitation period for contract and tort claims governed by Victoria law:
+    6 years, subject to the special regimes in the au pack and any extension or postponement provision.'
+  authority: Limitation of Actions Act 1958 (Vic) s 5
+  source_url: https://www.legislation.vic.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Candidate only; the applicable period is a counsel decision.
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/map-limitation-periods/references/limitation-registry.json
+    upstream_checked: null
+    upstream_state: pending-verification

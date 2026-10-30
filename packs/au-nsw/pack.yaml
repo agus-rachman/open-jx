@@ -1,0 +1,31 @@
+id: au-nsw
+name: New South Wales
+country: AU
+parent: au
+level: state
+locale: en-AU
+legal_system: common law
+version: 0.2.0
+status: draft
+maintainers:
+- '@au-reviewer'
+last_reviewed: null
+detection:
+  names:
+  - New South Wales
+  - NSW
+  governing_law_patterns:
+  - laws of New South Wales
+  - laws in force in New South Wales
+  - courts of New South Wales
+  courts:
+  - Supreme Court of New South Wales
+  - District Court of New South Wales
+  - Local Court of New South Wales
+  - Land and Environment Court of New South Wales
+  - NSW Civil and Administrative Tribunal (NCAT)
+  identifiers: []
+  other_signals:
+  - Sydney
+  - NSW in an address with a four-digit postcode
+law_checked_as_at: '2026-08-26'

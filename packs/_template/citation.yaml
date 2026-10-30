@@ -1,0 +1,14 @@
+citation:
+  name: Local citation guide
+  edition: edition and year
+  publisher: publisher
+  url: https://example.org/citation-guide
+rules:
+  - id: xx.cite.legislation
+    observe: How legislation is cited.
+    example: "Example Act 2000, s 1"
+    authority: Guide rule number
+    source_url: https://example.org/citation-guide
+    status: guidance
+    verified: null
+    verified_by: null

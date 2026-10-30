@@ -1,0 +1,42 @@
+sources:
+- id: au-nsw.src.legislation
+  name: New South Wales legislation (official)
+  url: https://legislation.nsw.gov.au/
+  type: legislation
+  rank: 1
+  note: Official register with point-in-time versions.
+  consolidated_term: version
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/point-in-time-method.md
+    upstream_checked: null
+    upstream_state: method
+    note: Consolidated-text terminology
+- id: au-nsw.src.1
+  name: NSW Caselaw
+  url: https://www.caselaw.nsw.gov.au/
+  type: case-law
+  rank: 1
+  note: Official NSW judgments.
+- id: au-nsw.src.2
+  name: Supreme Court of NSW
+  url: https://supremecourt.nsw.gov.au/
+  type: court
+  rank: 1
+  note: Practice notes, including SC Gen 23.
+- id: au-nsw.src.3
+  name: Revenue NSW
+  url: https://www.revenue.nsw.gov.au/
+  type: regulator
+  rank: 1
+- id: au-nsw.src.4
+  name: NSW Fair Trading
+  url: https://www.fairtrading.nsw.gov.au/
+  type: regulator
+  rank: 1
+- id: au-nsw.src.5
+  name: NSW Land Registry Services
+  url: https://www.nswlrs.com.au/
+  type: register
+  rank: 1

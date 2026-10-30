@@ -1,0 +1,26 @@
+courts_ai:
+- id: au-vic.ai.vsc-guidelines
+  court: Supreme Court of Victoria; County Court of Victoria
+  instrument: 'Guidelines for litigants: responsible use of artificial intelligence in litigation (Supreme
+    Court, 2024; County Court equivalent)'
+  observe: The guidelines expect parties and practitioners to understand the tools they use, to disclose
+    AI use where appropriate, to verify citations and content, and not to use AI to generate evidence
+    that should reflect a witness's own knowledge.
+  restricted_content: []
+  authority: 'Guidelines for litigants: responsible use of artificial intelligence in litigation (Supreme
+    Court, 2024; County Court equivalent)'
+  source_url: https://www.supremecourt.vic.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: au-vic.ai.check-current
+  court: All Victoria courts and VCAT
+  instrument: Current practice notes or directions on generative AI
+  observe: Check the court's or tribunal's current practice notes for generative AI rules; contributors
+    should add each instrument as its own entry.
+  restricted_content: []
+  authority: Court and tribunal practice notes
+  source_url: https://www.supremecourt.vic.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null

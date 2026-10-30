@@ -1,0 +1,178 @@
+business_day:
+- id: au.cal.bd-corps
+  observe: Where the Corporations Act applies, "business day" excludes Saturdays, Sundays and public or
+    bank holidays in the place concerned.
+  authority: Corporations Act 2001 (Cth) s 9 (definition of "business day")
+  source_url: https://www.legislation.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: au.cal.bd-contract
+  observe: If a contract does not define "Business Day" or names no city, the place whose holidays apply
+    is unclear; the governing-law state and the place of performance may differ.
+  authority: Contract construction (no statutory default)
+  source_url: https://www.legislation.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null
+time_computation:
+- id: au.cal.aia-36
+  observe: For periods in Commonwealth legislation, the trigger day is excluded and a last day on a weekend
+    or holiday moves to the next day, subject to the section's terms.
+  authority: Acts Interpretation Act 1901 (Cth) s 36
+  source_url: https://www.legislation.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/computation-rules/cth-federal-courts.json
+    upstream_checked: '2026-08-14'
+    upstream_state: verified
+- id: au.cal.fcr
+  observe: Time limits in Federal Court proceedings are counted under the Federal Court Rules.
+  authority: Federal Court Rules 2011 (Cth) r 1.61
+  source_url: https://www.legislation.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/computation-rules/cth-federal-courts.json
+    upstream_checked: '2026-08-14'
+    upstream_state: verified
+- id: au.cal.art
+  observe: Applications to the Administrative Review Tribunal have their own time limits; the rule table
+    in deadlines.yaml uses NSW holidays as its holiday basis — confirm the registry location.
+  authority: Administrative Review Tribunal Act 2024 (Cth) s 18(1); Administrative Review Tribunal Rules
+    2024 (Cth) r 5
+  source_url: https://www.legislation.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/computation-rules/art.json
+    upstream_checked: '2026-08-14'
+    upstream_state: verified
+holidays:
+- id: au.cal.holidays
+  observe: Public holidays are declared by each state and territory; there is no single national list
+    in Commonwealth law.
+  authority: State and territory public holiday Acts
+  source_url: https://www.fairwork.gov.au/employment-conditions/public-holidays
+  status: guidance
+  verified: null
+  verified_by: null
+limitation:
+- id: au.cal.limitation
+  observe: Most limitation periods are set by state and territory Acts; see the state pack for the candidate
+    general period.
+  authority: State and territory limitation Acts
+  source_url: https://www.legislation.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: The applicable period is a counsel decision.
+- id: au.cal.limitation-acl
+  observe: 'Candidate period for Australian Consumer Law damages claims: 6 years.'
+  authority: Competition and Consumer Act 2010 (Cth) sch 2 s 236(2)
+  source_url: https://www.legislation.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/map-limitation-periods/references/limitation-registry.json
+    upstream_checked: null
+    upstream_state: pending-verification
+- id: au.cal.limitation-child-abuse
+  observe: 'Child abuse claims: limitation periods have been removed in every jurisdiction; never state
+    a candidate period, flag for the responsible lawyer.'
+  authority: State and territory limitation Acts
+  source_url: https://www.legislation.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/map-limitation-periods/references/limitation-registry.json
+    upstream_checked: null
+    upstream_state: pending-verification
+- id: au.cal.limitation-defamation
+  observe: 'Defamation: a one-year period from publication applies in every jurisdiction, subject to extension;
+    Western Australia has not enacted the Stage 1 uniform reforms (single-publication rule), the Northern
+    Territory has.'
+  authority: State and territory limitation and defamation Acts
+  source_url: https://www.legislation.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Confirm the NT commencement date.
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/map-limitation-periods/references/limitation-registry.json
+    upstream_checked: '2026-09-24'
+    upstream_state: pending-verification
+- id: au.cal.limitation-personal-injury
+  observe: 'Personal injury: discoverability-based and scheme-specific periods (motor accident, workers
+    compensation) displace the general period.'
+  authority: State and territory limitation and scheme Acts
+  source_url: https://www.legislation.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/map-limitation-periods/references/limitation-registry.json
+    upstream_checked: null
+    upstream_state: pending-verification
+- id: au.cal.limitation-contribution
+  observe: 'Contribution claims: separate periods run from judgment or settlement, not from the underlying
+    wrong.'
+  authority: State and territory limitation Acts
+  source_url: https://www.legislation.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/map-limitation-periods/references/limitation-registry.json
+    upstream_checked: null
+    upstream_state: pending-verification
+- id: au.cal.limitation-estates
+  observe: 'Deceased estates: survival-of-actions and family-provision periods are separate and short;
+    flag whenever a party has died.'
+  authority: State and territory succession and limitation Acts
+  source_url: https://www.legislation.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/map-limitation-periods/references/limitation-registry.json
+    upstream_checked: null
+    upstream_state: pending-verification
+- id: au.cal.limitation-postponement
+  observe: 'Disability, fraud and concealment: postponement and suspension provisions may extend any candidate
+    period; record as flags, never resolve.'
+  authority: State and territory limitation Acts
+  source_url: https://www.legislation.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/map-limitation-periods/references/limitation-registry.json
+    upstream_checked: null
+    upstream_state: pending-verification

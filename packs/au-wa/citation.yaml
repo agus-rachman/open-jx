@@ -1,0 +1,12 @@
+citation:
+  inherit: au
+  note: Use the AGLC as set in the au pack; state Acts carry the state abbreviation, for example (NSW),
+    (Vic), (Qld), (WA), (SA), (Tas), (ACT), (NT).
+rules:
+- id: au-wa.cite.state-act
+  observe: Cite Western Australia Acts with the jurisdiction abbreviation in brackets after the year.
+  authority: AGLC4 r 3.1
+  source_url: https://law.unimelb.edu.au/mulr/aglc
+  status: guidance
+  verified: null
+  verified_by: null

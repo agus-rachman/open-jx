@@ -1,0 +1,60 @@
+entries:
+  - id: nz.gov.sch3-minutes
+    applies_to: [company-board]
+    observe: The board keeps proper minutes of all proceedings of its meetings; the draft provides for the minutes to be confirmed or signed.
+    authority: Companies Act 1993, sch 3 cl 6
+    source_url: https://www.legislation.govt.nz/act/public/1993/0105/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: nz.gov.sch3-unanimous
+    applies_to: [company-board]
+    observe: A board resolution in writing records signature or assent by all directors entitled to receive notice of a board meeting.
+    authority: Companies Act 1993, sch 3 cl 7
+    source_url: https://www.legislation.govt.nz/act/public/1993/0105/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: The constitution may provide otherwise.
+  - id: nz.gov.sch3-quorum
+    applies_to: [company-board]
+    observe: The minutes record who was present for quorum; unless the constitution provides otherwise, the board quorum is a majority of directors.
+    authority: Companies Act 1993, sch 3 cl 4
+    source_url: https://www.legislation.govt.nz/act/public/1993/0105/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: nz.gov.s189-records
+    applies_to: [company-board, company-members]
+    observe: Minutes of shareholder and director meetings, and written resolutions, form part of the company records kept at the registered office.
+    authority: Companies Act 1993, s 189
+    source_url: https://www.legislation.govt.nz/act/public/1993/0105/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: nz.gov.s140-interests
+    applies_to: [company-board]
+    observe: A director's disclosure of interest in a transaction is recorded, and the interests register is updated.
+    authority: Companies Act 1993, ss 140, 189(1)(c)
+    source_url: https://www.legislation.govt.nz/act/public/1993/0105/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed
+  - id: nz.gov.s122-shareholders
+    applies_to: [company-members]
+    observe: A shareholders' resolution in writing records the signatures of the required proportion of shareholders entitled to vote.
+    authority: Companies Act 1993, s 122
+    source_url: https://www.legislation.govt.nz/act/public/1993/0105/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: pinpoint and thresholds to be confirmed
+  - id: nz.gov.societies
+    applies_to: [association]
+    observe: If the governing body is an incorporated society, its meetings follow the Incorporated Societies Act 2022 and its constitution.
+    authority: Incorporated Societies Act 2022
+    source_url: https://www.legislation.govt.nz/
+    status: in-force
+    verified: null
+    verified_by: null

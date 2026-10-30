@@ -1,0 +1,25 @@
+sources:
+- id: au-wa.src.legislation
+  name: Western Australia legislation (official)
+  url: https://www.legislation.wa.gov.au/
+  type: legislation
+  rank: 1
+  note: Official register with point-in-time versions.
+  consolidated_term: compilation
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/point-in-time-method.md
+    upstream_checked: null
+    upstream_state: method
+    note: Consolidated-text terminology
+- id: au-wa.src.1
+  name: Supreme Court of Western Australia
+  url: https://www.supremecourt.wa.gov.au/
+  type: court
+  rank: 1
+- id: au-wa.src.2
+  name: Government of Western Australia (RevenueWA)
+  url: https://www.wa.gov.au/
+  type: regulator
+  rank: 1

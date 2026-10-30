@@ -1,0 +1,29 @@
+id: au-nt
+name: Northern Territory
+country: AU
+parent: au
+level: territory
+locale: en-AU
+legal_system: common law
+version: 0.2.0
+status: draft
+maintainers:
+- '@au-reviewer'
+last_reviewed: null
+detection:
+  names:
+  - Northern Territory
+  - NT
+  governing_law_patterns:
+  - laws of Northern Territory
+  - laws in force in Northern Territory
+  - courts of Northern Territory
+  courts:
+  - Supreme Court of the Northern Territory
+  - Local Court of the Northern Territory
+  - Northern Territory Civil and Administrative Tribunal (NTCAT)
+  identifiers: []
+  other_signals:
+  - Darwin
+  - NT in an address with a four-digit postcode
+law_checked_as_at: '2026-08-26'

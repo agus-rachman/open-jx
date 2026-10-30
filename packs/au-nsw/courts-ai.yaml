@@ -1,0 +1,60 @@
+courts_ai:
+- id: au-nsw.ai.sc-gen-23
+  court: Supreme Court of New South Wales
+  instrument: Practice Note SC Gen 23 — Use of Generative Artificial Intelligence (Gen AI)
+  observe: Gen AI must not be used to generate the content of affidavits, witness statements, character
+    references or other material intended to reflect a witness's evidence or opinion; such documents carry
+    a statement that Gen AI was not used. Gen AI must not be used to draft or prepare expert reports without
+    the Court's prior leave. Where Gen AI is used for written submissions or summaries, the author must
+    verify that citations and references exist, are accurate and are relevant. Restrictions apply to entering
+    material subject to non-publication or suppression orders, subpoenaed material and material produced
+    under compulsion.
+  restricted_content:
+  - affidavit-content
+  - witness-statement-content
+  - character-reference-content
+  - expert-report-without-leave
+  authority: Practice Note SC Gen 23 — Use of Generative Artificial Intelligence (Gen AI)
+  source_url: https://supremecourt.nsw.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: au-nsw.ai.district-local
+  court: District Court of New South Wales; Local Court of New South Wales
+  instrument: Generative AI practice notes of the District Court and Local Court (Local Court note commencing
+    12 January 2026)
+  observe: The District and Local Courts have adopted generative AI practice notes along the lines of
+    SC Gen 23; check the current note for the court concerned.
+  restricted_content:
+  - affidavit-content
+  - witness-statement-content
+  - character-reference-content
+  - expert-report-without-leave
+  authority: Generative AI practice notes of the District Court and Local Court (Local Court note commencing
+    12 January 2026)
+  source_url: https://localcourt.nsw.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: au-nsw.ai.pic13
+  court: Personal Injury Commission of New South Wales
+  instrument: Procedural Direction PIC13 — Use of Generative Artificial Intelligence
+  observe: The Commission has its own procedural direction on generative AI; check it before preparing
+    material for the Commission.
+  restricted_content: []
+  authority: Procedural Direction PIC13 — Use of Generative Artificial Intelligence
+  source_url: https://www.pi.nsw.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: au-nsw.ai.check-current
+  court: All New South Wales courts and NCAT
+  instrument: Current practice notes or directions on generative AI
+  observe: Check the court's or tribunal's current practice notes for generative AI rules; contributors
+    should add each instrument as its own entry.
+  restricted_content: []
+  authority: Court and tribunal practice notes
+  source_url: https://www.caselaw.nsw.gov.au/
+  status: guidance
+  verified: null
+  verified_by: null

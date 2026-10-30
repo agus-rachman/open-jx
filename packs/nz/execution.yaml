@@ -1,0 +1,60 @@
+entries:
+  - id: nz.exec.s180-deed
+    applies_to: [company, deed]
+    observe: >-
+      For an obligation that would need a deed if made by an individual, the
+      company's block shows signature by two or more directors; or, if there is
+      only one director, by that director with the signature witnessed; or by a
+      person the constitution allows, with signatures witnessed; or by an
+      attorney appointed under s 181.
+    authority: Companies Act 1993, s 180(1)(a)
+    source_url: https://www.legislation.govt.nz/act/public/1993/0105/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: nz.exec.s180-writing
+    applies_to: [company]
+    observe: For an obligation that needs writing (not a deed), a person acting under the company's express or implied authority signs on its behalf.
+    authority: Companies Act 1993, s 180(1)(b)
+    source_url: https://www.legislation.govt.nz/act/public/1993/0105/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: nz.exec.s181-attorney
+    applies_to: [company, attorney]
+    observe: A company signs by an attorney; check the block refers to a power of attorney executed as a deed.
+    authority: Companies Act 1993, s 181
+    source_url: https://www.legislation.govt.nz/act/public/1993/0105/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: nz.exec.pla-deed-individual
+    applies_to: [individual, deed]
+    observe: >-
+      A deed by an individual is signed by the individual and witnessed by at
+      least one person who is not a party; the witness block shows the
+      witness's signature, name, occupation and place of residence.
+    authority: Property Law Act 2007, s 9
+    source_url: https://www.legislation.govt.nz/act/public/2007/0091/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed (witness details and exceptions)
+  - id: nz.exec.pla-deed-form
+    applies_to: [deed]
+    observe: The document is described as a deed on its face (for example "deed", "executed as a deed"); sealing is not needed for an individual's deed.
+    authority: Property Law Act 2007, ss 9–12
+    source_url: https://www.legislation.govt.nz/act/public/2007/0091/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed
+  - id: nz.exec.electronic
+    applies_to: [individual, company, electronic]
+    observe: An electronic signature is used where the law requires a signature or witnessing.
+    authority: Contract and Commercial Law Act 2017, pt 4
+    source_url: https://www.legislation.govt.nz/act/public/2017/0005/latest/
+    status: in-force
+    verified: null
+    verified_by: null
+    note: pinpoint to be confirmed (electronic signatures and witnessing)

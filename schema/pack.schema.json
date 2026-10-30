@@ -1,0 +1,879 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/open-jx/open-jx/schema/pack.schema.json",
+  "title": "open-jx jurisdiction pack files",
+  "description": "One definition per pack file. tools/validate_packs.py selects the definition by file name.",
+  "$defs": {
+    "date_or_null": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      ]
+    },
+    "https": {
+      "type": "string",
+      "pattern": "^https://[^\\s]+$"
+    },
+    "entry_id": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(-[a-z0-9]{1,3})?\\.[a-z-]+\\.[a-z0-9.-]+$"
+    },
+    "status": {
+      "enum": [
+        "in-force",
+        "pending",
+        "repealed",
+        "guidance"
+      ]
+    },
+    "legal_entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "observe",
+        "authority",
+        "source_url",
+        "status",
+        "verified",
+        "verified_by"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/entry_id"
+        },
+        "applies_to": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "company",
+              "individual",
+              "attorney",
+              "deed",
+              "electronic",
+              "trust",
+              "partnership",
+              "company-board",
+              "company-members",
+              "association"
+            ]
+          }
+        },
+        "observe": {
+          "type": "string",
+          "minLength": 10
+        },
+        "example": {
+          "type": "string"
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 3
+        },
+        "source_url": {
+          "$ref": "#/$defs/https"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "commences": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "verified": {
+          "$ref": "#/$defs/date_or_null"
+        },
+        "verified_by": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^@[A-Za-z0-9-]+$"
+            }
+          ]
+        },
+        "note": {
+          "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        }
+      },
+      "additionalProperties": false
+    },
+    "pack": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "country",
+        "parent",
+        "level",
+        "locale",
+        "legal_system",
+        "version",
+        "status",
+        "maintainers",
+        "detection"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z]{2}(-[a-z0-9]{1,3})?$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "parent": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-z]{2}(-[a-z0-9]{1,3})?$"
+            }
+          ]
+        },
+        "level": {
+          "enum": [
+            "national",
+            "state",
+            "territory",
+            "province",
+            "region"
+          ]
+        },
+        "locale": {
+          "type": "string",
+          "pattern": "^[a-z]{2}-[A-Z]{2}$"
+        },
+        "legal_system": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "beta",
+            "stable",
+            "stale",
+            "unmaintained"
+          ]
+        },
+        "maintainers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^@[A-Za-z0-9-]+$"
+          }
+        },
+        "last_reviewed": {
+          "$ref": "#/$defs/date_or_null"
+        },
+        "detection": {
+          "type": "object",
+          "required": [
+            "names",
+            "governing_law_patterns",
+            "courts"
+          ],
+          "properties": {
+            "names": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
+            "governing_law_patterns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "courts": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "identifiers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "other_signals": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "law_checked_as_at": {
+          "$ref": "#/$defs/date_or_null"
+        }
+      },
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "object",
+      "required": [
+        "sources"
+      ],
+      "properties": {
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "url",
+              "type",
+              "rank"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/entry_id"
+              },
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "$ref": "#/$defs/https"
+              },
+              "type": {
+                "enum": [
+                  "legislation",
+                  "case-law",
+                  "court",
+                  "regulator",
+                  "register",
+                  "secondary"
+                ]
+              },
+              "rank": {
+                "enum": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "note": {
+                "type": "string"
+              },
+              "consolidated_term": {
+                "type": "string"
+              },
+              "access": {
+                "type": "string"
+              },
+              "provenance": {
+                "$ref": "#/$defs/provenance"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "citation": {
+      "type": "object",
+      "required": [
+        "citation"
+      ],
+      "properties": {
+        "citation": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "edition": {
+              "type": "string"
+            },
+            "publisher": {
+              "type": "string"
+            },
+            "url": {
+              "$ref": "#/$defs/https"
+            },
+            "inherit": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legal_entry"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "identifiers": {
+      "type": "object",
+      "required": [
+        "personal",
+        "organisational"
+      ],
+      "properties": {
+        "personal": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "pattern_hint",
+              "authority",
+              "source_url",
+              "status",
+              "verified",
+              "verified_by"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/entry_id"
+              },
+              "name": {
+                "type": "string"
+              },
+              "pattern_hint": {
+                "type": "string"
+              },
+              "authority": {
+                "type": "string"
+              },
+              "source_url": {
+                "$ref": "#/$defs/https"
+              },
+              "status": {
+                "$ref": "#/$defs/status"
+              },
+              "verified": {
+                "$ref": "#/$defs/date_or_null"
+              },
+              "verified_by": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^@[A-Za-z0-9-]+$"
+                  }
+                ]
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "organisational": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "format",
+              "authority",
+              "source_url"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/entry_id"
+              },
+              "name": {
+                "type": "string"
+              },
+              "format": {
+                "type": "string"
+              },
+              "authority": {
+                "type": "string"
+              },
+              "source_url": {
+                "$ref": "#/$defs/https"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "privacy_context": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legal_entry"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "entries_file": {
+      "type": "object",
+      "required": [
+        "entries"
+      ],
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legal_entry"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "calendar": {
+      "type": "object",
+      "required": [
+        "business_day",
+        "time_computation",
+        "holidays",
+        "limitation"
+      ],
+      "properties": {
+        "business_day": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legal_entry"
+          }
+        },
+        "time_computation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legal_entry"
+          }
+        },
+        "holidays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legal_entry"
+          }
+        },
+        "limitation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legal_entry"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "courts_ai": {
+      "type": "object",
+      "required": [
+        "courts_ai"
+      ],
+      "properties": {
+        "courts_ai": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "court",
+              "instrument",
+              "observe",
+              "restricted_content",
+              "authority",
+              "source_url",
+              "status",
+              "verified",
+              "verified_by"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/entry_id"
+              },
+              "court": {
+                "type": "string"
+              },
+              "instrument": {
+                "type": "string"
+              },
+              "observe": {
+                "type": "string"
+              },
+              "restricted_content": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "affidavit-content",
+                    "witness-statement-content",
+                    "character-reference-content",
+                    "expert-report-without-leave",
+                    "expert-opinion"
+                  ]
+                }
+              },
+              "authority": {
+                "type": "string"
+              },
+              "source_url": {
+                "$ref": "#/$defs/https"
+              },
+              "status": {
+                "$ref": "#/$defs/status"
+              },
+              "verified": {
+                "$ref": "#/$defs/date_or_null"
+              },
+              "verified_by": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^@[A-Za-z0-9-]+$"
+                  }
+                ]
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "terminology": {
+      "type": "object",
+      "required": [
+        "spelling",
+        "terms"
+      ],
+      "properties": {
+        "spelling": {
+          "type": "string",
+          "pattern": "^[a-z]{2}-[A-Z]{2}$"
+        },
+        "terms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "use",
+              "instead_of"
+            ],
+            "properties": {
+              "use": {
+                "type": "string"
+              },
+              "instead_of": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "upstream_checked": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "upstream_state": {
+          "type": "string"
+        },
+        "licence": {
+          "type": "string"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "imported": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "deadlines": {
+      "type": "object",
+      "required": [
+        "provenance",
+        "holiday_table",
+        "court_rules"
+      ],
+      "properties": {
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "holiday_table": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "table_id",
+                "source_url",
+                "checked",
+                "evidence",
+                "coverage",
+                "holidays"
+              ],
+              "properties": {
+                "evidence": {
+                  "type": "object",
+                  "required": [
+                    "state"
+                  ]
+                },
+                "holidays": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "court_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "table_id",
+              "jurisdiction",
+              "forums",
+              "computation_provisions",
+              "period_rules"
+            ],
+            "properties": {
+              "period_rules": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "label",
+                    "citation",
+                    "period",
+                    "evidence"
+                  ]
+                }
+              },
+              "computation_provisions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "citation",
+                    "evidence"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "privacy": {
+      "type": "object",
+      "required": [
+        "privacy_regimes"
+      ],
+      "properties": {
+        "privacy_regimes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legal_entry"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "case_law": {
+      "type": "object",
+      "required": [
+        "publishers"
+      ],
+      "properties": {
+        "publishers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "court_ids",
+              "court",
+              "publisher",
+              "url",
+              "access",
+              "status",
+              "verified",
+              "verified_by"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/entry_id"
+              },
+              "court_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9]+$"
+                }
+              },
+              "court": {
+                "type": "string"
+              },
+              "publisher": {
+                "type": "string"
+              },
+              "url": {
+                "$ref": "#/$defs/https"
+              },
+              "access": {
+                "enum": [
+                  "direct",
+                  "human-browser-only",
+                  "not-mapped"
+                ]
+              },
+              "note": {
+                "type": "string"
+              },
+              "status": {
+                "$ref": "#/$defs/status"
+              },
+              "verified": {
+                "$ref": "#/$defs/date_or_null"
+              },
+              "verified_by": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^@[A-Za-z0-9-]+$"
+                  }
+                ]
+              },
+              "provenance": {
+                "$ref": "#/$defs/provenance"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "report_series": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "series",
+              "name",
+              "resolve_via"
+            ],
+            "properties": {
+              "series": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "resolve_via": {
+                "type": "string"
+              },
+              "provenance": {
+                "$ref": "#/$defs/provenance"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "x-file-map": {
+    "pack.yaml": "pack",
+    "sources.yaml": "sources",
+    "citation.yaml": "citation",
+    "identifiers.yaml": "identifiers",
+    "execution.yaml": "entries_file",
+    "governance.yaml": "entries_file",
+    "calendar.yaml": "calendar",
+    "courts-ai.yaml": "courts_ai",
+    "terminology.yaml": "terminology",
+    "deadlines.yaml": "deadlines",
+    "privacy.yaml": "privacy",
+    "case-law.yaml": "case_law"
+  }
+}

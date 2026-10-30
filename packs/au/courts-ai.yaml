@@ -1,0 +1,30 @@
+courts_ai:
+  - id: au.ai.fca-gpn-ai
+    court: Federal Court of Australia
+    instrument: Use of Generative Artificial Intelligence Practice Note (GPN-AI), 16 April 2026
+    observe: >-
+      Applies to everyone who appears before or files documents with the Court.
+      Disclosure of whether and how generative AI was used may be required by
+      the Court, and is expected where AI was used in preparing material a
+      witness relies on. Affidavits and witness statements must reflect the
+      person's own knowledge; expert reports must contain the expert's own
+      opinion. Citations, evidence, chronologies and lists of documents must be
+      checked before filing. Suppressed, confidential, privileged and implied
+      undertaking material must not be put into generally accessible AI tools
+      without checking restrictions.
+    restricted_content: [affidavit-content, witness-statement-content, expert-opinion]
+    authority: GPN-AI paras 2.1, 2.3, 3.1, 4.3–4.15, 5.1
+    source_url: https://www.fedcourt.gov.au/law-and-practice/practice-documents/practice-notes/gpn-ai
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.ai.fcfcoa
+    court: Federal Circuit and Family Court of Australia
+    instrument: Check the Court's current practice directions and notices on generative AI
+    observe: No specific rule recorded in this pack yet.
+    restricted_content: []
+    authority: Federal Circuit and Family Court of Australia practice directions
+    source_url: https://www.fcfcoa.gov.au/
+    status: guidance
+    verified: null
+    verified_by: null

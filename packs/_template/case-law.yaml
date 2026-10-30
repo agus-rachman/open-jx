@@ -1,0 +1,12 @@
+publishers:
+  - id: xx.case.supreme-court
+    court_ids: [XXSC, XXCA]          # medium neutral citation court identifiers
+    court: Supreme Court and Court of Appeal
+    publisher: Official judgments site
+    url: https://example.gov/judgments/
+    access: direct                   # direct | human-browser-only | not-mapped
+    note: Any publisher conditions (copyright notice, bot challenge, anonymisation)
+    status: guidance
+    verified: null
+    verified_by: null
+report_series: []                    # e.g. {series: XXLR, name: Law Reports, resolve_via: xx.case.supreme-court}

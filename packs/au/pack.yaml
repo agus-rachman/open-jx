@@ -1,0 +1,40 @@
+id: au
+name: Australia (Commonwealth)
+country: AU
+parent: null
+level: national
+locale: en-AU
+legal_system: common law (federation)
+version: 0.2.0
+status: draft
+maintainers:
+- '@au-reviewer'
+last_reviewed: null
+detection:
+  names:
+  - Australia
+  - Commonwealth of Australia
+  - Australian
+  governing_law_patterns:
+  - laws of Australia
+  - laws of the Commonwealth
+  courts:
+  - High Court of Australia
+  - Federal Court of Australia
+  - Federal Circuit and Family Court of Australia
+  - Fair Work Commission
+  - Administrative Review Tribunal
+  identifiers:
+  - ACN
+  - ABN
+  - ARBN
+  - ARSN
+  other_signals:
+  - Pty Ltd
+  - AUD
+  - A$
+  - '+61'
+  - four-digit postcode with a state abbreviation (NSW, VIC, QLD, WA, SA, TAS, ACT, NT)
+  note: Australian law is split between the Commonwealth and the states and territories. Load a state
+    or territory pack with this one whenever one is identified.
+law_checked_as_at: '2026-08-26'

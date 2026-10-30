@@ -1,0 +1,90 @@
+publishers:
+- id: au.case.hca
+  court_ids:
+  - HCA
+  court: High Court of Australia
+  publisher: High Court of Australia judgments
+  url: https://www.hcourt.gov.au/
+  access: direct
+  note: Includes Commonwealth Law Reports volumes 1–100, so older reported HCA citations can be checked
+    directly.
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/case-law-verification-method.md
+    upstream_checked: null
+    upstream_state: method
+- id: au.case.fca
+  court_ids:
+  - FCA
+  - FCAFC
+  court: Federal Court of Australia
+  publisher: Federal Court (Federal Law Search)
+  url: https://www.fedcourt.gov.au/
+  access: human-browser-only
+  note: 'The site uses a bot challenge: never automate around it; give the user the manual search route
+    or report the citation as unverifiable.'
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/case-law-verification-method.md
+    upstream_checked: null
+    upstream_state: method
+- id: au.case.fcfcoa
+  court_ids:
+  - FEDCFAMC1A
+  - FEDCFAMC1F
+  - FEDCFAMC2F
+  - FEDCFAMC2G
+  - FCCA
+  - FAMCA
+  - FAMCAFC
+  court: Federal Circuit and Family Court of Australia (and predecessors)
+  publisher: Federal Circuit and Family Court of Australia
+  url: https://www.fcfcoa.gov.au/
+  access: direct
+  note: Family law decisions are published under statutory anonymisation; treat the published pseudonym
+    as the case name.
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/case-law-verification-method.md
+    upstream_checked: null
+    upstream_state: method
+report_series:
+- series: CLR
+  name: Commonwealth Law Reports
+  resolve_via: au.case.hca
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/route-case-citation/scripts/parse_citation.py
+    upstream_checked: null
+    upstream_state: method
+- series: ALJR
+  name: Australian Law Journal Reports
+  resolve_via: au.case.hca
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/route-case-citation/scripts/parse_citation.py
+    upstream_checked: null
+    upstream_state: method
+- series: FCR
+  name: Federal Court Reports
+  resolve_via: au.case.fca
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/skills/route-case-citation/scripts/parse_citation.py
+    upstream_checked: null
+    upstream_state: method

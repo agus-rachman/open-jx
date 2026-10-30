@@ -1,0 +1,74 @@
+entries:
+- id: au-vic.exec.deed-individual
+  applies_to:
+  - individual
+  - deed
+  observe: A deed by an individual shows the execution formalities required in Victoria (signature, witnessing
+    and any sealing or delivery wording).
+  authority: Property Law Act 1958 (Vic) s 73
+  source_url: https://www.legislation.vic.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Victorian deed formalities for individuals have historically differed from other states; confirm
+    the current position, including electronic deeds.
+- id: au-vic.exec.electronic
+  applies_to:
+  - individual
+  - electronic
+  - deed
+  observe: The document is signed electronically, or a deed is executed electronically or witnessed by
+    audio-visual link.
+  authority: Electronic Transactions (Victoria) Act 2000
+  source_url: https://www.legislation.vic.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Electronic signing and electronic deeds; pinpoint to be confirmed
+- id: au-vic.exec.duty
+  applies_to:
+  - company
+  - individual
+  observe: The document may be dutiable (for example transfers of land or business assets); duty and stamping
+    are state matters.
+  authority: Duties Act 2000 (Vic)
+  source_url: https://www.legislation.vic.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Observation only; whether duty is payable is a counsel decision.
+- id: au-vic.exec.poa
+  applies_to:
+  - attorney
+  observe: A party signs by an attorney. If the power is an enduring power of attorney, it uses the prescribed
+    form, is signed before two eligible witnesses (at least one authorised to witness affidavits or a
+    medical practitioner) and carries each attorney's witnessed acceptance.
+  authority: Powers of Attorney Act 2014 (Vic) ss 32–38; Powers of Attorney Regulations 2025 (Vic) reg
+    6, sch 1 form 1
+  source_url: https://www.legislation.vic.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/vic-execution-formalities.md
+    upstream_checked: '2026-08-20'
+    upstream_state: verified
+- id: au-vic.exec.remote-poa
+  applies_to:
+  - attorney
+  - electronic
+  observe: An enduring power of attorney was witnessed remotely; Victoria permits this only through its
+    statutory procedure (same day, within Victoria, a special witness who signs last).
+  authority: Powers of Attorney Act 2014 (Vic) ss 5A–5C, 33(2)–(4)
+  source_url: https://www.legislation.vic.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/vic-execution-formalities.md
+    upstream_checked: '2026-08-20'
+    upstream_state: verified

@@ -1,0 +1,12 @@
+entries:
+- id: au-nt.gov.associations
+  applies_to:
+  - association
+  observe: If the governing body is an incorporated association, its minutes and resolutions follow the
+    state Act and its rules, not the Corporations Act.
+  authority: Associations Act 2003 (NT)
+  source_url: https://legislation.nt.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Companies are covered by the au pack (Corporations Act 2001 (Cth)).

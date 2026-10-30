@@ -1,0 +1,48 @@
+entries:
+- id: au-wa.exec.deed-individual
+  applies_to:
+  - individual
+  - deed
+  observe: A deed by an individual shows signature and attestation by a witness; confirm whether sealing
+    wording is needed.
+  authority: Property Law Act 1969 (WA) s 9
+  source_url: https://www.legislation.wa.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: au-wa.exec.electronic
+  applies_to:
+  - individual
+  - electronic
+  - deed
+  observe: The document is signed electronically, or a deed is executed electronically or witnessed by
+    audio-visual link.
+  authority: Electronic Transactions Act 2011 (WA)
+  source_url: https://www.legislation.wa.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: au-wa.exec.poa
+  applies_to:
+  - attorney
+  observe: A party signs by an attorney; the power of attorney and its form are governed by state or territory
+    law.
+  authority: Guardianship and Administration Act 1990 (WA) pt 9
+  source_url: https://www.legislation.wa.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: au-wa.exec.duty
+  applies_to:
+  - company
+  - individual
+  observe: The document may be dutiable (for example transfers of land or business assets); duty and stamping
+    are state matters.
+  authority: Duties Act 2008 (WA)
+  source_url: https://www.legislation.wa.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Observation only; whether duty is payable is a counsel decision.

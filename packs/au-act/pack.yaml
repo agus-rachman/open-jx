@@ -1,0 +1,30 @@
+id: au-act
+name: Australian Capital Territory
+country: AU
+parent: au
+level: territory
+locale: en-AU
+legal_system: common law
+version: 0.2.0
+status: draft
+maintainers:
+- '@au-reviewer'
+last_reviewed: null
+detection:
+  names:
+  - Australian Capital Territory
+  - ACT
+  governing_law_patterns:
+  - laws of Australian Capital Territory
+  - laws in force in Australian Capital Territory
+  - courts of Australian Capital Territory
+  courts:
+  - Supreme Court of the Australian Capital Territory
+  - ACT Magistrates Court
+  - ACT Civil and Administrative Tribunal (ACAT)
+  identifiers: []
+  other_signals:
+  - Canberra
+  - ACT in an address with a four-digit postcode
+  note: '''ACT'' is also an ordinary word; match only the capitalised abbreviation or the full name.'
+law_checked_as_at: '2026-08-26'

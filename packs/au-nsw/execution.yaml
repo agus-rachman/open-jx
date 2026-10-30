@@ -1,0 +1,74 @@
+entries:
+- id: au-nsw.exec.deed-individual
+  applies_to:
+  - individual
+  - deed
+  observe: A deed signed by an individual is attested by at least one witness who is not a party; a seal
+    is not needed.
+  authority: Conveyancing Act 1919 (NSW) s 38
+  source_url: https://legislation.nsw.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: au-nsw.exec.electronic
+  applies_to:
+  - individual
+  - electronic
+  - deed
+  observe: The document is signed electronically, or a deed is executed electronically or witnessed by
+    audio-visual link.
+  authority: Electronic Transactions Act 2000 (NSW)
+  source_url: https://legislation.nsw.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Includes provisions on electronic execution of deeds and witnessing by audio-visual link; pinpoint
+    to be confirmed
+- id: au-nsw.exec.duty
+  applies_to:
+  - company
+  - individual
+  observe: The document may be dutiable (for example transfers of land or business assets); duty and stamping
+    are state matters.
+  authority: Duties Act 1997 (NSW)
+  source_url: https://legislation.nsw.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Observation only; whether duty is payable is a counsel decision.
+- id: au-nsw.exec.poa
+  applies_to:
+  - attorney
+  observe: A party signs by an attorney. If the power is an enduring power of attorney, its creation shows
+    the continuing-effect statement, a prescribed witness who is not an attorney, and the witness certificate;
+    the attorney's authority depends on signed acceptance.
+  authority: Powers of Attorney Act 2003 (NSW) ss 19, 20
+  source_url: https://legislation.nsw.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Commercial (non-enduring) powers follow the general law and the instrument itself.
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/nsw-execution-formalities.md
+    upstream_checked: '2026-08-20'
+    upstream_state: verified
+- id: au-nsw.exec.avl-witnessing
+  applies_to:
+  - individual
+  - electronic
+  observe: A will, power of attorney or enduring guardianship appointment was witnessed by audio visual
+    link; the document shows the witness's endorsement of the method used.
+  authority: Electronic Transactions Act 2000 (NSW) pt 2B, s 14G
+  source_url: https://legislation.nsw.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Check separately whether a commercial deed may be witnessed this way.
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/nsw-execution-formalities.md
+    upstream_checked: '2026-08-26'
+    upstream_state: verified

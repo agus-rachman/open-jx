@@ -1,0 +1,47 @@
+entries:
+- id: au-nt.exec.deed-individual
+  applies_to:
+  - individual
+  - deed
+  observe: A deed by an individual shows signature and witnessing as required in the Northern Territory.
+  authority: Law of Property Act 2000 (NT)
+  source_url: https://legislation.nt.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: au-nt.exec.electronic
+  applies_to:
+  - individual
+  - electronic
+  - deed
+  observe: The document is signed electronically, or a deed is executed electronically or witnessed by
+    audio-visual link.
+  authority: Electronic Transactions (Northern Territory) Act 2000
+  source_url: https://legislation.nt.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: au-nt.exec.poa
+  applies_to:
+  - attorney
+  observe: A party signs by an attorney; the power of attorney and its form are governed by state or territory
+    law.
+  authority: Powers of Attorney Act 1980 (NT); Advance Personal Planning Act 2013 (NT)
+  source_url: https://legislation.nt.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: au-nt.exec.duty
+  applies_to:
+  - company
+  - individual
+  observe: The document may be dutiable (for example transfers of land or business assets); duty and stamping
+    are state matters.
+  authority: Stamp Duty Act 1978 (NT)
+  source_url: https://legislation.nt.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Observation only; whether duty is payable is a counsel decision.

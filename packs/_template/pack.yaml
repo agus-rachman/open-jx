@@ -1,0 +1,19 @@
+# Copy this folder to packs/<code>/ and fill every field.
+# <code>: ISO 3166-1 alpha-2 in lower case (sg), or country-subdivision (ca-on).
+id: xx
+name: Jurisdiction name
+country: XX
+parent: null            # e.g. "ca" for "ca-on"
+level: national         # national | state | territory | province | region
+locale: en-XX
+legal_system: common law
+version: 0.1.0
+status: draft           # draft | beta | stable | stale | unmaintained (reviewers change this)
+maintainers: ["@your-handle"]
+last_reviewed: null
+detection:
+  names: ["Jurisdiction name", "ABBR"]
+  governing_law_patterns: ["laws of Jurisdiction name"]
+  courts: ["Highest court name"]
+  identifiers: []       # company or registry identifiers that point to this jurisdiction
+  other_signals: []     # capital city, currency, phone prefix

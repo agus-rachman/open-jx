@@ -1,0 +1,27 @@
+spelling: en-AU
+terms:
+  - use: Annexure
+    instead_of: Exhibit
+    note: Agreements commonly use Schedules and Annexures; affidavits use annexures or exhibits depending on court rules.
+  - use: solicitor / barrister / legal practitioner
+    instead_of: attorney (except "power of attorney")
+  - use: Pty Ltd / Ltd
+    instead_of: Inc / LLC
+    note: Proprietary and public companies under the Corporations Act 2001 (Cth).
+  - use: GST
+    instead_of: sales tax / VAT
+    note: A New Tax System (Goods and Services Tax) Act 1999 (Cth).
+  - use: stamp duty / transfer duty
+    instead_of: transfer tax
+    note: Imposed by each state and territory.
+  - use: Australian Consumer Law (ACL)
+    instead_of: UCC / consumer protection statutes
+    note: Competition and Consumer Act 2010 (Cth) sch 2, applied as a law of each state and territory.
+  - use: PPSA / PPSR
+    instead_of: UCC Article 9 financing statement
+    note: Personal Property Securities Act 2009 (Cth).
+  - use: judgment
+    instead_of: judgement
+    note: Legal usage for a court decision.
+  - use: organisation, licence (noun), license (verb), program
+    instead_of: organization, license (noun)

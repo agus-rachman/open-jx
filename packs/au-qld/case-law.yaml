@@ -1,0 +1,21 @@
+publishers:
+- id: au-qld.case.sclqld
+  court_ids:
+  - QSC
+  - QCA
+  - QDC
+  - QCAT
+  court: Queensland courts
+  publisher: Supreme Court Library Queensland
+  url: https://www.sclqld.org.au/caselaw
+  access: human-browser-only
+  note: Judgment text is rendered in the browser only; use a human-operated browser session.
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/case-law-verification-method.md
+    upstream_checked: null
+    upstream_state: method

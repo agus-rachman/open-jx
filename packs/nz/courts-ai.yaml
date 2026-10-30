@@ -1,0 +1,25 @@
+courts_ai:
+  - id: nz.ai.guidelines-lawyers
+    court: All New Zealand courts and tribunals
+    instrument: Guidelines for use of generative artificial intelligence in courts and tribunals — lawyers (Courts of New Zealand, December 2023)
+    observe: >-
+      Lawyers remain responsible for material put before the court, must check
+      the accuracy of AI-assisted content and citations, and must not enter
+      suppressed, confidential or privileged information into public AI tools.
+      Courts may ask whether and how AI was used.
+    restricted_content: []
+    authority: Courts of New Zealand generative AI guidelines for lawyers
+    source_url: https://www.courtsofnz.govt.nz/
+    status: guidance
+    verified: null
+    verified_by: null
+  - id: nz.ai.check-current
+    court: Supreme Court, Court of Appeal, High Court, District Court, Employment Court, tribunals
+    instrument: Current practice notes and judicial statements on generative AI
+    observe: Check for later practice notes or judgments on AI use (the Supreme Court has warned about inaccurate AI-generated material); contributors should add each instrument as its own entry.
+    restricted_content: []
+    authority: Courts of New Zealand practice notes
+    source_url: https://www.courtsofnz.govt.nz/
+    status: guidance
+    verified: null
+    verified_by: null

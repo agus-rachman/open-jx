@@ -1,0 +1,22 @@
+publishers:
+- id: au-act.case.court-site
+  court_ids:
+  - ACTSC
+  - ACTCA
+  - ACAT
+  court: ACT courts and ACAT
+  publisher: The court's own website
+  url: https://www.courts.act.gov.au/
+  access: not-mapped
+  note: 'Official publisher route not yet mapped; a citation that cannot be checked at the court''s publisher
+    is reported as unverifiable, never as verified or fabricated. Contributors: map the publisher and
+    access posture.'
+  status: guidance
+  verified: null
+  verified_by: null
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/case-law-verification-method.md
+    upstream_checked: null
+    upstream_state: method

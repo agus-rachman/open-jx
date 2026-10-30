@@ -1,0 +1,88 @@
+sources:
+- id: au.src.frl
+  name: Federal Register of Legislation
+  url: https://www.legislation.gov.au/
+  type: legislation
+  rank: 1
+  note: Official register of Commonwealth Acts and legislative instruments, with point-in-time compilations.
+  consolidated_term: compilation
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/point-in-time-method.md
+    upstream_checked: null
+    upstream_state: method
+    note: Consolidated-text terminology
+- id: au.src.hca
+  name: High Court of Australia
+  url: https://www.hcourt.gov.au/
+  type: court
+  rank: 1
+- id: au.src.fca
+  name: Federal Court of Australia
+  url: https://www.fedcourt.gov.au/
+  type: court
+  rank: 1
+  note: Practice notes, rules and judgments.
+- id: au.src.fcfcoa
+  name: Federal Circuit and Family Court of Australia
+  url: https://www.fcfcoa.gov.au/
+  type: court
+  rank: 1
+- id: au.src.austlii
+  name: AustLII
+  url: https://www.austlii.edu.au/
+  type: case-law
+  rank: 2
+  note: Free reprints of legislation and judgments; confirm currency against the official register.
+- id: au.src.jade
+  name: Jade (BarNet)
+  url: https://jade.io/
+  type: case-law
+  rank: 2
+- id: au.src.asic
+  name: Australian Securities and Investments Commission (ASIC)
+  url: https://asic.gov.au/
+  type: regulator
+  rank: 1
+  note: Company registers, regulatory guides.
+- id: au.src.oaic
+  name: Office of the Australian Information Commissioner (OAIC)
+  url: https://www.oaic.gov.au/
+  type: regulator
+  rank: 1
+- id: au.src.accc
+  name: Australian Competition and Consumer Commission (ACCC)
+  url: https://www.accc.gov.au/
+  type: regulator
+  rank: 1
+- id: au.src.ato
+  name: Australian Taxation Office (ATO)
+  url: https://www.ato.gov.au/
+  type: regulator
+  rank: 1
+- id: au.src.fwo
+  name: Fair Work Ombudsman
+  url: https://www.fairwork.gov.au/
+  type: regulator
+  rank: 1
+- id: au.src.fwc
+  name: Fair Work Commission
+  url: https://www.fwc.gov.au/
+  type: court
+  rank: 1
+- id: au.src.apra
+  name: Australian Prudential Regulation Authority (APRA)
+  url: https://www.apra.gov.au/
+  type: regulator
+  rank: 1
+- id: au.src.austrac
+  name: AUSTRAC
+  url: https://www.austrac.gov.au/
+  type: regulator
+  rank: 1
+- id: au.src.abr
+  name: Australian Business Register (ABN Lookup)
+  url: https://abr.business.gov.au/
+  type: register
+  rank: 1

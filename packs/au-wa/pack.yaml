@@ -1,0 +1,31 @@
+id: au-wa
+name: Western Australia
+country: AU
+parent: au
+level: state
+locale: en-AU
+legal_system: common law
+version: 0.2.0
+status: draft
+maintainers:
+- '@au-reviewer'
+last_reviewed: null
+detection:
+  names:
+  - Western Australia
+  - WA
+  governing_law_patterns:
+  - laws of Western Australia
+  - laws in force in Western Australia
+  - courts of Western Australia
+  courts:
+  - Supreme Court of Western Australia
+  - District Court of Western Australia
+  - Magistrates Court of Western Australia
+  - State Administrative Tribunal (WA)
+  identifiers: []
+  other_signals:
+  - Perth
+  - WA in an address with a four-digit postcode
+  note: '''WA'' can also mean Washington (USA); require another Australian signal.'
+law_checked_as_at: '2026-08-26'

@@ -1,0 +1,31 @@
+id: au-qld
+name: Queensland
+country: AU
+parent: au
+level: state
+locale: en-AU
+legal_system: common law
+version: 0.2.0
+status: draft
+maintainers:
+- '@au-reviewer'
+last_reviewed: null
+detection:
+  names:
+  - Queensland
+  - QLD
+  - Qld
+  governing_law_patterns:
+  - laws of Queensland
+  - laws in force in Queensland
+  - courts of Queensland
+  courts:
+  - Supreme Court of Queensland
+  - District Court of Queensland
+  - Magistrates Courts of Queensland
+  - Queensland Civil and Administrative Tribunal (QCAT)
+  identifiers: []
+  other_signals:
+  - Brisbane
+  - QLD in an address with a four-digit postcode
+law_checked_as_at: '2026-08-26'

@@ -1,0 +1,38 @@
+publishers:
+- id: nz.case.courtsofnz
+  court_ids:
+  - NZSC
+  - NZCA
+  - NZHC
+  court: Supreme Court, Court of Appeal and High Court of New Zealand
+  publisher: Courts of New Zealand judgments
+  url: https://www.courtsofnz.govt.nz/
+  access: direct
+  note: Not from upstream; open-jx seed entry. Check suppression and anonymisation notations before quoting.
+  status: guidance
+  verified: null
+  verified_by: null
+- id: nz.case.district
+  court_ids:
+  - NZDC
+  - NZFC
+  - NZYC
+  court: District Court, Family Court and Youth Court
+  publisher: District Court of New Zealand
+  url: https://www.districtcourts.govt.nz/
+  access: not-mapped
+  note: Not from upstream; publication of these courts' decisions is selective and often anonymised.
+  status: guidance
+  verified: null
+  verified_by: null
+- id: nz.case.employment
+  court_ids:
+  - NZEmpC
+  court: Employment Court of New Zealand
+  publisher: Employment Court
+  url: https://www.employmentcourt.govt.nz/
+  access: not-mapped
+  note: Not from upstream; open-jx seed entry.
+  status: guidance
+  verified: null
+  verified_by: null

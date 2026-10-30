@@ -1,0 +1,30 @@
+citation:
+  name: Australian Guide to Legal Citation
+  edition: 4th edition (2018)
+  publisher: Melbourne University Law Review Association
+  url: https://law.unimelb.edu.au/mulr/aglc
+  note: A 5th edition is in preparation; switch when it is published and the organisation adopts it.
+rules:
+  - id: au.cite.legislation
+    observe: Cite Acts as short title, year, jurisdiction in brackets, then pinpoint with a space after the abbreviation.
+    example: "Corporations Act 2001 (Cth) s 127(1)"
+    authority: AGLC4 r 3.1
+    source_url: https://law.unimelb.edu.au/mulr/aglc
+    status: guidance
+    verified: null
+    verified_by: null
+  - id: au.cite.cases-mnc
+    observe: Cite unreported or recent judgments by medium neutral citation, with a reported citation where one exists.
+    example: "Mabo v Queensland [No 2] (1992) 175 CLR 1"
+    authority: AGLC4 ch 2
+    source_url: https://law.unimelb.edu.au/mulr/aglc
+    status: guidance
+    verified: null
+    verified_by: null
+  - id: au.cite.footnotes
+    observe: AGLC uses footnotes, not in-text author-date citation; full stop at the end of each footnote.
+    authority: AGLC4 r 1.1
+    source_url: https://law.unimelb.edu.au/mulr/aglc
+    status: guidance
+    verified: null
+    verified_by: null

@@ -1,0 +1,103 @@
+personal:
+  - id: au.id.tfn
+    name: Tax file number (TFN)
+    pattern_hint: 8 or 9 digits, often written 123 456 789, near "TFN" or "tax file number".
+    authority: Taxation Administration Act 1953 (Cth); Privacy (Tax File Number) Rule 2015
+    source_url: https://www.legislation.gov.au/
+    note: Use and disclosure of TFNs is restricted by statute; record the field, never the number.
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.id.medicare
+    name: Medicare card number
+    pattern_hint: 10 digits plus an individual reference number, near "Medicare".
+    authority: Health Insurance Act 1973 (Cth)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.id.ihi
+    name: Individual healthcare identifier (IHI)
+    pattern_hint: 16 digits starting 800360, near "IHI" or "healthcare identifier".
+    authority: Healthcare Identifiers Act 2010 (Cth)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.id.crn
+    name: Centrelink customer reference number (CRN)
+    pattern_hint: 9 digits and a letter, near "CRN" or "Centrelink".
+    authority: Social Security (Administration) Act 1999 (Cth)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.id.passport
+    name: Australian passport number
+    pattern_hint: one or two letters followed by 7 digits, near "passport".
+    authority: Australian Passports Act 2005 (Cth)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.id.driver-licence
+    name: Driver licence number (state or territory issued)
+    pattern_hint: format varies by state; near "licence no", "driver licence" or "DL".
+    authority: State and territory road transport legislation
+    source_url: https://www.legislation.gov.au/
+    note: See the state pack for the issuing law.
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.id.usi
+    name: Unique Student Identifier (USI)
+    pattern_hint: 10 characters, letters and digits, near "USI".
+    authority: Student Identifiers Act 2014 (Cth)
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+organisational:
+  - id: au.org.acn
+    name: Australian Company Number (ACN)
+    format: 9 digits, written "ACN 123 456 789"
+    authority: Corporations Act 2001 (Cth)
+    source_url: https://asic.gov.au/
+  - id: au.org.abn
+    name: Australian Business Number (ABN)
+    format: 11 digits, written "ABN 12 345 678 901"; for a company the last 9 digits usually equal its ACN
+    authority: A New Tax System (Australian Business Number) Act 1999 (Cth)
+    source_url: https://abr.business.gov.au/
+  - id: au.org.arbn
+    name: Australian Registered Body Number (ARBN)
+    format: 9 digits; used by foreign companies and registered bodies
+    authority: Corporations Act 2001 (Cth)
+    source_url: https://asic.gov.au/
+  - id: au.org.arsn
+    name: Australian Registered Scheme Number (ARSN)
+    format: 9 digits; managed investment schemes
+    authority: Corporations Act 2001 (Cth)
+    source_url: https://asic.gov.au/
+privacy_context:
+  - id: au.priv.app
+    observe: Personal information handling by most organisations with annual turnover over $3 million, and by Commonwealth agencies, is governed by the Australian Privacy Principles.
+    authority: Privacy Act 1988 (Cth) sch 1
+    source_url: https://www.oaic.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null
+  - id: au.priv.adm
+    observe: Privacy policies must describe certain automated decision-making that uses personal information; obligations apply from 10 December 2026.
+    authority: Privacy Act 1988 (Cth) as amended by the Privacy and Other Legislation Amendment Act 2024 (Cth)
+    source_url: https://www.oaic.gov.au/
+    status: pending
+    commences: "2026-12-10"
+    verified: null
+    verified_by: null
+  - id: au.priv.tort
+    observe: A statutory cause of action for serious invasions of privacy exists.
+    authority: Privacy Act 1988 (Cth) sch 2
+    source_url: https://www.legislation.gov.au/
+    status: in-force
+    verified: null
+    verified_by: null

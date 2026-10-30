@@ -1,0 +1,21 @@
+Pack content licence
+
+The contents of the packs/ directory (jurisdiction pack files) and the compiled
+pack reference files generated from them are licensed under the Creative
+Commons Attribution 4.0 International licence (CC BY 4.0).
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution: "open-jx contributors, https://github.com/YOUR-GITHUB-HANDLE/open-jx"
+
+Some pack content is adapted from l0cka/legal-skills, which is licensed under the
+MIT License; that content remains subject to the MIT notice in
+THIRD-PARTY-NOTICES.md, which must be kept with any copy. Those entries carry a
+`provenance` block naming the upstream source.
+
+Quotations of legislation, court practice notes and other public-sector material
+inside packs remain subject to the reuse terms of their publishers, recorded in
+each pack's sources.yaml where known.
+
+Pack content is provided as checklists pointing to primary sources. It is not
+legal advice and is provided without warranty of any kind.

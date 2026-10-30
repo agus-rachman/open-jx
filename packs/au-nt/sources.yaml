@@ -1,0 +1,25 @@
+sources:
+- id: au-nt.src.legislation
+  name: Northern Territory legislation (official)
+  url: https://legislation.nt.gov.au/
+  type: legislation
+  rank: 1
+  note: Official register with point-in-time versions.
+  consolidated_term: reprint
+  provenance:
+    source: https://github.com/l0cka/legal-skills
+    commit: 5bfb3d8
+    path: plugins/legal-skills/references/point-in-time-method.md
+    upstream_checked: null
+    upstream_state: method
+    note: Consolidated-text terminology
+- id: au-nt.src.1
+  name: Supreme Court of the Northern Territory
+  url: https://supremecourt.nt.gov.au/
+  type: court
+  rank: 1
+- id: au-nt.src.2
+  name: Territory Revenue Office (Department of Treasury and Finance)
+  url: https://treasury.nt.gov.au/
+  type: regulator
+  rank: 1

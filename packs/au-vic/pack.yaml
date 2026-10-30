@@ -1,0 +1,31 @@
+id: au-vic
+name: Victoria
+country: AU
+parent: au
+level: state
+locale: en-AU
+legal_system: common law
+version: 0.2.0
+status: draft
+maintainers:
+- '@au-reviewer'
+last_reviewed: null
+detection:
+  names:
+  - Victoria
+  - Victorian
+  - VIC
+  governing_law_patterns:
+  - laws of Victoria
+  - laws in force in Victoria
+  - courts of Victoria
+  courts:
+  - Supreme Court of Victoria
+  - County Court of Victoria
+  - Magistrates' Court of Victoria
+  - Victorian Civil and Administrative Tribunal (VCAT)
+  identifiers: []
+  other_signals:
+  - Melbourne
+  - VIC in an address with a four-digit postcode
+law_checked_as_at: '2026-08-26'

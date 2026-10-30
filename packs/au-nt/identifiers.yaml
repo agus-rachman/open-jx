@@ -1,0 +1,11 @@
+personal:
+- id: au-nt.id.driver-licence
+  name: Northern Territory driver licence number
+  pattern_hint: format set by the issuing authority; near 'licence no' or 'driver licence'
+  authority: Motor Vehicles Act 1949 (NT)
+  source_url: https://legislation.nt.gov.au/
+  status: in-force
+  verified: null
+  verified_by: null
+organisational: []
+privacy_context: []

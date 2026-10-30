@@ -1,0 +1,7 @@
+build/
+__pycache__/
+*.pyc
+evals/runs/*/results.*
+evals/selftest/*/results.*
+evals/selftest/*/report.md
+.DS_Store
