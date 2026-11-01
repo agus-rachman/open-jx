@@ -1,0 +1,66 @@
+publishers:
+- id: sg.case.court-of-appeal
+  court_ids:
+  - SGCA
+  - SGCA(I)
+  court: Court of Appeal
+  publisher: Singapore Courts judgments
+  url: https://www.judiciary.gov.sg/judgments
+  access: direct
+  note: Also eLitigation GD Viewer. Court identifiers to be confirmed.
+  status: guidance
+  verified: null
+  verified_by: null
+- id: sg.case.appellate-division
+  court_ids:
+  - SGHC(A)
+  court: Appellate Division of the High Court
+  publisher: Singapore Courts judgments
+  url: https://www.judiciary.gov.sg/judgments
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+- id: sg.case.high-court
+  court_ids:
+  - SGHC
+  - SGHCR
+  - SGHCF
+  court: General Division of the High Court (including Registrar and Family Division)
+  publisher: Singapore Courts judgments
+  url: https://www.judiciary.gov.sg/judgments
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+- id: sg.case.sicc
+  court_ids:
+  - SGHC(I)
+  court: Singapore International Commercial Court
+  publisher: Singapore Courts judgments
+  url: https://www.judiciary.gov.sg/judgments
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+- id: sg.case.lower-courts
+  court_ids:
+  - SGDC
+  - SGMC
+  - SGFC
+  - SGYC
+  court: State Courts and Family Justice Courts
+  publisher: Singapore Courts judgments
+  url: https://www.judiciary.gov.sg/judgments
+  access: direct
+  note: Publication of lower-court decisions is selective.
+  status: guidance
+  verified: null
+  verified_by: null
+report_series:
+- series: SLR
+  name: Singapore Law Reports
+  resolve_via: sg.case.court-of-appeal
+- series: SLR(R)
+  name: Singapore Law Reports (Reissue)
+  resolve_via: sg.case.court-of-appeal

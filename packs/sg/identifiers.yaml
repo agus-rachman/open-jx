@@ -1,0 +1,57 @@
+personal:
+- id: sg.id.nric
+  name: NRIC number
+  pattern_hint: a letter (S or T) + 7 digits + check letter, near 'NRIC' or 'IC no.'
+  authority: PDPC Advisory Guidelines on the PDPA for NRIC and other national identification numbers (from
+    1 September 2019); National Registration Act 1965
+  source_url: https://www.pdpc.gov.sg/
+  status: in-force
+  note: Organisations are generally barred from collecting, using or disclosing NRIC numbers unless required
+    by law or needed to establish identity to a high degree of fidelity. Record the field, never the number.
+  verified: null
+  verified_by: null
+- id: sg.id.fin
+  name: Foreign identification number (FIN)
+  pattern_hint: a letter (F, G or M) + 7 digits + check letter, near 'FIN'
+  authority: PDPC Advisory Guidelines on NRIC and other national identification numbers
+  source_url: https://www.pdpc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: sg.id.work-pass
+  name: Work pass number
+  pattern_hint: format varies by pass type; near 'work permit' or 'pass no.'
+  authority: Employment of Foreign Manpower Act 1990
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: sg.id.passport
+  name: Singapore passport number
+  pattern_hint: a letter + 7 digits + a letter, near 'passport'
+  authority: Passports Act 2007
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  note: Pattern to be confirmed
+  verified: null
+  verified_by: null
+- id: sg.id.birth-cert
+  name: Birth certificate number
+  pattern_hint: near 'birth certificate no.'
+  authority: Registration of Births and Deaths Act 2021
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+organisational:
+- id: sg.org.uen
+  name: Unique Entity Number (UEN)
+  format: '9 or 10 characters, e.g. 201912345K (local companies: year + 5 digits + check letter)'
+  authority: ACRA
+  source_url: https://www.acra.gov.sg/
+- id: sg.org.gst
+  name: GST registration number
+  format: usually the UEN, or an M-prefixed number
+  authority: Goods and Services Tax Act 1993
+  source_url: https://www.iras.gov.sg/
+privacy_context: []

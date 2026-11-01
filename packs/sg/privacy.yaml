@@ -1,0 +1,45 @@
+privacy_regimes:
+- id: sg.privacy.pdpa
+  observe: 'General privacy law: Personal Data Protection Act 2012 — private-sector organisations collecting,
+    using or disclosing personal data in Singapore.'
+  authority: Personal Data Protection Act 2012
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: sg.privacy.breach
+  observe: 'Data breach notification: once there are credible grounds to believe a breach occurred, the
+    organisation assesses whether it is notifiable (significant harm or significant scale); PDPC is notified
+    within 3 calendar days of that determination and affected individuals at the same time or after.'
+  authority: Personal Data Protection Act 2012 pt 6A, s 26D(1)–(2) (from 1 February 2021)
+  source_url: https://www.pdpc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Significant-scale threshold (believed to be 500 individuals) and assessment timing to be confirmed
+    in the PDP (Notification of Data Breaches) Regulations 2021
+- id: sg.privacy.intermediary
+  observe: A data intermediary notifies the organisation it processes for without undue delay after credible
+    grounds to believe a breach occurred.
+  authority: Personal Data Protection Act 2012 s 26C(3)(a)
+  source_url: https://www.pdpc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: sg.privacy.nric
+  observe: The document collects, uses or discloses NRIC numbers or retains physical NRICs; PDPC guidelines
+    restrict this from 1 September 2019.
+  authority: PDPC Advisory Guidelines on NRIC and other national identification numbers
+  source_url: https://www.pdpc.gov.sg/
+  status: guidance
+  verified: null
+  verified_by: null
+- id: sg.privacy.dnc
+  observe: The document involves marketing messages to Singapore telephone numbers, which engage the Do
+    Not Call provisions.
+  authority: Personal Data Protection Act 2012 pt 9
+  source_url: https://www.pdpc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed

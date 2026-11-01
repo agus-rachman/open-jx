@@ -14,7 +14,7 @@ description: >-
 license: Apache-2.0
 metadata:
   author: open-jx contributors
-  version: "0.1.1"
+  version: "0.2.0"
 ---
 
 # Jurisdiction router (open-jx)
@@ -78,7 +78,7 @@ Detected from: governing-law clause, cl 22.1 · Overlays: jx-personal-identifier
 ```
 
 ```
-**Jurisdiction:** Singapore — no open-jx pack installed
+**Jurisdiction:** Hong Kong — no open-jx pack installed
 Detected from: governing-law clause, cl 18 · Overlays: none (Legal for Cowork runs as shipped)
 ```
 

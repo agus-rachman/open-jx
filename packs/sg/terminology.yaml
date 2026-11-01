@@ -1,0 +1,23 @@
+spelling: en-SG
+terms:
+- use: Pte. Ltd. / Ltd
+  instead_of: Pty Ltd / Inc / LLC
+  note: Private and public companies under the Companies Act 1967.
+- use: advocate and solicitor
+  instead_of: attorney (except 'power of attorney') / barrister
+  note: Legal Profession Act 1966.
+- use: originating claim / statement of claim
+  instead_of: writ of summons
+  note: Rules of Court 2021.
+- use: General Division of the High Court / Appellate Division
+  instead_of: High Court (alone)
+  note: Court structure since 2021.
+- use: GST
+  instead_of: VAT / sales tax
+  note: 9% from 1 January 2024; confirm the rate at use.
+- use: stamp duty
+  instead_of: transfer tax
+  note: Stamp Duties Act 1929.
+- use: SICC / SIAC / SIMC
+  instead_of: ''
+  note: Commercial court, arbitration centre and mediation centre.

@@ -6,6 +6,7 @@ open-jx is an add-on plugin that gives the legal skills in Microsoft Copilot Cow
 - every Australian state and territory: NSW, Victoria, Queensland, Western
   Australia, South Australia, Tasmania, the ACT and the Northern Territory
 - New Zealand
+- Singapore (new in 0.2.0; draft seed pack, no deadline tables yet)
 
 Anyone can contribute another jurisdiction as a data pack.
 
@@ -20,7 +21,7 @@ Anyone can contribute another jurisdiction as a data pack.
 | --- | --- |
 | `jx-router` | Detects the jurisdiction (from the user, a governing-law clause, a court, company numbers or a default), loads the packs and prints a jurisdiction brief |
 | `jx-personal-identifiers` | Stops local identifiers being reproduced: tax file numbers, Medicare and IHI numbers, IRD and NHI numbers, licences, passports |
-| `jx-sources-and-citation` | Supplies official legislation, case-law and regulator sources and the local citation style (AGLC4 for Australia, the NZ Law Style Guide for New Zealand). Checks legislation at a date and routes case citations to each court's official publisher |
+| `jx-sources-and-citation` | Supplies official legislation, case-law and regulator sources and the local citation style (AGLC4 for Australia, the NZ Law Style Guide for New Zealand, the SLR Style Guide for Singapore). Checks legislation at a date and routes case citations to each court's official publisher |
 | `jx-execution-and-governance` | Adds an overlay after execution and minutes skills: s 127 signing methods, deeds and witnessing by state, s 180 (NZ), electronic signing, ACN, ABN and NZBN consistency, minutes and written-resolution checkpoints |
 | `jx-dates-and-deadlines` | Adds an overlay after deadline skills: business and working days, dated holiday tables, time-counting rules, candidate limitation periods and special regimes. Computes candidate court and tribunal deadlines with a bundled script that refuses rather than guesses |
 | `jx-court-ai-rules` | Flags court rules on generative AI (Federal Court GPN-AI, NSW SC Gen 23, NZ guidelines) and won't draft restricted content |

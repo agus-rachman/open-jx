@@ -12,7 +12,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SCORE = HERE.parent / "score.py"
-IDS = "AU-NSW-EXEC-01,SG-DEGRADE-01,AU-NSW-COURT-01,AU-NSW-DEADLINE-01,AU-VIC-DEADLINE-FC-01"
+IDS = "AU-NSW-EXEC-01,HK-DEGRADE-01,AU-NSW-COURT-01,AU-NSW-DEADLINE-01,AU-VIC-DEADLINE-FC-01"
 
 
 def run(name):

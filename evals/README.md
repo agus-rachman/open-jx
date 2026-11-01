@@ -14,8 +14,8 @@ in Microsoft Copilot Cowork:
 | Path | Purpose |
 | --- | --- |
 | `check_package.py` | Static checks on the built zip against the Copilot Cowork packaging rules. No tenant needed. |
-| `cases/cases.yaml` | 32 cases. 23 run side by side with Legal for Cowork across every Australian state and territory, the Commonwealth and New Zealand, plus a jurisdiction with no pack, a conflict case and an injection case. 9 cover computed deadlines, fail-closed deadlines, citation routing, limitation and privacy. |
-| `cases/trigger.yaml` | 44 short prompts that test router selection only. |
+| `cases/cases.yaml` | 37 cases. 23 run side by side with Legal for Cowork across every Australian state and territory, the Commonwealth and New Zealand, plus a jurisdiction with no pack (Hong Kong), a conflict case and an injection case. 9 cover computed deadlines, fail-closed deadlines, citation routing, limitation and privacy. 5 cover Singapore: company and individual deeds, NRIC suppression, the court AI Guide and a fail-closed deadline. |
+| `cases/trigger.yaml` | 49 short prompts that test router selection only. |
 | `fixtures/` | Synthetic `.docx` documents (fictional parties and planted fake identifiers) plus the generator script. |
 | `score.py` | `lint`, `sheet` and `score` commands. |
 | `rubric.md` | Reviewer rubric for the qualities a script can't judge. |

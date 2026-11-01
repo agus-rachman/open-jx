@@ -1,0 +1,21 @@
+courts_ai:
+- id: sg.ai.courts-guide
+  court: Supreme Court, State Courts (including the Small Claims, Employment Claims and Community Disputes
+    Resolution Tribunals) and Family Justice Courts of Singapore
+  instrument: Guide on the Use of Generative Artificial Intelligence Tools by Court Users (Registrar's
+    Circular No. 1 of 2024, Supreme Court; No. 9 of 2024, State Courts), from 1 October 2024
+  observe: 'AI tools may be used to prepare court documents, including a first-cut draft of an affidavit
+    or witness statement, but must not be used to generate, fabricate, embellish, strengthen, dilute or
+    tamper with evidence. The court user is fully responsible for content: every case, statute and quotation
+    must be checked to exist and support the proposition, using eLitigation GD Viewer or Singapore Statutes
+    Online (another AI tool is not enough). Disclosure is not required by default but the court may require
+    a statement, if needed by affidavit. Confidentiality orders, personal data, privilege and documents
+    produced under court order must be respected. Non-compliance may lead to adverse costs (personally
+    against lawyers), disregard of material, or disciplinary action.'
+  restricted_content:
+  - evidence-fabrication
+  authority: Guide on the Use of Generative AI Tools by Court Users paras 3(1)–(3), 5(1), 5(3)–(8), 6(9)
+  source_url: https://www.judiciary.gov.sg/news-and-resources/registrar's-circulars/circular-details/registrar's-circular-no.-1-2024-supreme-court
+  status: in-force
+  verified: null
+  verified_by: null

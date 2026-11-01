@@ -1,0 +1,65 @@
+sources:
+- id: sg.src.sso
+  name: Singapore Statutes Online (Attorney-General's Chambers)
+  url: https://sso.agc.gov.sg/
+  type: legislation
+  rank: 1
+  consolidated_term: current version (as at date)
+  note: Official text with point-in-time view. Acts are cited by year of enactment since the 2020 Revised
+    Edition. Reviewer to confirm the point-in-time label.
+- id: sg.src.judgments
+  name: Singapore Courts — judgments
+  url: https://www.judiciary.gov.sg/judgments
+  type: case-law
+  rank: 1
+  note: Free judgments of the Supreme Court and State Courts.
+- id: sg.src.elitigation
+  name: eLitigation GD Viewer
+  url: https://www.elitigation.sg/
+  type: case-law
+  rank: 1
+  note: Named in the courts' generative AI Guide as a verification source.
+- id: sg.src.lawnet
+  name: LawNet (Singapore Academy of Law)
+  url: https://www.lawnet.sg/
+  type: case-law
+  rank: 2
+  note: Subscription; Singapore Law Reports.
+- id: sg.src.slw
+  name: Singapore Law Watch
+  url: https://www.singaporelawwatch.sg/
+  type: secondary
+  rank: 2
+- id: sg.src.acra
+  name: Accounting and Corporate Regulatory Authority (ACRA)
+  url: https://www.acra.gov.sg/
+  type: register
+  rank: 1
+  note: Companies, UEN, BizFile+.
+- id: sg.src.pdpc
+  name: Personal Data Protection Commission (PDPC)
+  url: https://www.pdpc.gov.sg/
+  type: regulator
+  rank: 1
+- id: sg.src.mas
+  name: Monetary Authority of Singapore (MAS)
+  url: https://www.mas.gov.sg/
+  type: regulator
+  rank: 1
+- id: sg.src.iras
+  name: Inland Revenue Authority of Singapore (IRAS)
+  url: https://www.iras.gov.sg/
+  type: regulator
+  rank: 1
+  note: Tax, GST and stamp duty.
+- id: sg.src.mom
+  name: Ministry of Manpower (MOM)
+  url: https://www.mom.gov.sg/
+  type: regulator
+  rank: 1
+  note: Employment; official public holiday list.
+- id: sg.src.cccs
+  name: Competition and Consumer Commission of Singapore (CCCS)
+  url: https://www.cccs.gov.sg/
+  type: regulator
+  rank: 1

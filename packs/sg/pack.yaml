@@ -1,0 +1,43 @@
+# Draft seed pack. Research: open-jx Singapore research doc (2 November 2026).
+# Every legal entry must be verified by a Singapore-qualified reviewer before status changes.
+id: sg
+name: Singapore
+country: SG
+parent: null
+level: national
+locale: en-SG
+legal_system: common law
+version: 0.1.0
+status: draft
+maintainers:
+- '@agus-rachman'
+last_reviewed: null
+law_checked_as_at: null
+detection:
+  names:
+  - Singapore
+  - Republic of Singapore
+  governing_law_patterns:
+  - laws of Singapore
+  - laws of the Republic of Singapore
+  - courts of Singapore
+  courts:
+  - Court of Appeal of the Republic of Singapore
+  - Appellate Division of the High Court
+  - General Division of the High Court
+  - Singapore International Commercial Court (SICC)
+  - State Courts of Singapore (District Court, Magistrates' Court)
+  - Family Justice Courts
+  - Small Claims Tribunals
+  - Employment Claims Tribunals
+  identifiers:
+  - UEN
+  - GST registration number
+  other_signals:
+  - Pte. Ltd.
+  - SGD
+  - S$
+  - '+65'
+  - six-digit postal code
+  - 'SIAC arbitration clause (hint only: SIAC also hears foreign-law disputes)'
+  note: '''SG'' alone is ambiguous; load this pack only with another Singapore signal, otherwise ask.'

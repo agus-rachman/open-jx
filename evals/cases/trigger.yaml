@@ -35,7 +35,7 @@ prompts:
   - {id: T29, prompt: "Check the defined terms in this agreement.", expect: none}
   - {id: T30, prompt: "Check the cross-references in this contract.", expect: none}
   - {id: T31, prompt: "Summarise the redlines between these two drafts.", expect: none}
-  - {id: T32, prompt: "Is this Singapore-law agreement ready to sign?", expect: no_pack}
+  - {id: T32, prompt: "Is this Hong Kong-law agreement ready to sign?", expect: no_pack}
   - {id: T33, prompt: "Is this English-law deed properly executed?", expect: no_pack}
   - {id: T34, prompt: "Is this deed ready to sign?", expect: ask}
   - {id: T35, prompt: "Draft minutes from this board meeting transcript.", expect: ask}
@@ -48,3 +48,8 @@ prompts:
   - {id: T42, prompt: "Check whether [2024] NSWCA 55 is a real case.", expect: [au, au-nsw]}
   - {id: T43, prompt: "What's the limitation period for contract claims in the Northern Territory?", expect: [au, au-nt]}
   - {id: T44, prompt: "Which privacy laws cover a Queensland council?", expect: [au, au-qld]}
+  - {id: T45, prompt: "Is this Singapore-law deed ready to sign?", expect: [sg]}
+  - {id: T46, prompt: "The supplier is Lion City Data Pte. Ltd., UEN 201912345K. Check the signature blocks.", expect: [sg]}
+  - {id: T47, prompt: "Prepare a chronology for our SICC proceeding.", expect: [sg]}
+  - {id: T48, prompt: "This agreement is governed by the laws of the Republic of Singapore. Any blanks left?", expect: [sg]}
+  - {id: T49, prompt: "Check this SG contract for execution issues.", expect: ask}

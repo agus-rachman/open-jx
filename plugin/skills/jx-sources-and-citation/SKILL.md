@@ -13,7 +13,7 @@ description: >-
 license: Apache-2.0
 metadata:
   author: open-jx contributors
-  version: "0.1.1"
+  version: "0.2.0"
 ---
 
 # Official sources and citation (open-jx)

@@ -1,0 +1,93 @@
+business_day:
+- id: sg.cal.bd-contract
+  observe: No statutory default for 'business day' in contracts; agreements usually refer to days banks
+    are open in Singapore.
+  authority: Contract construction (no statutory default)
+  source_url: https://sso.agc.gov.sg/
+  status: guidance
+  verified: null
+  verified_by: null
+time_computation:
+- id: sg.cal.ia-s50
+  observe: For periods in written law, the day of the event is excluded from a period counted from that
+    event.
+  authority: Interpretation Act 1965 s 50
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Rules on a last day falling on an excluded day and on short periods to be confirmed
+- id: sg.cal.roc-2021
+  observe: 'Time limits in civil proceedings in the Supreme Court and State Courts are counted under the
+    Rules of Court 2021 (from 1 April 2022): for example notice of intention to contest within 14 days
+    and defence within 21 days after service of the statement of claim in Singapore.'
+  authority: Rules of Court 2021
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Order and rule numbers to be confirmed; the deadline script has no Singapore tables and will not
+    compute
+holidays:
+- id: sg.cal.holidays
+  observe: Public holidays are listed in the Schedule to the Holidays Act 1998 (one national list, no
+    regional days); the President may declare additional or substitute holidays by Gazette notification,
+    and a holiday falling on a Sunday is observed on the next day.
+  authority: Holidays Act 1998 ss 4–5 and Schedule
+  source_url: https://sso.agc.gov.sg/Act/HA1998
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Use MOM's official list for dated holidays; s 4 text to be confirmed
+limitation:
+- id: sg.cal.limitation
+  observe: 'Candidate general limitation period for contract and tort claims: 6 years from accrual, subject
+    to the special rules below.'
+  authority: Limitation Act 1959 s 6(1)
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Candidate only; the applicable period is a counsel decision
+- id: sg.cal.limitation-pi
+  observe: 'Personal injury (negligence, nuisance or breach of duty): 3 years from accrual or from the
+    date of knowledge, whichever is later.'
+  authority: Limitation Act 1959 s 24A
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: sg.cal.limitation-latent
+  observe: 'Other negligence damage: 6 years from damage or 3 years from knowledge, with a 15-year longstop.'
+  authority: Limitation Act 1959 ss 24A–24B
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: sg.cal.limitation-defamation
+  observe: 'Defamation: no shorter special period was identified (6 years from publication), unlike Australia.'
+  authority: Limitation Act 1959 s 6
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: To be confirmed
+- id: sg.cal.limitation-judgments
+  observe: 'Enforcement of judgments: 12 years.'
+  authority: Limitation Act 1959 s 6(3)
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: sg.cal.limitation-postponement
+  observe: Disability (minors under 21, lack of capacity), fraud, concealment and acknowledgment may postpone
+    or extend a period; record as flags, never resolve.
+  authority: Limitation Act 1959 ss 22, 26, 29
+  source_url: https://sso.agc.gov.sg/
+  status: guidance
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed

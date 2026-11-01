@@ -1,6 +1,39 @@
 # Changelog
 
-## Unreleased — engine support for Singapore
+## 0.2.0 — 2026-11-02
+
+Adds Singapore. The `sg` pack is a draft seed (version 0.1.0): none of its 43
+entries is verified yet, and it has no holiday or court-rule tables, so the
+deadline script refuses every Singapore computation.
+
+### Singapore pack (`packs/sg`)
+
+- Detection: names, governing-law wording, courts, UEN, "Pte. Ltd.", SICC. "SG"
+  alone needs a second signal.
+- Sources (Singapore Statutes Online, Singapore Courts judgments, eLitigation,
+  ACRA, PDPC and regulators), SLR Style Guide citation rules.
+- Identifiers: NRIC, FIN, work pass, passport, birth certificate (suppressed);
+  UEN and GST number (matched).
+- Execution: Companies Act 1967 ss 41A and 41B, sealing for individuals' deeds,
+  attestation, Electronic Transactions Act exclusions, e-conveyancing, guarantees,
+  stamp duty, lasting powers of attorney.
+- Governance: minutes (s 188), written resolutions, interests, AGM dispensation.
+- Calendar: Interpretation Act 1965 s 50, Rules of Court 2021, Holidays Act 1998,
+  candidate limitation periods.
+- Court AI: the Guide on the Use of Generative AI Tools by Court Users (all
+  Singapore courts, from 1 October 2024).
+- Privacy: PDPA, breach notification, NRIC guidelines, Do Not Call.
+- Case law: court identifiers including SGHC(A), SGHC(I) and SGCA(I); the
+  citation parser also reads square-bracket reported citations such as
+  `[2020] 2 SLR 1151`.
+
+### Evals
+
+- 5 Singapore cases (company deed, individual deed, NRIC, court AI, fail-closed
+  deadline) and 5 trigger prompts; 3 new fixtures.
+- The no-pack case and trigger prompt now use Hong Kong (`HK-DEGRADE-01`, `T32`).
+
+### Engine support for Singapore
 
 - Schema: `court_ids` accept a bracketed suffix (`SGHC(A)`); new
   `restricted_content` value `evidence-fabrication`.

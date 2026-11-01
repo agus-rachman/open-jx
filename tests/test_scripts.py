@@ -78,6 +78,13 @@ class CitationScript(unittest.TestCase):
         sghca, sgca = parse("[2026] SGHC(A) 9", "[2024] SGCA 1")
         self.assertEqual((sghca["citation_type"], sghca["court_id"], sghca["number"]), ("medium-neutral", "SGHC(A)", 9))
         self.assertEqual((sgca["court_id"], sgca["number"]), ("SGCA", 1))
+        self.assertEqual(sghca["route"], "https://www.judiciary.gov.sg/judgments")
+        self.assertEqual(sghca["pack_entry"], "sg.case.appellate-division")
+
+    def test_square_bracket_reported(self):
+        slr, slrr = parse("[2020] 2 SLR 1151", "[2005] 1 SLR(R) 1")
+        self.assertEqual((slr["citation_type"], slr["route"]), ("reported", "sg.case.court-of-appeal"))
+        self.assertEqual((slrr["citation_type"], slrr["route"]), ("reported", "sg.case.court-of-appeal"))
 
 
 if __name__ == "__main__":
