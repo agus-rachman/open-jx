@@ -323,7 +323,7 @@ cases:
       forbidden_regex: ["(?i)\\bthis deed (poll )?(is|was) validly executed\\b", "(?i)\\bthis deed (poll )?is enforceable\\b"]
       parity: position
 
-  # ---- v0.2: deadlines, limitation, citations and privacy (data from l0cka/legal-skills, MIT)
+  # ---- deadlines, limitation, citations and privacy (data from l0cka/legal-skills, MIT)
 
   - id: AU-NSW-DEADLINE-01
     title: NSW Supreme Court defence due date — computed by the script across the holidays

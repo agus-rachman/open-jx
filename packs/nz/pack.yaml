@@ -5,7 +5,7 @@ parent: null
 level: national
 locale: en-NZ
 legal_system: common law (unitary)
-version: 0.2.0
+version: 0.1.0
 status: draft
 maintainers:
 - '@nz-reviewer'

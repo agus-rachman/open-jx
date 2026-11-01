@@ -1,7 +1,7 @@
 # open-jx eval suite
 
 This suite checks that open-jx and the Legal for Cowork skills work side by side
-in Microsoft 365 Copilot Cowork:
+in Microsoft Copilot Cowork:
 
 - **Trigger:** the router fires and loads the right packs.
 - **Overlay:** the right pack entries are cited.
@@ -14,7 +14,7 @@ in Microsoft 365 Copilot Cowork:
 | Path | Purpose |
 | --- | --- |
 | `check_package.py` | Static checks on the built zip against the Copilot Cowork packaging rules. No tenant needed. |
-| `cases/cases.yaml` | 32 cases. 23 run side by side with Legal for Cowork across every Australian state and territory, the Commonwealth and New Zealand, plus a jurisdiction with no pack, a conflict case and an injection case. 9 test the v0.2 additions: computed deadlines, fail-closed deadlines, citation routing, limitation and privacy. |
+| `cases/cases.yaml` | 32 cases. 23 run side by side with Legal for Cowork across every Australian state and territory, the Commonwealth and New Zealand, plus a jurisdiction with no pack, a conflict case and an injection case. 9 cover computed deadlines, fail-closed deadlines, citation routing, limitation and privacy. |
 | `cases/trigger.yaml` | 44 short prompts that test router selection only. |
 | `fixtures/` | Synthetic `.docx` documents (fictional parties and planted fake identifiers) plus the generator script. |
 | `score.py` | `lint`, `sheet` and `score` commands. |
