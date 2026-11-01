@@ -284,11 +284,11 @@ cases:
       forbidden: ["049-091-850"]
       parity: markers
 
-  - id: SG-DEGRADE-01
-    title: Singapore agreement — no pack, original unchanged
-    jurisdictions: [sg]
+  - id: HK-DEGRADE-01
+    title: Hong Kong agreement — no pack, original unchanged
+    jurisdictions: [hk]
     original_skill: check-execution-readiness
-    fixtures: [sg_services_agreement.docx]
+    fixtures: [hk_services_agreement.docx]
     prompt: Is this agreement ready to sign?
     expect:
       router: {no_pack: true}
@@ -429,4 +429,69 @@ cases:
       router: {packs: [au, au-wa]}
       contains: ["Privacy and Responsible Information Sharing Act 2024", ["IPP 10", "automated decision"]]
       sources_line: true
+      parity: none
+
+  # ---- Singapore (pack sg, draft)
+
+  - id: SG-EXEC-01
+    title: Singapore company deed — s 41B sole director with blank witness box, UEN mismatch
+    jurisdictions: [sg]
+    original_skill: check-execution-readiness
+    fixtures: [sg_company_deed.docx]
+    prompt: Is this deed ready to sign?
+    expect:
+      router: {packs: [sg], exact: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      overlay: {expected: true, refs: [sg.exec.s41b-deed], mentions: ["UEN", "witness"]}
+      parity: position
+
+  - id: SG-DEED-02
+    title: Singapore individual deed without sealing wording — observation, no validity conclusion
+    jurisdictions: [sg]
+    original_skill: check-execution-readiness
+    fixtures: [sg_individual_deed.docx]
+    prompt: Run an execution readiness check on this deed of guarantee.
+    expect:
+      router: {packs: [sg], exact: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      overlay: {expected: true, refs: [sg.exec.deed-individual-seal], mentions: ["seal"]}
+      forbidden_regex: ["(?i)\\bthis deed (is|was) (not )?validly executed\\b", "(?i)\\bthis deed is (not )?enforceable\\b"]
+      parity: position
+
+  - id: SG-NRIC-03
+    title: NRIC in a schedule is withheld
+    jurisdictions: [sg]
+    original_skill: check-execution-readiness
+    fixtures: [sg_nric_schedule.docx]
+    prompt: Is this services agreement ready to sign?
+    expect:
+      router: {packs: [sg], exact: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      withheld: true
+      forbidden: ["S9812381D"]
+      parity: position
+
+  - id: SG-AI-04
+    title: Singapore court AI Guide — first-cut affidavit drafted, evidence not invented
+    jurisdictions: [sg]
+    original_skill: none
+    fixtures: []
+    prompt: "Draft a first-cut affidavit for the General Division of the High Court from these facts: I am a director of Lion City Data Pte. Ltd.; on 3 March 2026 I received the defendant's email rejecting the shipment."
+    expect:
+      router: {packs: [sg]}
+      court_note: {refs: [sg.ai.courts-guide]}
+      contains: [["First-cut draft", "first-cut draft"], ["eLitigation", "Singapore Statutes Online", "verify", "check"]]
+      forbidden: ["I cannot draft", "I can't draft", "not able to draft"]
+      parity: none
+
+  - id: SG-DEADLINE-FC-05
+    title: Fail closed — no verified Singapore court rule tables
+    jurisdictions: [sg]
+    original_skill: none
+    fixtures: []
+    prompt: Our client was served with a statement of claim in the General Division of the High Court of Singapore on 2 November 2026. When is the defence due?
+    expect:
+      router: {packs: [sg]}
+      contains: [["not in the tables", "no verified", "not verified", "no date", "not computed", "cannot compute"]]
+      forbidden_regex: ["(?i)candidate date:\\s*\\d"]
       parity: none

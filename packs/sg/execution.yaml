@@ -1,0 +1,100 @@
+entries:
+- id: sg.exec.s41a-seal-optional
+  applies_to:
+  - company
+  observe: The company has no common seal or does not use one; the Act provides that a document is not
+    defective only because no seal was affixed.
+  authority: Companies Act 1967 s 41A (from 31 March 2017)
+  source_url: https://www.acra.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: sg.exec.s41b-deed
+  applies_to:
+  - company
+  - deed
+  observe: A company deed shows signature by a director and the secretary, by two directors, or by one
+    director whose signature is attested by a witness.
+  authority: Companies Act 1967 s 41B
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: sg.exec.deed-individual-seal
+  applies_to:
+  - individual
+  - deed
+  observe: A deed by an individual shows an objective physical manifestation of sealing (wording alone
+    may not suffice); at common law sealing remains a requirement unless a statute displaces it.
+  authority: Lim Zhipeng v Seow Suat Thin [2020] 2 SLR 1151 at [37]
+  source_url: https://www.judiciary.gov.sg/judgments
+  status: in-force
+  verified: null
+  verified_by: null
+- id: sg.exec.attestation
+  applies_to:
+  - individual
+  - deed
+  observe: Witness boxes are present but blank; record whether any statute or the document itself calls
+    for attestation.
+  authority: Lee Yih Kang v Hsu Shih Hsun [2026] SGHC(A) 9
+  source_url: https://www.judiciary.gov.sg/judgments
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Taken from commentary; reviewer to read the judgment before relying on this entry
+- id: sg.exec.eta-exclusions
+  applies_to:
+  - electronic
+  - deed
+  observe: The document is signed electronically and may fall within a category the Electronic Transactions
+    Act excludes (wills, indentures, trusts, powers of attorney, immovable-property contracts and conveyances).
+  authority: Electronic Transactions Act 2010 s 4 and First Schedule
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Negotiable instruments were removed from the exclusions in 2021; confirm the current list
+- id: sg.exec.e-conveyancing
+  applies_to:
+  - electronic
+  observe: A property transaction relies on electronic execution through a prescribed system.
+  authority: Electronic Conveyancing and Other Matters Act 2025
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Commencement to be confirmed
+- id: sg.exec.guarantee-writing
+  applies_to:
+  - individual
+  - company
+  observe: A guarantee is in writing and signed by the guarantor.
+  authority: Civil Law Act 1909 s 6(b)
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: sg.exec.stamp-duty
+  applies_to:
+  - company
+  - individual
+  observe: The document may be chargeable with stamp duty (for example property or shares), payable within
+    a fixed period after execution.
+  authority: Stamp Duties Act 1929
+  source_url: https://www.iras.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Periods believed to be 14 days if signed in Singapore and 30 days if signed abroad; to be confirmed.
+    Whether duty is payable is a counsel decision
+- id: sg.exec.lpa
+  applies_to:
+  - attorney
+  observe: A lasting power of attorney is signed in the presence of a certificate issuer.
+  authority: Mental Capacity Act 2008
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed

@@ -25,7 +25,7 @@ NEUTRAL = re.compile(
     r"\[(?P<year>1[89]\d\d|20\d\d)\]\s+(?P<court>(?:[A-Za-z][A-Za-z0-9]*[A-Za-z]|[A-Za-z]+)(?:\([A-Za-z]\))?)\s+(?P<number>\d+)"
 )
 REPORTED = re.compile(
-    r"\((?P<year>1[89]\d\d|20\d\d)\)\s+(?P<volume>\d+)\s+(?P<series>[A-Z][A-Za-z ]*?)\s+(?P<page>\d+)"
+    r"[(\[](?P<year>1[89]\d\d|20\d\d)[)\]]\s+(?P<volume>\d+)\s+(?P<series>[A-Z][A-Za-z ]*?(?:\([A-Z]\))?)\s+(?P<page>\d+)"
 )
 
 PUBLISHERS_FILE = Path(__file__).resolve().parents[1] / "references" / "case-publishers.json"

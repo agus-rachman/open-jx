@@ -1,0 +1,55 @@
+entries:
+- id: sg.gov.s188-minutes
+  applies_to:
+  - company-board
+  - company-members
+  observe: Minutes are entered in the minute book within one month and signed by the chair of that meeting
+    or the next; signed minutes serve as evidence that the meeting was duly held.
+  authority: 'Companies Act 1967 s 188 (evidence: s 188(3))'
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: sg.gov.written-resolution-members
+  applies_to:
+  - company-members
+  observe: A members' written resolution of a private or unlisted public company records the required
+    majority, notice to every member within 15 days, and a minute-book record signed by a director or
+    the secretary.
+  authority: Companies Act 1967 ss 184A–184G
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: sg.gov.directors-written-resolution
+  applies_to:
+  - company-board
+  observe: A directors' written resolution follows the procedure in the company's constitution.
+  authority: Companies (Model Constitutions) Regulations 2015
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: sg.gov.s156-interests
+  applies_to:
+  - company-board
+  observe: A director's interest in a transaction is declared at a board meeting and recorded in the minutes.
+  authority: Companies Act 1967 s 156
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: sg.gov.agm-dispensed
+  applies_to:
+  - company-members
+  observe: A private company has dispensed with annual general meetings, and the minutes or resolutions
+    show how.
+  authority: Companies Act 1967 s 175A
+  source_url: https://sso.agc.gov.sg/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed

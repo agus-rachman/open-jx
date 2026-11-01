@@ -1,0 +1,38 @@
+citation:
+  name: Singapore Law Reports Style Guide
+  edition: '2021'
+  publisher: Academy Publishing (Singapore Academy of Law)
+  url: https://libguides.nus.edu.sg/Singaporelaw/citations
+  note: Recommended by NUS Libraries for current Singapore materials; reviewer to confirm the guide practitioners
+    use in court documents.
+rules:
+- id: sg.cite.legislation
+  example: Companies Act 1967 s 41B
+  observe: Cite Acts by name and year of enactment, then pinpoint; pre-2021 material may use the chapter
+    and revised edition.
+  authority: SLR Style Guide 2021
+  source_url: https://libguides.nus.edu.sg/Singaporelaw/citations
+  status: guidance
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: sg.cite.neutral
+  example: '[2026] SGHC(A) 9'
+  observe: Cite judgments by neutral citation [year] court number; court identifiers may carry a bracketed
+    suffix.
+  authority: SLR Style Guide 2021
+  source_url: https://libguides.nus.edu.sg/Singaporelaw/citations
+  status: guidance
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed
+- id: sg.cite.reports
+  example: '[2020] 2 SLR 1151'
+  observe: Reported cases use the Singapore Law Reports (SLR) from 2010 and the reissue series SLR(R)
+    for 1965 to 2009.
+  authority: SLR Style Guide 2021
+  source_url: https://libguides.nus.edu.sg/Singaporelaw/citations
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Year boundaries to be confirmed

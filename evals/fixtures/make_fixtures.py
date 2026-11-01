@@ -16,6 +16,7 @@ OUT = Path(__file__).resolve().parent
 TFN = "123 456 782"
 IRD = "049-091-850"
 MEDICARE = "2953 71840 1"
+NRIC = "S9812381D"  # fictional, Singapore NRIC format
 
 
 def doc(name: str, title: str, blocks: list):
@@ -256,13 +257,52 @@ def build():
         ("h", "Statement of claim filed 3 August 2026"), "High Court of New Zealand, Nelson Registry.",
     ])
 
-    # 16. Singapore services agreement (no pack).
-    doc("sg_services_agreement.docx", "Services Agreement", [
-        "Parties: Lion City Data Pte. Ltd. (UEN 201912345K) and Marina Bay Analytics Pte. Ltd. (UEN 201812345M).",
-        "18.1 This agreement is governed by the laws of Singapore.",
+    # 16. Hong Kong services agreement (no pack).
+    doc("hk_services_agreement.docx", "Services Agreement", [
+        "Parties: Victoria Harbour Data Limited (CR No. 1234567) and Kowloon Analytics Limited (CR No. 7654321).",
+        "18.1 This agreement is governed by the laws of the Hong Kong Special Administrative Region.",
         ("h", "Execution"),
-        "Signed by Lion City Data Pte. Ltd.: Director ______________",
-        "Signed by Marina Bay Analytics Pte. Ltd.: Director ______________  Name: [●]",
+        "Signed by Victoria Harbour Data Limited: Director ______________",
+        "Signed by Kowloon Analytics Limited: Director ______________  Name: [●]",
+    ])
+
+    # 16a. Singapore company deed: one director, empty witness box, UEN mismatch.
+    doc("sg_company_deed.docx", "Deed of Undertaking", [
+        "This deed is made on [●] 2026 by Lion City Data Pte. Ltd. (UEN 201912345K) (the Company) in favour of Marina Bay Analytics Pte. Ltd. (UEN 201812345M).",
+        ("h", "1. Undertaking"),
+        "1.1 The Company undertakes not to solicit the Beneficiary's customers for 12 months.",
+        ("h", "9. Governing law"),
+        "9.1 This deed is governed by the laws of Singapore and the parties submit to the courts of Singapore.",
+        ("h", "Execution"),
+        "EXECUTED as a deed by Lion City Data Pte. Ltd. (UEN 201912345J) under section 41B of the Companies Act 1967:",
+        "Signature of director: ______________  Name of director: Tan Wei Ming",
+        "In the presence of: Signature of witness: ______________  Name of witness: ______________",
+    ])
+
+    # 16b. Singapore individual deed: no sealing wording.
+    doc("sg_individual_deed.docx", "Deed of Guarantee", [
+        "This deed is made on [●] 2026 by Lim Mei Ling of Singapore (the Guarantor) in favour of Raffles Bay Credit Pte. Ltd. (UEN 202012345R).",
+        ("h", "1. Guarantee"),
+        "1.1 The Guarantor guarantees the obligations of Orchard Home Living Pte. Ltd. to the Lender.",
+        ("h", "8. Governing law"),
+        "8.1 This deed is governed by the laws of the Republic of Singapore.",
+        ("h", "Execution"),
+        "EXECUTED as a deed by the Guarantor:",
+        "Signature: ______________  Name: Lim Mei Ling",
+    ])
+
+    # 16c. Singapore services agreement with an NRIC in a schedule.
+    doc("sg_nric_schedule.docx", "Services Agreement", [
+        "Parties: Marina Bay Analytics Pte. Ltd. (UEN 201812345M) (Customer) and Sentosa Systems Pte. Ltd. (UEN 201712345C) (Contractor).",
+        ("h", "3. Personnel"),
+        "3.1 The Contractor's key personnel are listed in Schedule 2.",
+        ("h", "15. Governing law"),
+        "15.1 This agreement is governed by the laws of Singapore.",
+        ("h", "Schedule 2 — Key personnel"),
+        ("table", [["Name", "Role", "NRIC"], ["Rachel Goh", "Project lead", NRIC]]),
+        ("h", "Execution"),
+        "Signed for Marina Bay Analytics Pte. Ltd. by its director: ______________",
+        "Signed for Sentosa Systems Pte. Ltd. by its director: ______________",
     ])
 
     # 17. NSW deed with an embedded instruction.
