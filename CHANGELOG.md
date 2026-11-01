@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased — engine support for Singapore
+
+- Schema: `court_ids` accept a bracketed suffix (`SGHC(A)`); new
+  `restricted_content` value `evidence-fabrication`.
+- `parse_citation.py` parses bracketed court identifiers; new script test.
+- `jx-court-ai-rules` drafts under `evidence-fabrication` rules (first-cut
+  affidavits allowed) without inventing or altering evidence.
+- `jx-router` recognises Singapore signals (UEN, Pte. Ltd., SICC, "use the SG
+  pack") and asks when "SG" appears alone.
+- Other skills' descriptions name Singapore; point-in-time method adds Singapore
+  Statutes Online.
+
 ## 0.1.1 — 2026-11-02
 
 Housekeeping. No change to skill behaviour or pack content.

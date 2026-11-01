@@ -2,13 +2,14 @@
 name: jx-court-ai-rules
 description: >-
   Checks court and tribunal rules on generative AI before preparing anything
-  that may be filed, served or relied on in Australian or New Zealand
-  proceedings: affidavits, witness statements, expert reports, submissions,
+  that may be filed, served or relied on in Australian, New Zealand or
+  Singapore proceedings: affidavits, witness statements, expert reports, submissions,
   chronologies, lists of documents. Use before build-case-chronology,
   draft-legal-memo or legal-reasoning when the user mentions a court, tribunal,
   filing, affidavit, witness statement, expert report or submissions, or names
   the Federal Court, a Supreme, District, County or Local Court, NCAT, VCAT,
-  QCAT or a New Zealand court.
+  QCAT, a New Zealand court, or a Singapore court (Court of Appeal, High
+  Court, SICC, State Courts, Family Justice Courts).
 license: Apache-2.0
 metadata:
   author: open-jx contributors
@@ -46,6 +47,14 @@ appears earlier in this conversation, run jx-router first.
    leave), do not generate that content. Say which entry applies and offer help
    that falls outside the restriction, such as a document index or a
    chronology for the lawyer's own working use, clearly labelled as such.
+   **Exception — `evidence-fabrication`.** This value means the rule permits
+   AI-assisted drafting (for example a first-cut affidavit or witness
+   statement) but forbids using AI to generate, fabricate, embellish,
+   strengthen, dilute or tamper with evidence. Do not decline to draft. Instead:
+   draft only from facts the user or the documents supply, never add or
+   strengthen a fact, mark the draft "First-cut draft — the deponent must
+   confirm every statement is their own evidence", and give the verification
+   checklist from step 5.
 5. **Verification duties.** Where an entry requires verification of citations or
    evidence, remind the user that each citation and quotation must be checked
    against the source before filing, and offer the case citation check in
@@ -59,5 +68,6 @@ appears earlier in this conversation, run jx-router first.
 
 - This skill flags court rules; it does not decide whether a use is permitted.
 - Never draft content an entry restricts, even if the user insists; explain and
-  offer permitted help instead.
+  offer permitted help instead. For `evidence-fabrication` entries, drafting is
+  permitted but no evidence may be invented, embellished or altered.
 - The Legal for Cowork skill's own guardrails continue to apply.

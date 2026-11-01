@@ -5,11 +5,12 @@ description: >-
   after the Legal for Cowork skill has answered: company signing methods,
   deeds, witnessing, electronic signing, company-number consistency, and
   statutory minutes and written-resolution checkpoints for Australia (each
-  state and territory) and New Zealand. Use after check-execution-readiness,
-  draft-new-contract, analyze-related-contracts or draft-minutes-and-resolutions
-  when an Australian or New Zealand pack is loaded, or when the user asks
-  "does this meet NSW execution requirements", "is the deed signed properly
-  for NZ" or "check the minutes against the Corporations Act".
+  state and territory), New Zealand and Singapore. Use after
+  check-execution-readiness, draft-new-contract, analyze-related-contracts or
+  draft-minutes-and-resolutions when an Australian, New Zealand or Singapore
+  pack is loaded, or when the user asks "does this meet NSW execution
+  requirements", "is the deed signed properly for NZ", "is this signed under
+  section 41B" or "check the minutes against the Corporations Act".
 license: Apache-2.0
 metadata:
   author: open-jx contributors
@@ -42,8 +43,9 @@ Work only from the supplied document and the pack entries under `execution` and
    company, an individual, an attorney, a trustee or a partnership, and compare
    its signature block with the pack's signing-method entries for that type
    (for example the two-director / director-and-secretary / sole-director
-   methods in Australia, or the director-signature and witness requirements in
-   New Zealand). Report what the block shows and which entry it relates to.
+   methods in Australia, the director-signature and witness requirements in
+   New Zealand, or the s 41B methods and sealing for individuals' deeds in
+   Singapore). Report what the block shows and which entry it relates to.
 2. **Deed indications.** If the document calls itself a deed or uses "executed
    as a deed" or "signed, sealed and delivered", list the pack's deed entries
    for the governing jurisdiction (witnessing, sealing, delivery, electronic
@@ -52,8 +54,8 @@ Work only from the supplied document and the pack entries under `execution` and
    entry are present and completed, by field only (never the values).
 4. **Electronic signing.** If the document refers to electronic or split
    execution, point to the pack's electronic-execution entries.
-5. **Company identifiers.** Compare ACN, ABN, ARBN or NZBN and company names
-   (including "Pty Ltd" or "Limited") across the parties clause, recitals and
+5. **Company identifiers.** Compare ACN, ABN, ARBN, NZBN or UEN and company names
+   (including "Pty Ltd", "Limited" or "Pte. Ltd.") across the parties clause, recitals and
    signature blocks. Report any mismatch.
 
 **Governance (minutes and resolutions)**

@@ -2,7 +2,8 @@
 
 Adapted for open-jx from l0cka/legal-skills (commit 5bfb3d8),
 `plugins/legal-skills/references/point-in-time-method.md`. Copyright (c) 2026
-l0cka, MIT License (see THIRD-PARTY-NOTICES.md). Extended with New Zealand.
+l0cka, MIT License (see THIRD-PARTY-NOTICES.md). Extended with New Zealand
+and Singapore.
 
 Use this when a task relies on what a provision said on a particular date,
 or when the user asks you to check a citation to legislation.
@@ -24,6 +25,7 @@ consolidated text differently (`consolidated_term` in the pack):
 | Victoria | legislation.vic.gov.au | authorised version |
 | Western Australia | legislation.wa.gov.au | compilation |
 | New Zealand | legislation.govt.nz | version (as at date) |
+| Singapore | sso.agc.gov.sg | current version (as at date) |
 
 ## Steps
 

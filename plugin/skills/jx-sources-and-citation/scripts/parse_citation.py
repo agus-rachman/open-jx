@@ -4,7 +4,8 @@
 # Copyright (c) 2026 l0cka. Licensed under the MIT License; see THIRD-PARTY-NOTICES.md.
 # open-jx changes: the court and report-series maps are read from
 # references/case-publishers.json (built from packs/*/case-law.yaml) and the route
-# names the official publisher rather than a verification skill.
+# names the official publisher rather than a verification skill. Court identifiers
+# may carry a bracketed suffix, e.g. SGHC(A) (open-jx 0.2.0).
 """Parse a case citation and report the official publisher route.
 
 Offline helper: it parses citation text and maps the court identifier or
@@ -21,7 +22,7 @@ import sys
 from pathlib import Path
 
 NEUTRAL = re.compile(
-    r"\[(?P<year>1[89]\d\d|20\d\d)\]\s+(?P<court>[A-Za-z][A-Za-z0-9]*[A-Za-z]|[A-Za-z]+)\s+(?P<number>\d+)"
+    r"\[(?P<year>1[89]\d\d|20\d\d)\]\s+(?P<court>(?:[A-Za-z][A-Za-z0-9]*[A-Za-z]|[A-Za-z]+)(?:\([A-Za-z]\))?)\s+(?P<number>\d+)"
 )
 REPORTED = re.compile(
     r"\((?P<year>1[89]\d\d|20\d\d)\)\s+(?P<volume>\d+)\s+(?P<series>[A-Z][A-Za-z ]*?)\s+(?P<page>\d+)"

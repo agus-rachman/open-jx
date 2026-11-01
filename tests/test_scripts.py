@@ -74,6 +74,11 @@ class CitationScript(unittest.TestCase):
         self.assertEqual((aljr["citation_type"], aljr["route"]), ("reported", "au.case.hca"))
         self.assertEqual(none["citation_type"], "unknown")
 
+    def test_bracketed_court_ids(self):
+        sghca, sgca = parse("[2026] SGHC(A) 9", "[2024] SGCA 1")
+        self.assertEqual((sghca["citation_type"], sghca["court_id"], sghca["number"]), ("medium-neutral", "SGHC(A)", 9))
+        self.assertEqual((sgca["court_id"], sgca["number"]), ("SGCA", 1))
+
 
 if __name__ == "__main__":
     unittest.main()

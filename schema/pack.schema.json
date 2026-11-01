@@ -537,7 +537,8 @@
                     "witness-statement-content",
                     "character-reference-content",
                     "expert-report-without-leave",
-                    "expert-opinion"
+                    "expert-opinion",
+                    "evidence-fabrication"
                   ]
                 }
               },
@@ -786,7 +787,7 @@
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "pattern": "^[A-Za-z0-9]+$"
+                  "pattern": "^[A-Za-z0-9]+(\\([A-Z]\\))?$"
                 }
               },
               "court": {
