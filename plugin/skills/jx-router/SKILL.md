@@ -9,7 +9,8 @@ description: >-
   analysis or compares jurisdictions; whenever a document has a governing-law
   clause; and whenever the user mentions Australia, an Australian state or
   territory (NSW, Victoria, Queensland, WA, SA, Tasmania, ACT, NT), New Zealand,
-  AU, NZ, or says "use the AU pack" / "use the NZ pack".
+  Singapore, AU, NZ, a Pte. Ltd. company, a UEN, the SICC, or says "use the AU
+  pack" / "use the NZ pack" / "use the SG pack".
 license: Apache-2.0
 metadata:
   author: open-jx contributors
@@ -28,10 +29,11 @@ Use the first signal that applies, in this order:
 
 1. **The user says so** ("NSW law", "use the NZ pack", "this is a Victorian lease").
 2. **A governing-law or jurisdiction clause** in the supplied document.
-3. **A named court, tribunal or registry** (for example "Supreme Court of Queensland").
+3. **A named court, tribunal or registry** (for example "Supreme Court of Queensland"
+   or "General Division of the High Court of Singapore").
 4. **Party identifiers and addresses**: ACN, ABN or ARBN point to Australia;
-   NZBN or an NZ company number point to New Zealand; a state in an address
-   points to that state.
+   NZBN or an NZ company number point to New Zealand; a UEN or a "Pte. Ltd."
+   company points to Singapore; a state in an address points to that state.
 5. **A default in the user's custom instructions** ("my default jurisdiction is au-vic").
 
 Resolve every label to legal units:
@@ -41,6 +43,8 @@ Resolve every label to legal units:
   `au-tas`, `au-act`, `au-nt`). "Australia" alone loads `au` only; say that
   state-specific items (deeds, holidays, limitation, courts) are not loaded.
 - New Zealand is `nz`.
+- Singapore is `sg` (a single national pack). "SG" on its own is ambiguous:
+  load `sg` only when another Singapore signal is present, otherwise ask.
 - Several jurisdictions (a comparison, or parties in two countries) load every pack named.
 
 If signals conflict, follow the user and record the conflict in the brief.

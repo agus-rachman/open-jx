@@ -109,7 +109,18 @@ uncertain windows. Otherwise it returns `identify_only`.
 `restricted_content` drives the `jx-court-ai-rules` skill: it will not draft
 content in a listed category. Allowed values: `affidavit-content`,
 `witness-statement-content`, `character-reference-content`,
-`expert-report-without-leave`, `expert-opinion`.
+`expert-report-without-leave`, `expert-opinion`, and `evidence-fabrication`.
+
+`evidence-fabrication` is different: it is for rules (such as Singapore's) that
+allow AI-assisted drafting of court documents but forbid using AI to generate or
+alter evidence. The skill still drafts, but only from supplied facts, marks the
+draft for the deponent's confirmation and gives a verification checklist.
+
+## Case-law entries
+
+`court_ids` are the medium neutral citation court identifiers, for example
+`HCA`, `NSWSC` or `NZSC`. An identifier may end in a bracketed capital letter,
+for example `SGHC(A)` or `SGCA(I)`; the citation parser accepts the same form.
 
 ## Status and review
 

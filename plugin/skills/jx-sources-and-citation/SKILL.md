@@ -3,11 +3,11 @@ name: jx-sources-and-citation
 description: >-
   Gives legal research and writing the loaded jurisdiction's official sources,
   their order of authority, and its citation style (AGLC for Australia, the New
-  Zealand Law Style Guide for New Zealand). Use before a legal memo, legal
+  Zealand Law Style Guide for New Zealand, the SLR Style Guide for Singapore). Use before a legal memo, legal
   reasoning, a regulatory gap analysis, a cross-jurisdiction comparison or an
   explanation of a legal concept that concerns Australia, an Australian state
-  or territory, or New Zealand; when the user asks where to find Australian or
-  New Zealand legislation, cases or regulator guidance; and when the user asks
+  or territory, New Zealand or Singapore; when the user asks where to find
+  Australian, New Zealand or Singapore legislation, cases or regulator guidance; and when the user asks
   to "check these citations", "verify this case", "is this section still in
   force" or "what did the Act say on <date>".
 license: Apache-2.0

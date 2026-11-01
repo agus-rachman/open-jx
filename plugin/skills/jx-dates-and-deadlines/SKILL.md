@@ -4,11 +4,12 @@ description: >-
   Adds a labelled jurisdiction overlay on dates after the Legal for Cowork skill
   has answered: business-day and working-day definitions, local and regional
   public holidays, statutory rules for counting time, and where limitation
-  periods are found, for Australia (each state and territory) and New Zealand.
+  periods are found, for Australia (each state and territory), New Zealand and
+  Singapore.
   Computes candidate court and tribunal deadlines from verified rule and
   holiday tables. Use after extract-obligations-and-deadlines,
   build-case-chronology, summarize-legal-matters or identify-regulatory-gaps
-  when an Australian or New Zealand pack is loaded; when the user asks "when is
+  when an Australian, New Zealand or Singapore pack is loaded; when the user asks "when is
   the defence due", "when must we appeal" or "what is the limitation period";
   or about business days, public holidays, Matariki, anniversary days or
   Melbourne Cup Day in a deadline.
