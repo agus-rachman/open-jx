@@ -5,7 +5,7 @@ parent: au
 level: territory
 locale: en-AU
 legal_system: common law
-version: 0.2.0
+version: 0.1.0
 status: draft
 maintainers:
 - '@au-reviewer'

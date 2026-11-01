@@ -5,7 +5,8 @@
 /tools/               @agus-rachman
 /evals/               @agus-rachman
 
-# Packs: qualified reviewers per jurisdiction (replace with real handles)
-/packs/au/            @agus-rachman @au-reviewer
-/packs/au-*/          @agus-rachman @au-reviewer
-/packs/nz/            @agus-rachman @nz-reviewer
+# Packs: add each qualified reviewer's GitHub handle when they are named,
+# e.g. "/packs/au-*/  @agus-rachman @reviewer-handle".
+/packs/au/            @agus-rachman
+/packs/au-*/          @agus-rachman
+/packs/nz/            @agus-rachman

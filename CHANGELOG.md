@@ -1,8 +1,21 @@
 # Changelog
 
+## 0.1.1 — 2026-11-02
+
+Housekeeping. No change to skill behaviour or pack content.
+
+- Pack versions set to 0.1.0 to match the release (they read 0.2.0), and the
+  malformed `jx-sources-and-citation` skill version is fixed.
+- `docs/COPILOT-SETUP.md` restored: install steps and the custom-instruction
+  snippet that makes `jx-router` run first. The README links to it again.
+- Product name standardised to "Microsoft Copilot Cowork".
+- Placeholder reviewer handles removed from CODEOWNERS.
+- Leftover "v0.2" wording removed from the eval docs, cases and self-test
+  transcripts.
+
 ## 0.1.0 — 2026-10-31
 
-First release, for a pilot on Microsoft 365 Copilot Cowork. All packs are `draft`:
+First release, for a pilot on Microsoft Copilot Cowork. All packs are `draft`:
 no entry has yet been verified by an open-jx reviewer.
 
 ### Skills

@@ -1,7 +1,7 @@
-**Jurisdiction:** New South Wales, Australia — packs au@0.2.0, au-nsw@0.2.0 (draft)
+**Jurisdiction:** New South Wales, Australia — packs au@0.1.0, au-nsw@0.1.0 (draft)
 Detected from: user request (Supreme Court of NSW) · Overlays: jx-dates-and-deadlines
 
-#### Jurisdiction overlay — au@0.2.0, au-nsw@0.2.0 (draft)
+#### Jurisdiction overlay — au@0.1.0, au-nsw@0.1.0 (draft)
 
 | Step | Rule | Trigger date | Candidate date | Warnings |
 | --- | --- | --- | --- | --- |

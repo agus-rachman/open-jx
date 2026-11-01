@@ -46,6 +46,9 @@ compatibility rules.
 
 1. Download `open-jx-<version>.zip` from Releases, or build it yourself (below).
 2. For a pilot group, each user can use Copilot Cowork to add the plugin from Customize menu. Admin can also upload it in the M365 admin centre.
+3. Each user adds the custom-instruction snippet in
+   [docs/COPILOT-SETUP.md](docs/COPILOT-SETUP.md), so the jurisdiction router
+   runs before the legal skills.
 
 ## Build
 
@@ -86,7 +89,7 @@ dist/, build/       generated — do not edit
 
 ## Third-party material
 
-Version 0.1 imports holiday tables, court time-computation rules, limitation
+This release imports holiday tables, court time-computation rules, limitation
 data, privacy-regime routing, case-law publisher routes and two scripts from
 [l0cka/legal-skills](https://github.com/l0cka/legal-skills) under the MIT
 licence. Every imported entry records the upstream commit and check date in
