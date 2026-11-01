@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.0 — 2026-11-02
+## 0.1.1 — 2026-11-02
 
 Adds Singapore. The `sg` pack is a draft seed (version 0.1.0): none of its 43
 entries is verified yet, and it has no holiday or court-rule tables, so the
@@ -45,12 +45,10 @@ deadline script refuses every Singapore computation.
 - Other skills' descriptions name Singapore; point-in-time method adds Singapore
   Statutes Online.
 
-## 0.1.1 — 2026-11-02
+### Housekeeping
 
-Housekeeping. No change to skill behaviour or pack content.
-
-- Pack versions set to 0.1.0 to match the release (they read 0.2.0), and the
-  malformed `jx-sources-and-citation` skill version is fixed.
+- Pack versions aligned to 0.1.0, and the malformed `jx-sources-and-citation`
+  skill version fixed.
 - `docs/COPILOT-SETUP.md` restored: install steps and the custom-instruction
   snippet that makes `jx-router` run first. The README links to it again.
 - Product name standardised to "Microsoft Copilot Cowork".

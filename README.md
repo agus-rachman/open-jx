@@ -6,7 +6,7 @@ open-jx is an add-on plugin that gives the legal skills in Microsoft Copilot Cow
 - every Australian state and territory: NSW, Victoria, Queensland, Western
   Australia, South Australia, Tasmania, the ACT and the Northern Territory
 - New Zealand
-- Singapore (new in 0.2.0; draft seed pack, no deadline tables yet)
+- Singapore (new in 0.1.1; draft seed pack, no deadline tables yet)
 
 Anyone can contribute another jurisdiction as a data pack.
 

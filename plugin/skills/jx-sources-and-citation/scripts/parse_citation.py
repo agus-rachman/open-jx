@@ -5,7 +5,7 @@
 # open-jx changes: the court and report-series maps are read from
 # references/case-publishers.json (built from packs/*/case-law.yaml) and the route
 # names the official publisher rather than a verification skill. Court identifiers
-# may carry a bracketed suffix, e.g. SGHC(A) (open-jx 0.2.0).
+# may carry a bracketed suffix, e.g. SGHC(A) (open-jx 0.1.1).
 """Parse a case citation and report the official publisher route.
 
 Offline helper: it parses citation text and maps the court identifier or
