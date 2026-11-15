@@ -3,14 +3,16 @@ name: jx-court-ai-rules
 description: >-
   Checks court and tribunal rules on generative AI before preparing anything
   that may be filed, served or relied on in Australian, New Zealand,
-  Singapore or Hong Kong proceedings: affidavits, witness statements, expert reports, submissions,
+  Singapore, Hong Kong or UK proceedings: affidavits, witness statements, expert reports, submissions,
   chronologies, lists of documents. Use before build-case-chronology,
   draft-legal-memo or legal-reasoning when the user mentions a court, tribunal,
   filing, affidavit, witness statement, expert report or submissions, or names
   the Federal Court, a Supreme, District, County or Local Court, NCAT, VCAT,
   QCAT, a New Zealand court, a Singapore court (Court of Appeal, High
-  Court, SICC, State Courts, Family Justice Courts) or a Hong Kong court
-  (Court of Final Appeal, High Court, District Court, tribunals).
+  Court, SICC, State Courts, Family Justice Courts), a Hong Kong court
+  (Court of Final Appeal, High Court, District Court, tribunals) or a UK court
+  (the High Court, Business and Property Courts, County Court, Court of
+  Session, sheriff courts, Northern Ireland courts, UK tribunals).
 license: Apache-2.0
 metadata:
   author: open-jx contributors

@@ -1,0 +1,92 @@
+entries:
+- id: gb.gov.s248-board-minutes
+  applies_to:
+  - company-board
+  observe: Minutes of all directors' meetings are recorded and kept for at least ten years.
+  authority: Companies Act 2006 s 248
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.gov.s249-evidence
+  applies_to:
+  - company-board
+  observe: Minutes authenticated by the chair of the meeting or of the next meeting are evidence of the
+    proceedings.
+  authority: Companies Act 2006 s 249
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.gov.s355-records
+  applies_to:
+  - company-members
+  observe: Copies of members' resolutions passed otherwise than at meetings, minutes of general meetings
+    and sole-member decisions are kept for at least ten years.
+  authority: Companies Act 2006 ss 355-357
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.gov.written-resolution
+  applies_to:
+  - company-members
+  observe: A private company's written resolution records circulation to every eligible member, the required
+    majority and the lapse date (28 days from circulation unless the articles say otherwise).
+  authority: Companies Act 2006 ss 288-300
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Sections 296-297 to be confirmed
+- id: gb.gov.directors-written
+  applies_to:
+  - company-board
+  observe: A directors' decision without a meeting follows the articles (the model articles for private
+    companies require a unanimous decision).
+  authority: Companies (Model Articles) Regulations 2008, SI 2008/3229, sch 1 art 8
+  source_url: https://www.legislation.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk
+- id: gb.gov.s177-interests
+  applies_to:
+  - company-board
+  observe: A director's interest in a proposed transaction is declared to the other directors before the
+    company enters into it; an interest in an existing transaction is declared as soon as reasonably practicable.
+  authority: Companies Act 2006 ss 177 and 182
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.gov.s30-filing
+  applies_to:
+  - company-members
+  observe: Special resolutions and certain other resolutions are filed at Companies House within 15 days.
+  authority: Companies Act 2006 ss 29-30
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.gov.agm
+  applies_to:
+  - company-members
+  observe: A public company holds an AGM within six months of its accounting reference date; a private
+    company has no statutory AGM requirement unless its articles impose one.
+  authority: Companies Act 2006 s 336
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.gov.identity-verification
+  applies_to:
+  - company-board
+  observe: Directors and persons with significant control are subject to Companies House identity verification,
+    phased in from 18 November 2025.
+  authority: Economic Crime and Corporate Transparency Act 2023; Companies Act 2006 pt 35A
+  source_url: https://www.gov.uk/government/organisations/companies-house
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Transition dates to be confirmed

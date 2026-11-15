@@ -5,13 +5,13 @@ description: >-
   has answered: business-day and working-day definitions, local and regional
   public holidays, statutory rules for counting time, and where limitation
   periods are found, for Australia (each state and territory), New Zealand,
-  Singapore and Hong Kong.
+  Singapore, Hong Kong and the UK (England and Wales, Scotland, Northern Ireland).
   Computes candidate court and tribunal deadlines from verified rule and
   holiday tables. Use after extract-obligations-and-deadlines,
   build-case-chronology, summarize-legal-matters or identify-regulatory-gaps
-  when an Australian, New Zealand, Singapore or Hong Kong pack is loaded; when the user asks "when is
+  when an Australian, New Zealand, Singapore, Hong Kong or UK pack is loaded; when the user asks "when is
   the defence due", "when must we appeal" or "what is the limitation period";
-  or about business days, public holidays, Matariki, anniversary days,
+  or about business days, public or bank holidays, Matariki, anniversary days,
   Melbourne Cup Day or typhoon and rainstorm closures in a deadline.
 license: Apache-2.0
 metadata:

@@ -1,0 +1,26 @@
+sources:
+- id: gb-nir.src.judiciaryni
+  name: Judiciary NI — judgments and practice directions
+  url: https://www.judiciaryni.uk/
+  type: case-law
+  rank: 1
+- id: gb-nir.src.courts
+  name: Northern Ireland Courts and Tribunals Service
+  url: https://www.justice-ni.gov.uk/topics/courts-and-tribunals
+  type: court
+  rank: 1
+- id: gb-nir.src.lps
+  name: Land & Property Services (Land Registry and Registry of Deeds)
+  url: https://www.finance-ni.gov.uk/land-property-services-lps
+  type: register
+  rank: 1
+- id: gb-nir.src.lawsoc
+  name: Law Society of Northern Ireland
+  url: https://www.lawsoc-ni.org/
+  type: regulator
+  rank: 1
+- id: gb-nir.src.ccni
+  name: Charity Commission for Northern Ireland
+  url: https://www.charitycommissionni.org.uk/
+  type: register
+  rank: 1

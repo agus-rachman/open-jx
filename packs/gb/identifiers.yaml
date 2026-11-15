@@ -1,0 +1,81 @@
+personal:
+- id: gb.id.nino
+  name: National Insurance number
+  pattern_hint: two letters + six digits + a suffix letter A-D, often written QQ 12 34 56 C; near 'NI
+    number', 'NINO' or 'National Insurance'
+  authority: Social Security Administration Act 1992; HMRC
+  source_url: https://www.gov.uk/national-insurance/your-national-insurance-number
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.id.nhs
+  name: NHS number (England, Wales and Isle of Man)
+  pattern_hint: 10 digits, often written 3-3-4 (the last is a check digit); near 'NHS number'
+  authority: NHS England
+  source_url: https://www.nhs.uk/nhs-services/online-services/find-nhs-number/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.id.utr
+  name: Unique Taxpayer Reference (UTR)
+  pattern_hint: 10 digits, sometimes followed by K; near 'UTR' or 'tax reference'
+  authority: HMRC
+  source_url: https://www.gov.uk/find-utr-number
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.id.driving-licence
+  name: Driving licence number (Great Britain)
+  pattern_hint: 16 characters starting with five letters of the surname; near 'driving licence' or 'driver
+    number'
+  authority: Road Traffic Act 1988; DVLA
+  source_url: https://www.gov.uk/view-driving-licence
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.id.passport
+  name: UK passport number
+  pattern_hint: 9 digits, near 'passport'
+  authority: HM Passport Office
+  source_url: https://www.gov.uk/government/organisations/hm-passport-office
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Pattern to be confirmed
+- id: gb.id.ch-personal-code
+  name: Companies House personal code
+  pattern_hint: an 11-character code issued after identity verification; near 'personal code' or 'identity
+    verification'
+  authority: Economic Crime and Corporate Transparency Act 2023; Companies House
+  source_url: https://www.gov.uk/government/organisations/companies-house
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Format to be confirmed. Companies House guidance treats the code as personal to the individual
+- id: gb.id.share-code
+  name: Immigration status share code or biometric residence permit number
+  pattern_hint: 'share code: 9 characters starting with a letter; near ''share code'', ''eVisa'' or ''BRP'''
+  authority: Home Office
+  source_url: https://www.gov.uk/view-prove-immigration-status
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Pattern to be confirmed
+organisational:
+- id: gb.org.company-number
+  name: Companies House company number
+  format: '8 characters: 8 digits (England and Wales), or a prefix + 6 digits (SC Scotland, NI Northern
+    Ireland, OC / SO / NC for LLPs)'
+  authority: Companies Act 2006 s 1066
+  source_url: https://www.gov.uk/government/organisations/companies-house
+- id: gb.org.vat
+  name: VAT registration number
+  format: GB + 9 digits (XI prefix for Northern Ireland goods trade)
+  authority: Value Added Tax Act 1994
+  source_url: https://www.gov.uk/vat-registration
+- id: gb.org.frn
+  name: FCA firm reference number (FRN)
+  format: 6 or 7 digits
+  authority: Financial Services and Markets Act 2000
+  source_url: https://register.fca.org.uk/
+privacy_context: []

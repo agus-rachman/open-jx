@@ -1,0 +1,60 @@
+courts_ai:
+- id: gb-eaw.ai.judicial-guidance
+  court: Courts and tribunals of England and Wales
+  instrument: Artificial Intelligence (AI) - Guidance for Judicial Office Holders (31 October 2025)
+  observe: 'The guidance is addressed to judges and their staff, not to court users. It expects AI to
+    appear in submissions: lawyers remain bound by their professional obligations to verify what they
+    file, and judges may ask a litigant in person whether AI was used and what accuracy checks were made.'
+  restricted_content: []
+  authority: AI Judicial Guidance (October 2025)
+  source_url: https://www.judiciary.uk/guidance-and-resources/artificial-intelligence-ai-judicial-guidance-october-2025/
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Summary taken from the judiciary page and commentary; reviewer to read the guidance text
+- id: gb-eaw.ai.ayinde
+  court: High Court and all courts of England and Wales
+  instrument: R (Ayinde) v London Borough of Haringey; Al-Haroun v Qatar National Bank [2025] EWHC 1383
+    (Admin)
+  observe: The Divisional Court held that lawyers who use AI for research have a professional duty to
+    check its output against authoritative sources before it is put before the court. Citing non-existent
+    authorities may lead to public admonition, costs or wasted costs orders, referral to the regulator,
+    contempt proceedings or referral to the police.
+  restricted_content: []
+  authority: '[2025] EWHC 1383 (Admin), [2025] 1 WLR 5147'
+  source_url: https://caselaw.nationalarchives.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Paragraph pinpoints to be confirmed
+- id: gb-eaw.ai.pd-57ac
+  court: Business and Property Courts of England and Wales
+  instrument: CPR Practice Direction 57AC - Trial Witness Statements in the Business and Property Courts
+  observe: 'A trial witness statement sets out only matters of fact of which the witness has personal
+    knowledge, in the witness''s own words, and is prepared in line with the Statement of Best Practice.
+    This is not an AI rule, but AI-generated content that is not the witness''s own account does not fit
+    it: draft only from the facts the witness has supplied and add nothing.'
+  restricted_content:
+  - evidence-fabrication
+  authority: CPR PD 57AC paras 3.1-3.2 and Appendix
+  source_url: https://www.justice.gov.uk/courts/procedure-rules/civil
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Paragraph pinpoints to be confirmed
+- id: gb-eaw.ai.cjc-final-report
+  court: Civil courts of England and Wales
+  instrument: 'Civil Justice Council, Use of AI for the Preparation of Court Documents: Final Report (29
+    October 2026)'
+  observe: 'Recommendations to the Civil Procedure Rule Committee, not yet rules: a declaration in a witness
+    statement that AI used in its preparation has not generated or influenced its substantive content;
+    a declaration in an expert report where AI use generates or influences its substantive content; no
+    declaration for statements of case or skeleton arguments, with the responsible legal representative
+    named; certified human translation alongside any AI translation; and a new practice direction. Check
+    whether the CPR has been amended before relying on the absence of a declaration requirement.'
+  restricted_content: []
+  authority: CJC Final Report (29 October 2026) recs 3, 4, 6, 8 and 9
+  source_url: https://www.judiciary.uk/related-offices-and-bodies/advisory-bodies/cjc/current-work/use-of-ai-in-preparing-court-documents/
+  status: pending
+  verified: null
+  verified_by: null

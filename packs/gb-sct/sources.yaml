@@ -1,0 +1,36 @@
+sources:
+- id: gb-sct.src.scotcourts
+  name: Scottish Courts and Tribunals Service — judgments and rules
+  url: https://www.scotcourts.gov.uk/
+  type: case-law
+  rank: 1
+  note: Court of Session, High Court of Justiciary, Sheriff Appeal Court and sheriff court opinions; court
+    rules.
+- id: gb-sct.src.judiciary
+  name: Judiciary of Scotland
+  url: https://judiciary.scot/
+  type: court
+  rank: 1
+  note: Practice notes and judicial statements.
+- id: gb-sct.src.ros
+  name: Registers of Scotland
+  url: https://www.ros.gov.uk/
+  type: register
+  rank: 1
+  note: Land Register of Scotland and Books of Council and Session.
+- id: gb-sct.src.revenue-scotland
+  name: Revenue Scotland
+  url: https://revenue.scot/
+  type: regulator
+  rank: 1
+  note: Land and Buildings Transaction Tax.
+- id: gb-sct.src.lawscot
+  name: Law Society of Scotland
+  url: https://www.lawscot.org.uk/
+  type: regulator
+  rank: 1
+- id: gb-sct.src.oscr
+  name: Scottish Charity Regulator (OSCR)
+  url: https://www.oscr.org.uk/
+  type: register
+  rank: 1

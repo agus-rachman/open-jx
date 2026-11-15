@@ -1,0 +1,42 @@
+# Draft seed pack (open-jx 0.1.3, compiled 15 November 2026).
+# Every legal entry must be verified by a suitably qualified reviewer before status changes.
+id: gb-nir
+name: Northern Ireland
+country: GB
+parent: gb
+level: region
+locale: en-GB
+legal_system: common law
+version: 0.1.0
+status: draft
+maintainers:
+- '@agus-rachman'
+last_reviewed: null
+law_checked_as_at: null
+detection:
+  names:
+  - Northern Ireland
+  - Northern Irish
+  governing_law_patterns:
+  - laws of Northern Ireland
+  - law of Northern Ireland
+  - Northern Ireland law
+  - courts of Northern Ireland
+  courts:
+  - Court of Appeal in Northern Ireland
+  - High Court of Justice in Northern Ireland
+  - Court of Judicature of Northern Ireland
+  - Crown Court in Northern Ireland
+  - county court (Northern Ireland)
+  - Industrial Tribunals (Northern Ireland)
+  identifiers:
+  - NI-prefixed company number
+  - NC-prefixed LLP number
+  - Northern Ireland charity number (NIC1...)
+  other_signals:
+  - Belfast
+  - BT postcode
+  - '''registered in Northern Ireland'''
+  - Order in Council citations ending '(Northern Ireland) Order'
+  note: '''Ireland'' or ''Irish law'' alone means the Republic of Ireland, which is a different jurisdiction
+    with no open-jx pack; do not load this pack for it.'

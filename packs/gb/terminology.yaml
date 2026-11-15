@@ -1,0 +1,23 @@
+spelling: en-GB
+terms:
+- use: England and Wales / Scotland / Northern Ireland
+  instead_of: UK law (for contract, property, deeds or limitation)
+  note: Three separate legal systems.
+- use: Ltd / plc / LLP
+  instead_of: Pty Ltd / Inc / LLC
+  note: Companies Act 2006; Limited Liability Partnerships Act 2000.
+- use: solicitor / barrister (advocate in Scotland)
+  instead_of: attorney
+  note: Except 'power of attorney'.
+- use: Companies House
+  instead_of: corporate registry / ASIC
+  note: One registrar for each of England and Wales, Scotland and Northern Ireland.
+- use: VAT
+  instead_of: GST / sales tax
+  note: Value Added Tax Act 1994.
+- use: UK GDPR
+  instead_of: GDPR (alone)
+  note: The retained UK regime, distinct from the EU GDPR.
+- use: bank holiday
+  instead_of: public holiday
+  note: Dates differ between the three jurisdictions.

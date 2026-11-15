@@ -1,0 +1,50 @@
+# Draft seed pack (open-jx 0.1.3, compiled 15 November 2026).
+# Every legal entry must be verified by a suitably qualified reviewer before status changes.
+id: gb
+name: United Kingdom
+country: GB
+parent: null
+level: national
+locale: en-GB
+legal_system: three legal systems (England and Wales, Scotland, Northern Ireland) with UK-wide statutes
+version: 0.1.0
+status: draft
+maintainers:
+- '@agus-rachman'
+last_reviewed: null
+law_checked_as_at: null
+detection:
+  names:
+  - United Kingdom
+  - UK
+  - Great Britain
+  - Britain
+  - British
+  governing_law_patterns:
+  - laws of the United Kingdom
+  - UK law
+  - United Kingdom law
+  courts:
+  - Supreme Court of the United Kingdom
+  - Judicial Committee of the Privy Council
+  - Upper Tribunal
+  - First-tier Tribunal
+  - Employment Appeal Tribunal
+  - Employment Tribunal
+  - Competition Appeal Tribunal
+  identifiers:
+  - Companies House company number
+  - VAT registration number (GB prefix)
+  other_signals:
+  - Ltd / plc / LLP
+  - £
+  - GBP
+  - '+44'
+  - Companies House
+  - Companies Act 2006
+  - UK GDPR
+  - 'LCIA arbitration clause (hint only: the LCIA also hears foreign-law disputes)'
+  note: There is no single 'UK law' of contract, deeds, property or limitation. This pack holds only UK-wide
+    material (company law, data protection, identifiers, sources). Always add gb-eaw, gb-sct or gb-nir
+    when England and Wales, Scotland or Northern Ireland is identified; if only 'UK' is known and the
+    task turns on execution, deeds, time limits or courts, ask which of the three applies.

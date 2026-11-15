@@ -1,0 +1,13 @@
+personal: []
+organisational:
+- id: gb-eaw.org.charity
+  name: Registered charity number (England and Wales)
+  format: 6 or 7 digits
+  authority: Charities Act 2011
+  source_url: https://www.gov.uk/government/organisations/charity-commission
+- id: gb-eaw.org.title-number
+  name: HM Land Registry title number
+  format: letters + digits, e.g. AB123456
+  authority: Land Registration Act 2002
+  source_url: https://www.gov.uk/government/organisations/land-registry
+privacy_context: []

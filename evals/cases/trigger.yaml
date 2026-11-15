@@ -58,3 +58,11 @@ prompts:
   - {id: T52, prompt: "Prepare a chronology for our Court of First Instance action HCA 1234/2026.", expect: [hk]}
   - {id: T53, prompt: "This agreement is governed by the laws of the HKSAR. Any blanks left?", expect: [hk]}
   - {id: T54, prompt: "Does this clause comply with section 127 of the Companies Ordinance (Cap. 622)?", expect: [hk]}
+  - {id: T55, prompt: "Is this English-law deed properly executed?", expect: [gb, gb-eaw]}
+  - {id: T56, prompt: "This agreement is governed by the laws of England and Wales. Any blanks left?", expect: [gb, gb-eaw]}
+  - {id: T57, prompt: "Check the signing blocks on this Scots law agreement.", expect: [gb, gb-sct]}
+  - {id: T58, prompt: "The supplier is Forth Bridge Systems Limited, company number SC123456. Check the signature blocks.", expect: [gb, gb-sct]}
+  - {id: T59, prompt: "Is this Northern Ireland lease ready to sign?", expect: [gb, gb-nir]}
+  - {id: T60, prompt: "Prepare a chronology for our Commercial Court claim in London.", expect: [gb, gb-eaw]}
+  - {id: T61, prompt: "Draft board minutes for our UK company approving the accounts.", expect: [gb]}
+  - {id: T62, prompt: "Is this Irish-law agreement ready to sign?", expect: no_pack}

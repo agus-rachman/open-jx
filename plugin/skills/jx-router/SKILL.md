@@ -10,8 +10,9 @@ description: >-
   clause; and whenever the user mentions Australia, an Australian state or
   territory (NSW, Victoria, Queensland, WA, SA, Tasmania, ACT, NT), New Zealand,
   Singapore, Hong Kong, the HKSAR, AU, NZ, a Pte. Ltd. company, a UEN, the SICC,
-  a Hong Kong court or ordinance (Cap.), or says "use the AU pack" / "use the NZ
-  pack" / "use the SG pack" / "use the HK pack".
+  a Hong Kong court or ordinance (Cap.), the UK, England and Wales, English law,
+  Scotland, Scots law or Northern Ireland, or says "use the AU pack" / "use the
+  NZ pack" / "use the SG pack" / "use the HK pack" / "use the UK pack".
 license: Apache-2.0
 metadata:
   author: open-jx contributors
@@ -31,12 +32,15 @@ Use the first signal that applies, in this order:
 1. **The user says so** ("NSW law", "use the NZ pack", "this is a Victorian lease").
 2. **A governing-law or jurisdiction clause** in the supplied document.
 3. **A named court, tribunal or registry** (for example "Supreme Court of Queensland"
-   or "General Division of the High Court of Singapore" or "Court of First
-   Instance of the High Court of Hong Kong").
+   or "General Division of the High Court of Singapore", "Court of First
+   Instance of the High Court of Hong Kong", "Commercial Court" in London or
+   "Court of Session").
 4. **Party identifiers and addresses**: ACN, ABN or ARBN point to Australia;
    NZBN or an NZ company number point to New Zealand; a UEN or a "Pte. Ltd."
    company points to Singapore; a Hong Kong CR or BR number points to Hong
-   Kong; a state in an address points to that state.
+   Kong; a Companies House number points to the UK (an SC prefix to Scotland,
+   an NI prefix to Northern Ireland, "registered in England and Wales" to
+   England and Wales); a state in an address points to that state.
 5. **A default in the user's custom instructions** ("my default jurisdiction is au-vic").
 
 Resolve every label to legal units:
@@ -50,6 +54,12 @@ Resolve every label to legal units:
   load `sg` only when another Singapore signal is present, otherwise ask.
 - Hong Kong is `hk` (a single pack for the HKSAR). "Limited" or "HK$" alone is
   not enough; Mainland China (PRC) law is a different jurisdiction with no pack.
+- The United Kingdom is always the UK-wide pack `gb` plus `gb-eaw` (England
+  and Wales, "English law"), `gb-sct` (Scotland, "Scots law") or `gb-nir`
+  (Northern Ireland) where one is identified. "UK" or "British" alone loads
+  `gb` only; say that execution, deeds, time limits and court items are not
+  loaded, and ask which of the three applies if the task turns on them.
+  "Ireland" or "Irish law" alone is the Republic of Ireland: no pack.
 - Several jurisdictions (a comparison, or parties in two countries) load every pack named.
 
 If signals conflict, follow the user and record the conflict in the brief.

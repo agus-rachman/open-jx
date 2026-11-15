@@ -1,0 +1,100 @@
+entries:
+- id: gb-eaw.exec.deed-individual
+  applies_to:
+  - individual
+  - deed
+  observe: A deed by an individual makes clear on its face that it is intended to be a deed, is signed
+    in the presence of a witness who attests the signature (or at the individual's direction in the presence
+    of two witnesses), and is delivered; no seal is needed.
+  authority: Law of Property (Miscellaneous Provisions) Act 1989 s 1
+  source_url: https://www.legislation.gov.uk/ukpga/1989/34/section/1
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-eaw.exec.witness-presence
+  applies_to:
+  - individual
+  - company
+  - deed
+  - electronic
+  observe: A witness box is completed for a remote or electronic signing; the Law Commission's view is
+    that the witness is physically present when the signatory signs.
+  authority: Law Commission, Electronic execution of documents (Law Com No 386, 2019)
+  source_url: https://lawcom.gov.uk/project/electronic-execution-of-documents/
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb-eaw.exec.mercury
+  applies_to:
+  - deed
+  - electronic
+  - company
+  - individual
+  observe: Signature pages were signed separately from, or before, the final form of the document; record
+    how the pages were attached, especially for deeds and land contracts.
+  authority: R (Mercury Tax Group Ltd) v HMRC [2008] EWHC 2721 (Admin); Law Society and CLLS guidance
+    on virtual signings
+  source_url: https://caselaw.nationalarchives.gov.uk/
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Reviewer to confirm the current Law Society practice note
+- id: gb-eaw.exec.land-contract
+  applies_to:
+  - individual
+  - company
+  observe: A contract for the sale or other disposition of an interest in land is in writing, incorporates
+    all expressly agreed terms in one document (or in each exchanged part) and is signed by or on behalf
+    of each party.
+  authority: Law of Property (Miscellaneous Provisions) Act 1989 s 2
+  source_url: https://www.legislation.gov.uk/ukpga/1989/34/section/2
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-eaw.exec.land-deed
+  applies_to:
+  - deed
+  - electronic
+  observe: A conveyance of a legal estate in land is made by deed; HM Land Registry sets its own requirements
+    for witnessed electronic signatures.
+  authority: Law of Property Act 1925 s 52; HM Land Registry Practice Guide 8
+  source_url: https://www.gov.uk/government/organisations/land-registry
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk
+- id: gb-eaw.exec.guarantee
+  applies_to:
+  - individual
+  - company
+  observe: A guarantee is in writing, or evidenced by a written note or memorandum, signed by the guarantor
+    or an authorised agent.
+  authority: Statute of Frauds 1677 s 4
+  source_url: https://www.legislation.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-eaw.exec.poa
+  applies_to:
+  - attorney
+  - deed
+  observe: A power of attorney is executed as a deed by the donor; a lasting power of attorney is in the
+    prescribed form and registered before use.
+  authority: Powers of Attorney Act 1971 s 1; Mental Capacity Act 2005 ss 9-10 and sch 1
+  source_url: https://www.legislation.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk
+- id: gb-eaw.exec.corporation-aggregate
+  applies_to:
+  - association
+  - deed
+  observe: A corporation that is not a Companies Act company (for example a statutory or chartered body)
+    executes a deed under its seal attested as the Act describes, or as its constitution provides.
+  authority: Law of Property Act 1925 s 74
+  source_url: https://www.legislation.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk

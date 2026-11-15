@@ -12,3 +12,5 @@
 /packs/nz/            @agus-rachman
 /packs/sg/            @agus-rachman
 /packs/hk/            @agus-rachman
+/packs/gb/            @agus-rachman
+/packs/gb-*/          @agus-rachman

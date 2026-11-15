@@ -1,0 +1,73 @@
+business_day:
+- id: gb-sct.cal.bd-contract
+  observe: A business-day definition refers to London banks only; Scottish bank holidays differ (2 January,
+    the first Monday in August, St Andrew's Day; Easter Monday is not one), so record which place the
+    definition names.
+  authority: Banking and Financial Dealings Act 1971 sch 1 para 2
+  source_url: https://www.gov.uk/bank-holidays
+  status: guidance
+  verified: null
+  verified_by: null
+time_computation:
+- id: gb-sct.cal.court-rules
+  observe: Time in Court of Session and sheriff court proceedings is counted under the Rules of the Court
+    of Session 1994 and the sheriff court rules.
+  authority: Act of Sederunt (Rules of the Court of Session 1994) 1994, SI 1994/1443
+  source_url: https://www.scotcourts.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Rule numbers to be confirmed; no Scottish court-rule table is installed
+holidays:
+- id: gb-sct.cal.holidays
+  observe: 'Bank holidays in Scotland: 1 and 2 January, Good Friday, the early May and spring bank holidays,
+    the first Monday in August, St Andrew''s Day (30 November), Christmas Day and Boxing Day; local holidays
+    are set by councils and are not bank holidays.'
+  authority: Banking and Financial Dealings Act 1971 sch 1 para 2; St Andrew's Day Bank Holiday (Scotland)
+    Act 2007
+  source_url: https://www.gov.uk/bank-holidays
+  status: in-force
+  verified: null
+  verified_by: null
+limitation:
+- id: gb-sct.cal.prescription-short
+  observe: 'Candidate period: obligations under contract and to make reparation (delict) are extinguished
+    after 5 years (short negative prescription).'
+  authority: Prescription and Limitation (Scotland) Act 1973 s 6 and sch 1
+  source_url: https://www.legislation.gov.uk/ukpga/1973/52/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Candidate only. The Prescription (Scotland) Act 2018 changed the start date and added standstill
+    agreements; commencement to be confirmed
+- id: gb-sct.cal.prescription-long
+  observe: 'Long negative prescription: 20 years.'
+  authority: Prescription and Limitation (Scotland) Act 1973 s 7
+  source_url: https://www.legislation.gov.uk/ukpga/1973/52/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-sct.cal.limitation-pi
+  observe: 'Personal injury actions: 3 years, with a discretion to allow a late action.'
+  authority: Prescription and Limitation (Scotland) Act 1973 ss 17 and 19A
+  source_url: https://www.legislation.gov.uk/ukpga/1973/52/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-sct.cal.limitation-defamation
+  observe: 'Defamation: 1 year from first publication to the public.'
+  authority: Prescription and Limitation (Scotland) Act 1973 s 18A; Defamation and Malicious Publication
+    (Scotland) Act 2021 s 32
+  source_url: https://www.legislation.gov.uk/ukpga/1973/52/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk
+- id: gb-sct.cal.prescription-vs-limitation
+  observe: Prescription extinguishes the obligation; limitation bars the action. Record which the document
+    or question concerns, never resolve it.
+  authority: Prescription and Limitation (Scotland) Act 1973 pts I and II
+  source_url: https://www.legislation.gov.uk/ukpga/1973/52/contents
+  status: guidance
+  verified: null
+  verified_by: null

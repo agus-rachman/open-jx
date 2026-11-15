@@ -1,0 +1,25 @@
+personal:
+- id: gb-nir.id.hcn
+  name: Health and Care Number (H&C number)
+  pattern_hint: 10 digits; near 'H&C number' or 'health and care number'
+  authority: Health and Social Care Northern Ireland
+  source_url: https://www.nidirect.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-nir.id.driving-licence
+  name: Northern Ireland driving licence number
+  pattern_hint: 8 digits; near 'driving licence' or 'driver number'
+  authority: Road Traffic (Northern Ireland) Order 1981; DVA
+  source_url: https://www.nidirect.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Pattern to be confirmed
+organisational:
+- id: gb-nir.org.charity
+  name: Northern Ireland charity number
+  format: NIC + 6 digits, e.g. NIC100123
+  authority: Charities Act (Northern Ireland) 2008
+  source_url: https://www.charitycommissionni.org.uk/
+privacy_context: []

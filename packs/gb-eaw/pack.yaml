@@ -1,0 +1,55 @@
+# Draft seed pack (open-jx 0.1.3, compiled 15 November 2026).
+# Every legal entry must be verified by a suitably qualified reviewer before status changes.
+id: gb-eaw
+name: England and Wales
+country: GB
+parent: gb
+level: region
+locale: en-GB
+legal_system: common law
+version: 0.1.0
+status: draft
+maintainers:
+- '@agus-rachman'
+last_reviewed: null
+law_checked_as_at: null
+detection:
+  names:
+  - England and Wales
+  - England
+  - Wales
+  - English law
+  - English
+  - Welsh
+  governing_law_patterns:
+  - laws of England and Wales
+  - English law
+  - laws of England
+  - law of England and Wales
+  - courts of England and Wales
+  - English courts
+  courts:
+  - Court of Appeal (Civil Division)
+  - Court of Appeal (Criminal Division)
+  - High Court of Justice
+  - King's Bench Division
+  - Chancery Division
+  - Business and Property Courts
+  - Commercial Court
+  - Technology and Construction Court
+  - Administrative Court
+  - County Court
+  - Crown Court
+  - Family Court
+  - Court of Protection
+  identifiers:
+  - company number of 8 digits ('registered in England and Wales')
+  - OC-prefixed LLP number
+  other_signals:
+  - London
+  - '''registered in England and Wales'''
+  - CPR or Practice Direction references
+  - HM Land Registry title number
+  - '''executed as a deed'''
+  note: Welsh legislation made by Senedd Cymru applies in Wales only and is published in English and Welsh,
+    which have equal standing.

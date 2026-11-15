@@ -17,6 +17,7 @@ TFN = "123 456 782"
 IRD = "049-091-850"
 MEDICARE = "2953 71840 1"
 NRIC = "S9812381D"  # fictional, Singapore NRIC format
+NINO = "QQ 12 34 56 C"  # fictional: QQ is never issued as a National Insurance prefix
 HKID = "K394821(8)"  # fictional, HKID format with a valid check digit
 
 
@@ -303,6 +304,56 @@ def build():
         ("h", "Execution"),
         "Signed for Victoria Harbour Data Limited by its director: ______________",
         "Signed for Tsim Sha Tsui Systems Limited by its directors: ______________  ______________",
+    ])
+
+    # 16-uk-a. English company deed: one director, blank witness box, company number mismatch.
+    doc("eaw_company_deed.docx", "Deed of Undertaking", [
+        "This deed is made on [●] 2026 by Thames Wharf Data Ltd (company number 01234567), registered in England and Wales (the Company), in favour of Severn Bridge Analytics Ltd (company number 07654321).",
+        ("h", "1. Undertaking"),
+        "1.1 The Company undertakes not to solicit the Beneficiary's customers for 12 months.",
+        ("h", "9. Governing law"),
+        "9.1 This deed is governed by the laws of England and Wales and the parties submit to the exclusive jurisdiction of the courts of England and Wales.",
+        ("h", "Execution"),
+        "EXECUTED as a deed by Thames Wharf Data Ltd (company number 01234568) acting by a director in the presence of a witness:",
+        "Signature of director: ______________  Name of director: Eleanor Whitcombe",
+        "Signature of witness: ______________  Name of witness: ______________  Address: ______________",
+    ])
+
+    # 16-uk-b. English individual deed of guarantee: no witness provision; NI number in a schedule.
+    doc("eaw_individual_deed.docx", "Deed of Guarantee", [
+        "This deed is made on [●] 2026 by Thomas Ashdown of 4 Mill Lane, Bristol (the Guarantor) in favour of Avon Gorge Finance Ltd (company number 02345678) (the Lender).",
+        ("h", "1. Guarantee"),
+        "1.1 The Guarantor guarantees the obligations of Cotswold Home Living Ltd (company number 03456789) to the Lender.",
+        ("h", "8. Governing law"),
+        "8.1 This deed is governed by English law.",
+        ("h", "Schedule 1 — Guarantor details"),
+        ("table", [["Name", "National Insurance number"], ["Thomas Ashdown", NINO]]),
+        ("h", "Execution"),
+        "EXECUTED as a deed by the Guarantor:",
+        "Signature: ______________  Name: Thomas Ashdown",
+    ])
+
+    # 16-uk-c. Scottish services agreement: English deed wording, one director, no witness, London business days.
+    doc("sct_services_agreement.docx", "Services Agreement", [
+        "Parties: Forth Bridge Systems Limited (company number SC123456), registered in Scotland, and Clyde Valley Analytics Limited (company number SC654321).",
+        "1.1 Business Day means a day other than a Saturday, Sunday or public holiday when banks in London are open for business.",
+        "5.2 The Customer must pay each invoice within 10 Business Days after receipt.",
+        "18.1 This agreement is governed by Scots law and the parties submit to the exclusive jurisdiction of the Scottish courts.",
+        ("h", "Execution"),
+        "EXECUTED as a deed by Forth Bridge Systems Limited: Director ______________  at ______________ on ______________",
+        "Subscribed for Clyde Valley Analytics Limited: Director ______________  Name: [●]",
+    ])
+
+    # 16-uk-d. Northern Ireland individual deed with sealing wording and no witness.
+    doc("nir_individual_deed.docx", "Deed of Guarantee", [
+        "This deed is made on [●] 2026 by Siobhan McAllister of Belfast (the Guarantor) in favour of Lagan Quay Credit Limited (company number NI123456) (the Lender).",
+        ("h", "1. Guarantee"),
+        "1.1 The Guarantor guarantees the obligations of Mourne Home Living Limited (company number NI654321) to the Lender.",
+        ("h", "8. Governing law"),
+        "8.1 This deed is governed by the laws of Northern Ireland.",
+        ("h", "Execution"),
+        "SIGNED, SEALED AND DELIVERED by the Guarantor:",
+        "Signature: ______________  Name: Siobhan McAllister",
     ])
 
     # 16a. Singapore company deed: one director, empty witness box, UEN mismatch.

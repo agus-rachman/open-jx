@@ -1,0 +1,66 @@
+publishers:
+- id: gb.case.uksc
+  court_ids:
+  - UKSC
+  court: Supreme Court of the United Kingdom
+  publisher: The Supreme Court
+  url: https://www.supremecourt.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Also on Find Case Law.
+- id: gb.case.ukpc
+  court_ids:
+  - UKPC
+  court: Judicial Committee of the Privy Council
+  publisher: JCPC
+  url: https://www.jcpc.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb.case.ukhl
+  court_ids:
+  - UKHL
+  court: House of Lords (to 2009)
+  publisher: BAILII
+  url: https://www.bailii.org/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Historic court; official text is on the UK Parliament site.
+- id: gb.case.tribunals
+  court_ids:
+  - UKUT
+  - UKFTT
+  - EAT
+  - UKEAT
+  - UKET
+  - CAT
+  court: Upper Tribunal, First-tier Tribunal, Employment Appeal Tribunal and other UK tribunals
+  publisher: Find Case Law
+  url: https://caselaw.nationalarchives.gov.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+  note: The chamber follows the number in brackets, for example [2024] UKUT 123 (IAC). Coverage varies
+    by tribunal.
+report_series:
+- series: AC
+  name: Law Reports, Appeal Cases
+  resolve_via: gb.case.uksc
+- series: WLR
+  name: Weekly Law Reports
+  resolve_via: gb.case.uksc
+- series: AllER
+  name: All England Law Reports
+  resolve_via: gb.case.uksc
+- series: BCLC
+  name: Butterworths Company Law Cases
+  resolve_via: gb.case.uksc
+- series: ICR
+  name: Industrial Cases Reports
+  resolve_via: gb.case.tribunals

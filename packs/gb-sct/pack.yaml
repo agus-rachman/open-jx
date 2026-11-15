@@ -1,0 +1,50 @@
+# Draft seed pack (open-jx 0.1.3, compiled 15 November 2026).
+# Every legal entry must be verified by a suitably qualified reviewer before status changes.
+id: gb-sct
+name: Scotland
+country: GB
+parent: gb
+level: region
+locale: en-GB
+legal_system: mixed (civilian and common law)
+version: 0.1.0
+status: draft
+maintainers:
+- '@agus-rachman'
+last_reviewed: null
+law_checked_as_at: null
+detection:
+  names:
+  - Scotland
+  - Scottish
+  - Scots law
+  governing_law_patterns:
+  - laws of Scotland
+  - Scots law
+  - law of Scotland
+  - Scottish courts
+  - courts of Scotland
+  courts:
+  - Court of Session
+  - Outer House
+  - Inner House
+  - High Court of Justiciary
+  - Sheriff Appeal Court
+  - Sheriff Court
+  - Scottish Land Court
+  - Lands Tribunal for Scotland
+  identifiers:
+  - SC-prefixed company number
+  - SO-prefixed LLP number
+  - Scottish charity number (SC0...)
+  other_signals:
+  - Edinburgh
+  - Glasgow
+  - '''registered in Scotland'''
+  - testing clause
+  - '''IN WITNESS WHEREOF these presents'''
+  - missives
+  - pursuer / defender
+  - LBTT
+  note: 'Scots law of contract, property and execution differs from English law: there are no English-style
+    deeds and no doctrine of consideration.'

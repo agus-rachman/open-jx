@@ -1,0 +1,38 @@
+business_day:
+- id: gb.cal.bd-contract
+  observe: No statutory default for 'business day' in contracts; agreements usually refer to days (other
+    than Saturdays, Sundays and public holidays) on which banks in London (or Edinburgh or Belfast) are
+    open.
+  authority: Contract construction (no statutory default)
+  source_url: https://www.legislation.gov.uk/
+  status: guidance
+  verified: null
+  verified_by: null
+time_computation:
+- id: gb.cal.no-general-rule
+  observe: There is no single UK statutory rule for counting time in contracts; court rules and the law
+    of each of the three jurisdictions apply. Load gb-eaw, gb-sct or gb-nir.
+  authority: Interpretation Act 1978 (no general time-computation provision)
+  source_url: https://www.legislation.gov.uk/
+  status: guidance
+  verified: null
+  verified_by: null
+holidays:
+- id: gb.cal.bank-holidays
+  observe: Bank holidays differ between England and Wales, Scotland and Northern Ireland; some are set
+    by the Schedule and others by royal proclamation each year.
+  authority: Banking and Financial Dealings Act 1971 s 1 and sch 1
+  source_url: https://www.gov.uk/bank-holidays
+  status: in-force
+  verified: null
+  verified_by: null
+limitation:
+- id: gb.cal.limitation-split
+  observe: Limitation (England and Wales, Northern Ireland) and prescription (Scotland) are separate regimes
+    with different periods; identify which of the three applies before naming a period.
+  authority: Limitation Act 1980; Prescription and Limitation (Scotland) Act 1973; Limitation (Northern
+    Ireland) Order 1989
+  source_url: https://www.legislation.gov.uk/
+  status: guidance
+  verified: null
+  verified_by: null

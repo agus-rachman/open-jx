@@ -3,7 +3,7 @@
 Adapted for open-jx from l0cka/legal-skills (commit 5bfb3d8),
 `plugins/legal-skills/references/point-in-time-method.md`. Copyright (c) 2026
 l0cka, MIT License (see THIRD-PARTY-NOTICES.md). Extended with New Zealand,
-Singapore and Hong Kong.
+Singapore, Hong Kong and the United Kingdom.
 
 Use this when a task relies on what a provision said on a particular date,
 or when the user asks you to check a citation to legislation.
@@ -27,6 +27,7 @@ consolidated text differently (`consolidated_term` in the pack):
 | New Zealand | legislation.govt.nz | version (as at date) |
 | Singapore | sso.agc.gov.sg | current version (as at date) |
 | Hong Kong | elegislation.gov.hk | version (as at date) |
+| United Kingdom (all three jurisdictions) | legislation.gov.uk | revised version (point in time); check the 'changes to legislation' banner |
 
 ## Steps
 
