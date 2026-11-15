@@ -284,11 +284,11 @@ cases:
       forbidden: ["049-091-850"]
       parity: markers
 
-  - id: HK-DEGRADE-01
-    title: Hong Kong agreement — no pack, original unchanged
-    jurisdictions: [hk]
+  - id: MY-DEGRADE-01
+    title: Malaysian agreement — no pack, original unchanged
+    jurisdictions: [my]
     original_skill: check-execution-readiness
-    fixtures: [hk_services_agreement.docx]
+    fixtures: [my_services_agreement.docx]
     prompt: Is this agreement ready to sign?
     expect:
       router: {no_pack: true}

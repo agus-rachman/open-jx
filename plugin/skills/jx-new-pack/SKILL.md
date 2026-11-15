@@ -2,7 +2,7 @@
 name: jx-new-pack
 description: >-
   Helps a contributor create a new open-jx jurisdiction pack (for example
-  Hong Kong, Malaysia, England and Wales, or a Canadian province) or extend an
+  Malaysia, India, England and Wales, or a Canadian province) or extend an
   existing one, producing schema-valid YAML files ready for a pull request. Use
   when the user asks to "add a jurisdiction to open-jx", "create a jurisdiction
   pack", "contribute a pack for <country>", or "update the NSW pack".

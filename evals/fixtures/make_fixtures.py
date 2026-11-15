@@ -257,7 +257,16 @@ def build():
         ("h", "Statement of claim filed 3 August 2026"), "High Court of New Zealand, Nelson Registry.",
     ])
 
-    # 16. Hong Kong services agreement (no pack).
+    # 15a. Malaysian services agreement (no pack).
+    doc("my_services_agreement.docx", "Services Agreement", [
+        "Parties: Klang Valley Data Sdn. Bhd. (Registration No. 202001012345) and Penang Analytics Sdn. Bhd. (Registration No. 201901054321).",
+        "18.1 This agreement is governed by the laws of Malaysia.",
+        ("h", "Execution"),
+        "Signed by Klang Valley Data Sdn. Bhd.: Director ______________",
+        "Signed by Penang Analytics Sdn. Bhd.: Director ______________  Name: [●]",
+    ])
+
+    # 16. Hong Kong services agreement.
     doc("hk_services_agreement.docx", "Services Agreement", [
         "Parties: Victoria Harbour Data Limited (CR No. 1234567) and Kowloon Analytics Limited (CR No. 7654321).",
         "18.1 This agreement is governed by the laws of the Hong Kong Special Administrative Region.",

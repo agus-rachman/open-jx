@@ -78,7 +78,7 @@ Detected from: governing-law clause, cl 22.1 · Overlays: jx-personal-identifier
 ```
 
 ```
-**Jurisdiction:** Hong Kong — no open-jx pack installed
+**Jurisdiction:** Malaysia — no open-jx pack installed
 Detected from: governing-law clause, cl 18 · Overlays: none (Legal for Cowork runs as shipped)
 ```
 
