@@ -4,6 +4,8 @@
 # Copyright (c) 2026 l0cka. Licensed under the MIT License; see THIRD-PARTY-NOTICES.md.
 # open-jx changes: tables are read from one combined file, references/deadline-tables.json
 # (built from packs/*/deadlines.yaml), and open-jx pack review status is added to warnings.
+# open-jx 0.1.2: holiday tables may declare contingent_closures (closures that cannot be
+# dated in advance, such as typhoon or rainstorm warnings); each is reported with the result.
 """Deterministic candidate-deadline computation from evidence-gated tables.
 
 The model never performs date arithmetic. This script is the only source of
@@ -128,6 +130,15 @@ class HolidayTable:
             for window in data.get("uncertain_windows", [])
         ]
         self.caveats = list(data.get("caveats", []))
+        self.contingent_closures = list(data.get("contingent_closures", []))
+
+    def closure_warnings(self) -> list[str]:
+        return [
+            f"Contingent closure ({c.get('id')}): if {c.get('trigger')} on a counted or last day, "
+            f"{c.get('effect')} ({c.get('authority')}). The table cannot know this in advance; "
+            "confirm the day was not affected before reliance."
+            for c in self.contingent_closures
+        ]
 
     def check_usable(self, date: dt.date) -> None:
         if not self.cover_from <= date <= self.cover_to:
@@ -269,6 +280,7 @@ def compute(request: dict, tables: dict) -> dict:
                 raise Refusal(f"holiday table {table['holiday_table']!r} is not installed")
             holiday_table = HolidayTable(holiday_data)
             warnings.extend(holiday_table.caveats)
+            warnings.extend(holiday_table.closure_warnings())
 
         if unit == "business_days":
             if holiday_table is None:
@@ -294,6 +306,7 @@ def compute(request: dict, tables: dict) -> dict:
             "candidate_day": deadline.strftime("%A"),
             "provisions_applied": [rule.get("citation"), *applied],
             "holiday_table": holiday_table.table_id if holiday_table else None,
+            "contingent_closures": [c.get("id") for c in holiday_table.contingent_closures] if holiday_table else [],
             "warnings": warnings,
         }
     except Refusal as refusal:

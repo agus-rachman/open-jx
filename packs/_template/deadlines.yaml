@@ -14,6 +14,9 @@ holiday_table: null
 #  holidays: ["2026-01-01", "2026-12-25"]
 #  uncertain_windows: []
 #  caveats: []
+#  contingent_closures: []   # closures that cannot be dated in advance, e.g.
+#    - {id: xx.closure.storm, trigger: "a storm warning is in force", effect: "the registry closes",
+#       authority: "Example Courts Act s 1", source_url: "https://example.gov/", status: in-force}
 court_rules: []
 #  - table_id: xx-courts
 #    jurisdiction: XX

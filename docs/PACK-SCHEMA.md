@@ -83,13 +83,30 @@ Entries adapted from another project carry a `provenance` block:
 `compute_deadline.py` reads it:
 
 - A holiday table: `table_id`, `coverage`, `holidays`, `uncertain_windows`,
-  `caveats` and `evidence.state`.
+  `caveats`, optional `contingent_closures` and `evidence.state`.
 - Rule tables: `computation_provisions` and `period_rules`, each with
   `evidence.state`.
 
 The script computes only when the rule, every provision it applies and the
 holiday table are `verified`, and the dates fall inside coverage and outside
 uncertain windows. Otherwise it returns `identify_only`.
+
+`contingent_closures` lists closures that cannot be dated in advance, such as
+Hong Kong's typhoon signal No. 8 and black rainstorm warning. Each item has
+`id`, `trigger`, `effect`, `authority`, `source_url`, `status` and an optional
+`note`. The script does not change the date for them; it adds a warning for
+each one to every result that uses the table, and lists their ids in
+`contingent_closures`.
+
+```yaml
+contingent_closures:
+  - id: xx.closure.storm
+    trigger: a storm warning is in force during registry hours
+    effect: the registry closes and the governing rule may extend the time
+    authority: Example Courts Act s 1
+    source_url: https://example.gov/legislation/
+    status: in-force
+```
 
 ## Courts AI entries
 

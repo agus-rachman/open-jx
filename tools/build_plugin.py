@@ -150,6 +150,8 @@ def compile_pack(pid: str, files: dict) -> str:
                 out.append(f"  Uncertain window {w['from']} to {w['to']}: {w.get('reason', '')}")
             for c in h.get("caveats", []):
                 out.append(f"  Caveat: {c}")
+            for c in h.get("contingent_closures", []):
+                out.append(f"  Contingent closure `{c['id']}`: {c['trigger']} — {c['effect']} ({c['authority']}; {c['status']}). {c.get('note', '')}".rstrip())
         for t in dl.get("court_rules", []):
             out.append(f"- **Rule table `{t['table_id']}`** — {', '.join(t['forums'])}; holidays: `{t.get('holiday_table')}`. {t.get('note', '')}")
             for pr in t.get("computation_provisions", []):

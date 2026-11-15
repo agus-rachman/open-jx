@@ -5,6 +5,7 @@
 import json
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -51,6 +52,38 @@ class DeadlineScript(unittest.TestCase):
     def test_fail_closed_in_uncertain_window(self):
         r = compute("act-courts", "act-cpr-noir-or-defence-after-service", "2026-12-01")
         self.assertEqual(r["status"], "identify_only")
+
+    def test_contingent_closures_reported(self):
+        evidence = {"state": "verified", "checked": "2026-01-01"}
+        tables = {
+            "holidays": {"xx": {
+                "table_id": "xx", "source_url": "https://example.gov/", "checked": "2026-01-01",
+                "evidence": evidence, "coverage": {"from": "2026-01-01", "to": "2026-12-31"},
+                "holidays": ["2026-12-25"], "uncertain_windows": [], "caveats": [],
+                "contingent_closures": [{"id": "xx.closure.storm", "trigger": "a storm warning is in force",
+                                         "effect": "the registry closes", "authority": "Example Act s 1",
+                                         "source_url": "https://example.gov/", "status": "in-force"}]}},
+            "computation_rules": {"xx-courts": {
+                "table_id": "xx-courts", "jurisdiction": "XX", "forums": ["Example Court"], "holiday_table": "xx",
+                "computation_provisions": [],
+                "period_rules": [{"id": "xx-defence", "label": "Defence", "citation": "r 1", "evidence": evidence,
+                                  "period": {"length": 14, "unit": "calendar_days"}, "rollover": "next_business_day"}]}},
+            "open_jx_review": {},
+        }
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump(tables, f)
+        req = json.dumps({"table_id": "xx-courts", "period_rule_id": "xx-defence", "trigger_date": "2026-12-11",
+                          "tables_file": f.name})
+        out = subprocess.run([sys.executable, str(COMPUTE)], input=req, capture_output=True, text=True, check=True)
+        r = json.loads(out.stdout)
+        Path(f.name).unlink()
+        self.assertEqual((r["status"], r["candidate_date"]), ("computed", "2026-12-28"))
+        self.assertEqual(r["contingent_closures"], ["xx.closure.storm"])
+        self.assertTrue(any("xx.closure.storm" in w for w in r["warnings"]))
+
+    def test_no_contingent_closures_by_default(self):
+        r = compute("nsw-courts", "ucpr-defence-after-service", "2026-12-23")
+        self.assertEqual(r["contingent_closures"], [])
 
     def test_every_table_lists(self):
         out = subprocess.run([sys.executable, str(COMPUTE), "--list"], capture_output=True, text=True, check=True)

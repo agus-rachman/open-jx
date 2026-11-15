@@ -696,6 +696,47 @@
                     "type": "string",
                     "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
                   }
+                },
+                "contingent_closures": {
+                  "type": "array",
+                  "description": "Closures that cannot be dated in advance (for example a typhoon or rainstorm warning). The deadline script attaches each one to every result that uses this table.",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "trigger",
+                      "effect",
+                      "authority",
+                      "source_url",
+                      "status"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-z]{2}(-[a-z0-9]{1,3})?\\.[a-z-]+\\.[a-z0-9.-]+$"
+                      },
+                      "trigger": {
+                        "type": "string"
+                      },
+                      "effect": {
+                        "type": "string"
+                      },
+                      "authority": {
+                        "type": "string"
+                      },
+                      "source_url": {
+                        "type": "string",
+                        "format": "uri"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "note": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
                 }
               }
             }
