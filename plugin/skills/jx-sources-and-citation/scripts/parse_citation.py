@@ -5,7 +5,10 @@
 # open-jx changes: the court and report-series maps are read from
 # references/case-publishers.json (built from packs/*/case-law.yaml) and the route
 # names the official publisher rather than a verification skill. Court identifiers
-# may carry a bracketed suffix, e.g. SGHC(A) (open-jx 0.1.1).
+# may carry a bracketed suffix, e.g. SGHC(A) (open-jx 0.1.1). open-jx 0.1.3: court
+# identifiers may be two words (EWCA Civ, SC EDIN), a division after the number is
+# captured ([2025] EWHC 1383 (Admin)), and reports cited without a volume ([2024] AC 1)
+# or without brackets (2024 SLT 123) are recognised.
 """Parse a case citation and report the official publisher route.
 
 Offline helper: it parses citation text and maps the court identifier or
@@ -22,8 +25,11 @@ import sys
 from pathlib import Path
 
 NEUTRAL = re.compile(
-    r"\[(?P<year>1[89]\d\d|20\d\d)\]\s+(?P<court>(?:[A-Za-z][A-Za-z0-9]*[A-Za-z]|[A-Za-z]+)(?:\([A-Za-z]\))?)\s+(?P<number>\d+)"
+    r"\[(?P<year>1[89]\d\d|20\d\d)\]\s+(?P<court>(?:[A-Za-z][A-Za-z0-9]*[A-Za-z]|[A-Za-z]+)(?:\([A-Za-z]\))?(?:\s+[A-Za-z]+)?)\s+(?P<number>\d+)"
+    r"(?:\s+\((?P<division>[A-Za-z]+)\))?"
 )
+# Reports cited by year alone, without brackets or a volume (Scottish series such as SC, SLT, JC).
+BARE_YEAR = re.compile(r"(?<![\[(\d])\b(?P<year>1[89]\d\d|20\d\d)\s+(?P<series>[A-Z][A-Za-z]*)\s+(?P<page>\d+)\b")
 REPORTED = re.compile(
     r"[(\[](?P<year>1[89]\d\d|20\d\d)[)\]]\s+(?P<volume>\d+)\s+(?P<series>[A-Z][A-Za-z ]*?(?:\([A-Z]\))?)\s+(?P<page>\d+)"
 )
@@ -55,8 +61,25 @@ def parse(text: str, courts: dict | None = None, series_map: dict | None = None)
         courts, series_map = load_publishers()
     neutral = NEUTRAL.search(text)
     if neutral:
-        court_id = neutral.group("court").upper()
+        court_id = " ".join(neutral.group("court").upper().split())
         court = courts.get(court_id)
+        if court is None and court_id in series_map:
+            # A report series cited by year without a volume, e.g. [2024] AC 1.
+            series = series_map[court_id]
+            return {
+                "input": text.strip(),
+                "citation_type": "reported",
+                "year": matched_int(neutral, "year"),
+                "volume": None,
+                "series_id": neutral.group("court"),
+                "page": matched_int(neutral, "number"),
+                "series": series["name"],
+                "route": series["resolve_via"],
+                "note": (
+                    "reported citation: resolve to a medium-neutral citation at the "
+                    "official publisher before treating the decision as verified"
+                ),
+            }
         record: dict[str, object] = {
             "input": text.strip(),
             "citation_type": "medium-neutral",
@@ -64,6 +87,8 @@ def parse(text: str, courts: dict | None = None, series_map: dict | None = None)
             "court_id": neutral.group("court"),
             "number": matched_int(neutral, "number"),
         }
+        if neutral.group("division"):
+            record["division"] = neutral.group("division")
         if court is None:
             record["route"] = None
             record["note"] = f"unrecognised court identifier {court_id!r}"
@@ -103,6 +128,24 @@ def parse(text: str, courts: dict | None = None, series_map: dict | None = None)
             )
         return record
 
+    bare = BARE_YEAR.search(text)
+    if bare and bare.group("series").upper() in series_map:
+        series = series_map[bare.group("series").upper()]
+        return {
+            "input": text.strip(),
+            "citation_type": "reported",
+            "year": matched_int(bare, "year"),
+            "volume": None,
+            "series_id": bare.group("series"),
+            "page": matched_int(bare, "page"),
+            "series": series["name"],
+            "route": series["resolve_via"],
+            "note": (
+                "reported citation: resolve to a medium-neutral citation at the "
+                "official publisher before treating the decision as verified"
+            ),
+        }
+
     return {
         "input": text.strip(),
         "citation_type": "unknown",
@@ -114,8 +157,10 @@ def parse(text: str, courts: dict | None = None, series_map: dict | None = None)
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("citation", nargs="+", help="citation text, for example '[2023] HCA 12'")
+    parser.add_argument("--publishers", type=Path, default=PUBLISHERS_FILE,
+                        help="publisher map (default: references/case-publishers.json)")
     args = parser.parse_args()
-    courts, series_map = load_publishers()
+    courts, series_map = load_publishers(args.publishers)
     records = [parse(citation, courts, series_map) for citation in args.citation]
     json.dump(records if len(records) > 1 else records[0], sys.stdout, indent=2)
     sys.stdout.write("\n")
