@@ -36,7 +36,7 @@ in Microsoft Copilot Cowork:
 1. **Build and check the package.**
    ```
    python tools/build_plugin.py
-   python evals/check_package.py dist/open-jx-0.1.2.zip
+   python evals/check_package.py dist/open-jx-0.1.3.zip
    python evals/score.py lint
    ```
 2. **Install it for testers.** Share the zip with the tester group (see

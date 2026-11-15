@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Static checks on the built Copilot Cowork package (no tenant needed).
 
-    python evals/check_package.py dist/open-jx-0.1.2.zip
+    python evals/check_package.py dist/open-jx-0.1.3.zip
 
 Mirrors the published Copilot Cowork plugin rules (manifest v1.28 root keys,
 ASKILL-M001–M003, ASKILL-P001–P008, companion-file limits and path rules) and
