@@ -5,10 +5,10 @@ description: >-
   after the Legal for Cowork skill has answered: company signing methods,
   deeds, witnessing, electronic signing, company-number consistency, and
   statutory minutes and written-resolution checkpoints for Australia (each
-  state and territory), New Zealand and Singapore. Use after
+  state and territory), New Zealand, Singapore and Hong Kong. Use after
   check-execution-readiness, draft-new-contract, analyze-related-contracts or
-  draft-minutes-and-resolutions when an Australian, New Zealand or Singapore
-  pack is loaded, or when the user asks "does this meet NSW execution
+  draft-minutes-and-resolutions when an Australian, New Zealand, Singapore or
+  Hong Kong pack is loaded, or when the user asks "does this meet NSW execution
   requirements", "is the deed signed properly for NZ", "is this signed under
   section 41B" or "check the minutes against the Corporations Act".
 license: Apache-2.0
@@ -44,8 +44,8 @@ Work only from the supplied document and the pack entries under `execution` and
    its signature block with the pack's signing-method entries for that type
    (for example the two-director / director-and-secretary / sole-director
    methods in Australia, the director-signature and witness requirements in
-   New Zealand, or the s 41B methods and sealing for individuals' deeds in
-   Singapore). Report what the block shows and which entry it relates to.
+   New Zealand, the s 41B methods and sealing for individuals' deeds in
+   Singapore, or the Cap. 622 s 127 methods in Hong Kong). Report what the block shows and which entry it relates to.
 2. **Deed indications.** If the document calls itself a deed or uses "executed
    as a deed" or "signed, sealed and delivered", list the pack's deed entries
    for the governing jurisdiction (witnessing, sealing, delivery, electronic

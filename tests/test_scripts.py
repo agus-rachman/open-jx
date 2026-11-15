@@ -85,11 +85,17 @@ class DeadlineScript(unittest.TestCase):
         r = compute("nsw-courts", "ucpr-defence-after-service", "2026-12-23")
         self.assertEqual(r["contingent_closures"], [])
 
+    def test_hk_fails_closed_pending_verification(self):
+        r = compute("hk-courts", "hk-rhc-defence", "2026-11-02")
+        self.assertEqual(r["status"], "identify_only")
+        self.assertIn("pending-verification", r["reason"])
+        self.assertNotIn("candidate_date", r)
+
     def test_every_table_lists(self):
         out = subprocess.run([sys.executable, str(COMPUTE), "--list"], capture_output=True, text=True, check=True)
         tables = json.loads(out.stdout)
         for t in ("nsw-courts", "vic-courts", "qld-courts", "wa-courts", "sa-courts", "tas-courts", "act-courts",
-                  "nt-courts", "cth-federal-courts", "art", "ncat", "vcat", "qcat"):
+                  "nt-courts", "cth-federal-courts", "art", "ncat", "vcat", "qcat", "hk-courts"):
             self.assertIn(t, tables)
 
 
@@ -118,6 +124,14 @@ class CitationScript(unittest.TestCase):
         slr, slrr = parse("[2020] 2 SLR 1151", "[2005] 1 SLR(R) 1")
         self.assertEqual((slr["citation_type"], slr["route"]), ("reported", "sg.case.court-of-appeal"))
         self.assertEqual((slrr["citation_type"], slrr["route"]), ("reported", "sg.case.court-of-appeal"))
+
+    def test_hong_kong_routes(self):
+        cfi, ldt, cfar, hklrd = parse("[2026] HKCFI 123", "[2021] HKLdT 5", "(2020) 23 HKCFAR 1", "[2020] 1 HKLRD 1")
+        self.assertEqual((cfi["citation_type"], cfi["pack_entry"]), ("medium-neutral", "hk.case.cfi"))
+        self.assertEqual(cfi["route"], "https://legalref.judiciary.hk/")
+        self.assertEqual(ldt["pack_entry"], "hk.case.lower")
+        self.assertEqual((cfar["citation_type"], cfar["route"]), ("reported", "hk.case.cfa"))
+        self.assertEqual((hklrd["citation_type"], hklrd["route"]), ("reported", "hk.case.cfi"))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,124 @@
+business_day:
+- id: hk.cal.bd-contract
+  observe: No statutory default for 'business day' in contracts; agreements usually refer to days (other
+    than Saturdays, Sundays and general holidays) on which banks in Hong Kong are open.
+  authority: Contract construction (no statutory default)
+  source_url: https://www.elegislation.gov.hk/
+  status: guidance
+  verified: null
+  verified_by: null
+- id: hk.cal.bd-weather
+  observe: The business-day definition addresses tropical cyclone warning signal No. 8 or above, black
+    rainstorm warnings and 'extreme conditions' announcements; if it is silent, record the gap.
+  authority: Hong Kong contract practice
+  source_url: https://www.hko.gov.hk/
+  status: guidance
+  verified: null
+  verified_by: null
+time_computation:
+- id: hk.cal.igco-s71
+  observe: For periods in ordinances, the first day is excluded; where the last day falls on a general
+    holiday (and, after the 2016 amendment, possibly a gale warning or black rainstorm warning day), the
+    period runs to the next day that is not.
+  authority: Interpretation and General Clauses Ordinance (Cap. 1) s 71; Interpretation and General Clauses
+    (Amendment) Ordinance 2016 (Ord. No. 18 of 2016)
+  source_url: https://www.elegislation.gov.hk/hk/cap1
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Effect of the 2016 amendment on weather days to be confirmed
+- id: hk.cal.rhc-o3
+  observe: Time in High Court proceedings is counted under RHC O 3, which deals with periods ending on
+    days the Registry is closed.
+  authority: Rules of the High Court (Cap. 4A) O 3
+  source_url: https://www.elegislation.gov.hk/hk/cap4A
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.cal.gale-warnings
+  observe: Hearings and filings may be affected when a gale or rainstorm warning is in force.
+  authority: Judicial Proceedings (Adjournment During Gale Warnings) Ordinance (Cap. 62)
+  source_url: https://www.elegislation.gov.hk/hk/cap62
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+holidays:
+- id: hk.cal.general-holidays
+  observe: General holidays are every Sunday and the days in the Schedule to the General Holidays Ordinance,
+    with the dates published in the Gazette each year (substitutes where a holiday falls on a Sunday or
+    another holiday).
+  authority: General Holidays Ordinance (Cap. 149)
+  source_url: https://www.gov.hk/en/about/abouthk/holiday/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: hk.cal.statutory-holidays
+  observe: Statutory holidays for employees are a separate, shorter list from general holidays; banks
+    and courts follow general holidays.
+  authority: Employment Ordinance (Cap. 57) s 39
+  source_url: https://www.labour.gov.hk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+limitation:
+- id: hk.cal.limitation
+  observe: 'Candidate general limitation period for contract and tort claims: 6 years from accrual, subject
+    to the special rules below.'
+  authority: Limitation Ordinance (Cap. 347) s 4(1)
+  source_url: https://www.elegislation.gov.hk/hk/cap347
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Candidate only; the applicable period is a counsel decision
+- id: hk.cal.limitation-specialty
+  observe: 'Actions on a specialty (including a deed): 12 years.'
+  authority: Limitation Ordinance (Cap. 347) s 4(3)
+  source_url: https://www.elegislation.gov.hk/hk/cap347
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.cal.limitation-pi
+  observe: 'Personal injury: 3 years from accrual or from the date of knowledge.'
+  authority: Limitation Ordinance (Cap. 347) s 4A
+  source_url: https://www.elegislation.gov.hk/hk/cap347
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.cal.limitation-land
+  observe: 'Recovery of land: 12 years.'
+  authority: Limitation Ordinance (Cap. 347) s 7
+  source_url: https://www.elegislation.gov.hk/hk/cap347
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.cal.limitation-latent
+  observe: 'Latent damage in negligence (other than personal injury): special time limits with a longstop.'
+  authority: Limitation Ordinance (Cap. 347) pt IVA
+  source_url: https://www.elegislation.gov.hk/hk/cap347
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Sections and periods to be confirmed
+- id: hk.cal.limitation-defamation
+  observe: 'Defamation: whether a shorter special period applies is to be confirmed.'
+  authority: Limitation Ordinance (Cap. 347)
+  source_url: https://www.elegislation.gov.hk/hk/cap347
+  status: in-force
+  verified: null
+  verified_by: null
+  note: To be confirmed
+- id: hk.cal.limitation-postponement
+  observe: Disability, fraud, concealment, mistake and acknowledgment may postpone or extend a period;
+    record as flags, never resolve.
+  authority: Limitation Ordinance (Cap. 347) pt III
+  source_url: https://www.elegislation.gov.hk/hk/cap347
+  status: guidance
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation

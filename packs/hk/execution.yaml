@@ -1,0 +1,129 @@
+entries:
+- id: hk.exec.seal-optional
+  applies_to:
+  - company
+  observe: The company has no common seal or does not use one; keeping and using a seal is optional.
+  authority: Companies Ordinance (Cap. 622) s 124(1)
+  source_url: https://www.cr.gov.hk/en/companies_ordinance/faq_common_seal.htm
+  status: in-force
+  verified: null
+  verified_by: null
+- id: hk.exec.s127-signing
+  applies_to:
+  - company
+  observe: A company document is signed by its sole director (one-director company), or by two directors
+    or a director and the company secretary (two or more directors), and is expressed to be executed by
+    the company; alternatively it is executed under the common seal as the articles provide.
+  authority: Companies Ordinance (Cap. 622) s 127(1)-(3), (5)
+  source_url: https://www.cr.gov.hk/en/companies_ordinance/faq_common_seal.htm
+  status: in-force
+  verified: null
+  verified_by: null
+- id: hk.exec.s128-deed
+  applies_to:
+  - company
+  - deed
+  observe: A company deed executed without a seal is executed under s 127(3), expressed to be executed
+    by the company as a deed, and delivered as a deed.
+  authority: Companies Ordinance (Cap. 622) s 128(1)
+  source_url: https://www.cr.gov.hk/en/companies_ordinance/faq_common_seal.htm
+  status: in-force
+  verified: null
+  verified_by: null
+  note: A presumption of delivery on execution is described in commentary; section to be confirmed
+- id: hk.exec.s121-writing-under-seal
+  applies_to:
+  - company
+  observe: A contract that would need to be in writing under seal if made by an individual may be made
+    by the company in writing executed under s 127(3) and expressed to be executed by the company.
+  authority: Companies Ordinance (Cap. 622) s 121(2)(b)
+  source_url: https://www.cr.gov.hk/en/companies_ordinance/faq_common_seal.htm
+  status: in-force
+  verified: null
+  verified_by: null
+- id: hk.exec.deed-individual
+  applies_to:
+  - individual
+  - deed
+  observe: A deed by an individual shows signing, sealing and delivery; the CPO presumes sealing only
+    where the instrument describes itself as a deed, states that it has been sealed and bears a mark representing
+    a seal.
+  authority: Conveyancing and Property Ordinance (Cap. 219) ss 19-20
+  source_url: https://www.elegislation.gov.hk/hk/cap219
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Taken from commentary; reviewer to read ss 19-20 before relying on this entry
+- id: hk.exec.eto-schedule-1
+  applies_to:
+  - electronic
+  - deed
+  observe: The document is signed electronically and may fall within ETO Schedule 1 (wills and testamentary
+    documents, trusts, powers of attorney, instruments stampable under Cap. 117, Government leases, instruments
+    registrable in the Land Registry, Cap. 219 assignments, mortgages and charges, oaths and affidavits,
+    statutory declarations, judgments and orders, negotiable instruments).
+  authority: Electronic Transactions Ordinance (Cap. 553) s 3 and Sch 1
+  source_url: https://www.elegislation.gov.hk/hk/cap553
+  status: in-force
+  verified: null
+  verified_by: null
+  note: 'List taken from secondary sources; confirm the current Schedule 1 text. Whether a deed outside
+    Schedule 1 can be signed electronically is untested in the courts: record the question, give no view'
+- id: hk.exec.e-signature
+  applies_to:
+  - electronic
+  observe: An electronic signature is relied on for a requirement for a signature; the ETO distinguishes
+    electronic and digital signatures and transactions involving a government entity.
+  authority: Electronic Transactions Ordinance (Cap. 553) ss 6 and 6A
+  source_url: https://www.elegislation.gov.hk/hk/cap553
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.exec.witness-presence
+  applies_to:
+  - individual
+  - deed
+  - electronic
+  observe: Witness boxes are completed for a remote or electronic signing; physical presence of the witness
+    is usually assumed in practice.
+  authority: Practice commentary (no statutory rule identified)
+  source_url: https://www.elegislation.gov.hk/hk/cap553
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Reviewer to confirm
+- id: hk.exec.registrable-charge
+  applies_to:
+  - company
+  observe: A company charge that is registrable with the Companies Registry is usually executed in wet
+    ink because registrable documents are within ETO Schedule 1.
+  authority: Companies Ordinance (Cap. 622) pt 8; Cap. 553 Sch 1
+  source_url: https://www.cr.gov.hk/
+  status: guidance
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.exec.poa
+  applies_to:
+  - attorney
+  observe: The document is signed under a power of attorney; record the instrument relied on and whether
+    it is an enduring power.
+  authority: Powers of Attorney Ordinance (Cap. 31); Enduring Powers of Attorney Ordinance (Cap. 501)
+  source_url: https://www.elegislation.gov.hk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.exec.stamp-duty
+  applies_to:
+  - company
+  - individual
+  observe: The document may be chargeable with stamp duty (for example property or shares), within fixed
+    periods after execution.
+  authority: Stamp Duty Ordinance (Cap. 117)
+  source_url: https://www.ird.gov.hk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Periods to be confirmed. Whether duty is payable is a counsel decision

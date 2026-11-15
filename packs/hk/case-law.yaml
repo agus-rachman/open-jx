@@ -1,0 +1,57 @@
+publishers:
+- id: hk.case.cfa
+  court_ids:
+  - HKCFA
+  court: Court of Final Appeal
+  publisher: Judiciary Legal Reference System
+  url: https://legalref.judiciary.hk/
+  access: direct
+  note: Search by neutral citation.
+  status: guidance
+  verified: null
+  verified_by: null
+- id: hk.case.ca
+  court_ids:
+  - HKCA
+  court: Court of Appeal of the High Court
+  publisher: Judiciary Legal Reference System
+  url: https://legalref.judiciary.hk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+- id: hk.case.cfi
+  court_ids:
+  - HKCFI
+  court: Court of First Instance of the High Court
+  publisher: Judiciary Legal Reference System
+  url: https://legalref.judiciary.hk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+- id: hk.case.lower
+  court_ids:
+  - HKDC
+  - HKFC
+  - HKLdT
+  - HKLaT
+  court: District Court, Family Court, Lands Tribunal and Labour Tribunal
+  publisher: Judiciary Legal Reference System
+  url: https://legalref.judiciary.hk/
+  access: direct
+  note: Court codes other than HKDC and HKFC to be confirmed; publication of lower-court decisions is
+    selective.
+  status: guidance
+  verified: null
+  verified_by: null
+report_series:
+- series: HKCFAR
+  name: Hong Kong Court of Final Appeal Reports
+  resolve_via: hk.case.cfa
+- series: HKLRD
+  name: Hong Kong Law Reports and Digest
+  resolve_via: hk.case.cfi
+- series: HKC
+  name: Hong Kong Cases
+  resolve_via: hk.case.cfi

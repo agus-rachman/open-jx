@@ -53,3 +53,8 @@ prompts:
   - {id: T47, prompt: "Prepare a chronology for our SICC proceeding.", expect: [sg]}
   - {id: T48, prompt: "This agreement is governed by the laws of the Republic of Singapore. Any blanks left?", expect: [sg]}
   - {id: T49, prompt: "Check this SG contract for execution issues.", expect: ask}
+  - {id: T50, prompt: "Is this Hong Kong-law deed ready to sign?", expect: [hk]}
+  - {id: T51, prompt: "The supplier is Victoria Harbour Data Limited, CR No. 1234567. Check the signature blocks.", expect: [hk]}
+  - {id: T52, prompt: "Prepare a chronology for our Court of First Instance action HCA 1234/2026.", expect: [hk]}
+  - {id: T53, prompt: "This agreement is governed by the laws of the HKSAR. Any blanks left?", expect: [hk]}
+  - {id: T54, prompt: "Does this clause comply with section 127 of the Companies Ordinance (Cap. 622)?", expect: [hk]}
