@@ -59,7 +59,7 @@ compatibility rules.
 pip install pyyaml jsonschema pillow python-docx
 python tools/validate_packs.py          # check packs
 python tools/build_plugin.py            # build dist/open-jx-<version>.zip (+ a Claude plugin zip)
-python evals/check_package.py dist/open-jx-0.1.0.zip
+python evals/check_package.py dist/open-jx-0.1.2.zip
 python -m unittest discover -s tests     # bundled script tests
 ```
 
