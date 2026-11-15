@@ -1,0 +1,45 @@
+citation:
+  name: 'No official guide: university legal citation guides (OSCOLA-based)'
+  edition: current
+  publisher: CUHK and HKU law libraries
+  url: https://libguides.lib.cuhk.edu.hk/legal_citation/cases
+  note: Reviewer to confirm whether a Judiciary practice direction or a preferred guide applies to court
+    documents.
+rules:
+- id: hk.cite.legislation
+  example: Companies Ordinance (Cap. 622) s 127(3)
+  observe: Cite ordinances by short title and chapter number, then pinpoint; subsidiary legislation by
+    its own chapter (for example Cap. 4A).
+  authority: University citation guides; e-Legislation chapter numbering
+  source_url: https://libguides.lib.cuhk.edu.hk/legal_citation/cases
+  status: guidance
+  verified: null
+  verified_by: null
+- id: hk.cite.neutral
+  example: '[2026] HKCFI 123 (format only)'
+  observe: Cite judgments by neutral citation [year] court number (HKCFA, HKCA, HKCFI, HKDC, HKFC, HKLdT
+    and others).
+  authority: University citation guides; Judiciary neutral citation practice
+  source_url: https://libguides.lib.cuhk.edu.hk/legal_citation/cases
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Full list of court codes and start dates to be confirmed
+- id: hk.cite.reports
+  example: (2020) 23 HKCFAR 1; [2020] 1 HKLRD 1 (format only)
+  observe: 'Reported cases: Hong Kong Court of Final Appeal Reports (HKCFAR, round brackets), Hong Kong
+    Law Reports and Digest (HKLRD) and Hong Kong Cases (HKC) (square brackets).'
+  authority: University citation guides
+  source_url: https://libguides.lib.cuhk.edu.hk/legal_citation/cases
+  status: guidance
+  verified: null
+  verified_by: null
+- id: hk.cite.bilingual
+  observe: A provision may be cited in English or Chinese; where the two texts appear to differ, record
+    the difference rather than choose between them.
+  authority: Interpretation and General Clauses Ordinance (Cap. 1) s 10B
+  source_url: https://www.elegislation.gov.hk/hk/cap1
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation

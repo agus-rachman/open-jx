@@ -1,0 +1,24 @@
+spelling: en-HK
+terms:
+- use: Ordinance (Cap. number)
+  instead_of: Act
+  note: Hong Kong primary legislation; Acts are UK or Mainland statutes.
+- use: Limited
+  instead_of: Pty Ltd / Pte. Ltd. / Inc
+  note: Companies under the Companies Ordinance (Cap. 622).
+- use: solicitor / barrister
+  instead_of: lawyer (where the role matters) / attorney
+  note: Split profession under the Legal Practitioners Ordinance (Cap. 159).
+- use: Court of First Instance (of the High Court)
+  instead_of: High Court (alone, when the level matters)
+  note: The High Court comprises the Court of Appeal and the Court of First Instance.
+- use: general holiday
+  instead_of: public holiday / bank holiday
+  note: General Holidays Ordinance (Cap. 149); statutory holidays under the Employment Ordinance are a
+    different list.
+- use: HKSAR
+  instead_of: Hong Kong, China (in legal instruments)
+  note: Usual short form in governing-law clauses.
+- use: Lands Tribunal / Labour Tribunal
+  instead_of: ''
+  note: Different tribunals with similar names; check the neutral-citation code.

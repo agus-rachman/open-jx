@@ -1,0 +1,64 @@
+sources:
+- id: hk.src.elegislation
+  name: Hong Kong e-Legislation (Department of Justice)
+  url: https://www.elegislation.gov.hk/
+  type: legislation
+  rank: 1
+  consolidated_term: version (as at date)
+  note: Verified copies and past versions. Ordinances are cited by chapter ('Cap.') number. English and
+    Chinese texts are equally authentic. Reviewer to confirm the point-in-time label.
+- id: hk.src.lrs
+  name: Judiciary Legal Reference System
+  url: https://legalref.judiciary.hk/
+  type: case-law
+  rank: 1
+  note: Official judgments of the Hong Kong courts, searchable by neutral citation.
+- id: hk.src.hklii
+  name: Hong Kong Legal Information Institute (HKLII)
+  url: https://www.hklii.hk/
+  type: case-law
+  rank: 2
+  note: Free legislation and judgments (secondary).
+- id: hk.src.judiciary
+  name: Hong Kong Judiciary — practice directions
+  url: https://www.judiciary.hk/
+  type: court
+  rank: 1
+- id: hk.src.cr
+  name: Companies Registry
+  url: https://www.cr.gov.hk/
+  type: register
+  rank: 1
+  note: Companies, CR numbers, e-Registry.
+- id: hk.src.ird
+  name: Inland Revenue Department (Business Registration Office, Stamp Office)
+  url: https://www.ird.gov.hk/
+  type: register
+  rank: 1
+  note: BR numbers and stamp duty.
+- id: hk.src.landreg
+  name: Land Registry
+  url: https://www.landreg.gov.hk/
+  type: register
+  rank: 1
+- id: hk.src.pcpd
+  name: Office of the Privacy Commissioner for Personal Data (PCPD)
+  url: https://www.pcpd.org.hk/
+  type: regulator
+  rank: 1
+- id: hk.src.sfc
+  name: Securities and Futures Commission
+  url: https://www.sfc.hk/
+  type: regulator
+  rank: 1
+- id: hk.src.hkma
+  name: Hong Kong Monetary Authority
+  url: https://www.hkma.gov.hk/
+  type: regulator
+  rank: 1
+- id: hk.src.lawsoc
+  name: The Law Society of Hong Kong
+  url: https://www.hklawsoc.org.hk/
+  type: secondary
+  rank: 2
+  note: Professional guidance for solicitors.

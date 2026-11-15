@@ -1,0 +1,53 @@
+entries:
+- id: hk.gov.board-minutes
+  applies_to:
+  - company-board
+  observe: Minutes of directors' meetings are recorded and kept, and directors' written resolutions are
+    recorded.
+  authority: Companies Ordinance (Cap. 622) s 481
+  source_url: https://www.elegislation.gov.hk/hk/cap622
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.gov.written-resolution-members
+  applies_to:
+  - company-members
+  observe: A members' written resolution of a private company records the circulation date, the required
+    majority and the period within which it lapses.
+  authority: Companies Ordinance (Cap. 622) pt 12 div 1 (from s 547)
+  source_url: https://www.elegislation.gov.hk/hk/cap622
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.gov.records
+  applies_to:
+  - company-members
+  observe: Records of members' resolutions and meetings are kept for the period required by the Ordinance.
+  authority: Companies Ordinance (Cap. 622) s 618
+  source_url: https://www.elegislation.gov.hk/hk/cap622
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.gov.agm
+  applies_to:
+  - company-members
+  observe: The company holds an AGM, or the minutes or resolutions show how it was dispensed with.
+  authority: Companies Ordinance (Cap. 622) ss 610-612
+  source_url: https://www.elegislation.gov.hk/hk/cap622
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.gov.directors-interests
+  applies_to:
+  - company-board
+  observe: A director's material interest in a transaction is declared to the board and recorded.
+  authority: Companies Ordinance (Cap. 622) s 536
+  source_url: https://www.elegislation.gov.hk/hk/cap622
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation

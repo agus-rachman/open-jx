@@ -5,6 +5,7 @@
 import json
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -52,11 +53,49 @@ class DeadlineScript(unittest.TestCase):
         r = compute("act-courts", "act-cpr-noir-or-defence-after-service", "2026-12-01")
         self.assertEqual(r["status"], "identify_only")
 
+    def test_contingent_closures_reported(self):
+        evidence = {"state": "verified", "checked": "2026-01-01"}
+        tables = {
+            "holidays": {"xx": {
+                "table_id": "xx", "source_url": "https://example.gov/", "checked": "2026-01-01",
+                "evidence": evidence, "coverage": {"from": "2026-01-01", "to": "2026-12-31"},
+                "holidays": ["2026-12-25"], "uncertain_windows": [], "caveats": [],
+                "contingent_closures": [{"id": "xx.closure.storm", "trigger": "a storm warning is in force",
+                                         "effect": "the registry closes", "authority": "Example Act s 1",
+                                         "source_url": "https://example.gov/", "status": "in-force"}]}},
+            "computation_rules": {"xx-courts": {
+                "table_id": "xx-courts", "jurisdiction": "XX", "forums": ["Example Court"], "holiday_table": "xx",
+                "computation_provisions": [],
+                "period_rules": [{"id": "xx-defence", "label": "Defence", "citation": "r 1", "evidence": evidence,
+                                  "period": {"length": 14, "unit": "calendar_days"}, "rollover": "next_business_day"}]}},
+            "open_jx_review": {},
+        }
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump(tables, f)
+        req = json.dumps({"table_id": "xx-courts", "period_rule_id": "xx-defence", "trigger_date": "2026-12-11",
+                          "tables_file": f.name})
+        out = subprocess.run([sys.executable, str(COMPUTE)], input=req, capture_output=True, text=True, check=True)
+        r = json.loads(out.stdout)
+        Path(f.name).unlink()
+        self.assertEqual((r["status"], r["candidate_date"]), ("computed", "2026-12-28"))
+        self.assertEqual(r["contingent_closures"], ["xx.closure.storm"])
+        self.assertTrue(any("xx.closure.storm" in w for w in r["warnings"]))
+
+    def test_no_contingent_closures_by_default(self):
+        r = compute("nsw-courts", "ucpr-defence-after-service", "2026-12-23")
+        self.assertEqual(r["contingent_closures"], [])
+
+    def test_hk_fails_closed_pending_verification(self):
+        r = compute("hk-courts", "hk-rhc-defence", "2026-11-02")
+        self.assertEqual(r["status"], "identify_only")
+        self.assertIn("pending-verification", r["reason"])
+        self.assertNotIn("candidate_date", r)
+
     def test_every_table_lists(self):
         out = subprocess.run([sys.executable, str(COMPUTE), "--list"], capture_output=True, text=True, check=True)
         tables = json.loads(out.stdout)
         for t in ("nsw-courts", "vic-courts", "qld-courts", "wa-courts", "sa-courts", "tas-courts", "act-courts",
-                  "nt-courts", "cth-federal-courts", "art", "ncat", "vcat", "qcat"):
+                  "nt-courts", "cth-federal-courts", "art", "ncat", "vcat", "qcat", "hk-courts"):
             self.assertIn(t, tables)
 
 
@@ -85,6 +124,14 @@ class CitationScript(unittest.TestCase):
         slr, slrr = parse("[2020] 2 SLR 1151", "[2005] 1 SLR(R) 1")
         self.assertEqual((slr["citation_type"], slr["route"]), ("reported", "sg.case.court-of-appeal"))
         self.assertEqual((slrr["citation_type"], slrr["route"]), ("reported", "sg.case.court-of-appeal"))
+
+    def test_hong_kong_routes(self):
+        cfi, ldt, cfar, hklrd = parse("[2026] HKCFI 123", "[2021] HKLdT 5", "(2020) 23 HKCFAR 1", "[2020] 1 HKLRD 1")
+        self.assertEqual((cfi["citation_type"], cfi["pack_entry"]), ("medium-neutral", "hk.case.cfi"))
+        self.assertEqual(cfi["route"], "https://legalref.judiciary.hk/")
+        self.assertEqual(ldt["pack_entry"], "hk.case.lower")
+        self.assertEqual((cfar["citation_type"], cfar["route"]), ("reported", "hk.case.cfa"))
+        self.assertEqual((hklrd["citation_type"], hklrd["route"]), ("reported", "hk.case.cfi"))
 
 
 if __name__ == "__main__":

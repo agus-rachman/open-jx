@@ -1,0 +1,51 @@
+# Draft seed pack. Research: open-jx Hong Kong proposal (15 November 2026).
+# Every legal entry must be verified by a Hong Kong-qualified reviewer before status changes.
+id: hk
+name: Hong Kong SAR
+country: HK
+parent: null
+level: region
+locale: en-HK
+legal_system: common law (Basic Law art. 8); English and Chinese texts of ordinances equally authentic
+version: 0.1.0
+status: draft
+maintainers:
+- '@agus-rachman'
+last_reviewed: null
+law_checked_as_at: null
+detection:
+  names:
+  - Hong Kong
+  - Hong Kong SAR
+  - HKSAR
+  - Hong Kong Special Administrative Region
+  governing_law_patterns:
+  - laws of Hong Kong
+  - laws of the Hong Kong Special Administrative Region
+  - laws of the HKSAR
+  - courts of Hong Kong
+  - Hong Kong courts
+  courts:
+  - Court of Final Appeal
+  - Court of Appeal of the High Court
+  - Court of First Instance of the High Court
+  - District Court
+  - Family Court
+  - Lands Tribunal
+  - Labour Tribunal
+  - Small Claims Tribunal
+  - Competition Tribunal
+  - Magistrates' Courts
+  identifiers:
+  - Company Registration (CR) number
+  - Business Registration (BR) number
+  other_signals:
+  - citations to ordinances by 'Cap.' number
+  - HK$
+  - HKD
+  - '+852'
+  - HCA / HCMP / DCCJ action numbers
+  - 'HKIAC arbitration clause (hint only: HKIAC also hears foreign-law disputes)'
+  note: '''Limited'' and ''HK$'' alone are not enough; load this pack only with another Hong Kong signal,
+    otherwise ask. Mainland China (PRC) law is a different jurisdiction: a PRC-law clause or a Mainland
+    court is not a Hong Kong signal.'

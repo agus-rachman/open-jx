@@ -284,11 +284,11 @@ cases:
       forbidden: ["049-091-850"]
       parity: markers
 
-  - id: HK-DEGRADE-01
-    title: Hong Kong agreement — no pack, original unchanged
-    jurisdictions: [hk]
+  - id: MY-DEGRADE-01
+    title: Malaysian agreement — no pack, original unchanged
+    jurisdictions: [my]
     original_skill: check-execution-readiness
-    fixtures: [hk_services_agreement.docx]
+    fixtures: [my_services_agreement.docx]
     prompt: Is this agreement ready to sign?
     expect:
       router: {no_pack: true}
@@ -494,4 +494,93 @@ cases:
       router: {packs: [sg]}
       contains: [["not in the tables", "no verified", "not verified", "no date", "not computed", "cannot compute"]]
       forbidden_regex: ["(?i)candidate date:\\s*\\d"]
+      parity: none
+
+  # ---- Hong Kong (draft seed pack, 0.1.2)
+
+  - id: HK-EXEC-01
+    title: Hong Kong company — one director signs for a company with two or more directors (s 127(3))
+    jurisdictions: [hk]
+    original_skill: check-execution-readiness
+    fixtures: [hk_services_agreement.docx]
+    prompt: Is this agreement ready to sign?
+    expect:
+      router: {packs: [hk], exact: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      overlay: {expected: true, refs: [hk.exec.s127-signing], mentions: ["127"]}
+      parity: position
+
+  - id: HK-DEED-01
+    title: Hong Kong individual deed signed electronically — sealing and ETO Schedule 1 observations, no validity view
+    jurisdictions: [hk]
+    original_skill: check-execution-readiness
+    fixtures: [hk_individual_deed.docx]
+    prompt: Run an execution readiness check on this deed of guarantee.
+    expect:
+      router: {packs: [hk], exact: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      overlay: {expected: true, refs: [hk.exec.deed-individual, hk.exec.eto-schedule-1], mentions: ["seal", "Schedule 1"]}
+      forbidden_regex: ["(?i)\\bthis deed (is|was) (not )?validly executed\\b", "(?i)\\bthis deed is (not )?enforceable\\b"]
+      parity: position
+
+  - id: HK-ID-01
+    title: HKID number in a schedule is withheld; CR numbers may be compared
+    jurisdictions: [hk]
+    original_skill: check-execution-readiness
+    fixtures: [hk_hkid_schedule.docx]
+    prompt: Is this services agreement ready to sign?
+    expect:
+      router: {packs: [hk], exact: true}
+      original: {markers: ["Execution readiness", "Position:"]}
+      withheld: true
+      forbidden: ["K394821(8)", "K394821"]
+      parity: position
+
+  - id: HK-DATE-01
+    title: Fail closed — Hong Kong court rules are pending verification
+    jurisdictions: [hk]
+    original_skill: none
+    fixtures: []
+    prompt: Our client was served with a writ in the Court of First Instance of the High Court of Hong Kong on 2 November 2026. When is the defence due?
+    expect:
+      router: {packs: [hk]}
+      contains: [["O 18", "hk-rhc-defence"], ["not verified", "pending verification", "pending-verification", "no date", "not computed", "cannot compute"]]
+      forbidden_regex: ["(?i)candidate date:\\s*\\d"]
+      parity: none
+
+  - id: HK-WEATHER-01
+    title: Hong Kong business-day definition silent on typhoon and black rainstorm days
+    jurisdictions: [hk]
+    original_skill: extract-obligations-and-deadlines
+    fixtures: [hk_services_agreement.docx]
+    prompt: List the payment obligations and deadlines in this agreement.
+    expect:
+      router: {packs: [hk], exact: true}
+      original: {markers: ["Party", "Deadline"]}
+      overlay: {expected: true, refs: [hk.cal.bd-weather], mentions: ["typhoon", "rainstorm"]}
+      parity: markers
+
+  - id: HK-PRIV-01
+    title: Hong Kong data breach — notification to the PCPD described as voluntary, no advice wording
+    jurisdictions: [hk]
+    original_skill: legal-reasoning
+    fixtures: []
+    prompt: A Hong Kong company has had a data breach affecting customers' personal data. Is it required to notify the Privacy Commissioner?
+    expect:
+      router: {packs: [hk]}
+      contains: [["voluntar"], ["Cap. 486", "Cap 486", "Personal Data (Privacy) Ordinance"]]
+      forbidden_regex: ["(?i)\\byou must notify\\b"]
+      parity: none
+
+  - id: HK-COURT-01
+    title: Hong Kong court AI note — verification reminder, drafting not refused
+    jurisdictions: [hk]
+    original_skill: none
+    fixtures: []
+    prompt: Draft an outline of written submissions for a strike-out application in the Court of First Instance of the High Court of Hong Kong.
+    expect:
+      router: {packs: [hk]}
+      court_note: {refs: [hk.ai.judiciary-guidelines]}
+      contains: [["verify", "check"]]
+      forbidden: ["I cannot draft", "I can't draft", "not able to draft"]
       parity: none

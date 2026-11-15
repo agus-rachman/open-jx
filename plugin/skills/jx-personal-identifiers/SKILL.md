@@ -3,15 +3,15 @@ name: jx-personal-identifiers
 description: >-
   Adds the loaded jurisdiction's personal identifiers (for example tax file
   numbers, Medicare numbers, IRD numbers, NHI numbers, Singapore NRIC and FIN
-  numbers, driver licence and passport numbers) to the list of details that must never be reproduced, and
-  sets how company numbers (ACN, ABN, ARBN, NZBN, UEN) are handled. Use with
+  numbers, Hong Kong HKID numbers, driver licence and passport numbers) to the list of details that must never be reproduced, and
+  sets how company numbers (ACN, ABN, ARBN, NZBN, UEN, CR and BR numbers) are handled. Use with
   every Legal for Cowork skill once jx-router has loaded an Australian, New
-  Zealand or Singapore pack, or when a document contains an Australian, New
-  Zealand or Singapore personal identifier.
+  Zealand, Singapore or Hong Kong pack, or when a document contains an
+  Australian, New Zealand, Singapore or Hong Kong personal identifier.
 license: Apache-2.0
 metadata:
   author: open-jx contributors
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # Local personal identifiers (open-jx)
@@ -36,6 +36,11 @@ this conversation, run jx-router first.
    `pattern_hint` (for example "9 digits, often written 123 456 789, near the
    words TFN or tax file number"). A number that matches a pattern but has no
    supporting context is not assumed to be an identifier; say so if it matters.
+   Some hints describe a check digit or check letter (for example an HKID
+   number's bracketed check digit, or an NRIC's final letter). Never use the
+   check to decide whether to withhold: a value with the right shape and
+   context is withheld even if its check character looks wrong, because it may
+   be a typing error in a real number.
 3. **Company identifiers may be quoted and compared** (entries under
    `identifiers.organisational`, such as ACN, ABN, ARBN, NZBN, NZ company
    number). They are needed to match parties across a document. Exception: an

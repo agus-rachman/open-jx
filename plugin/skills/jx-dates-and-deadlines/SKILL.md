@@ -4,19 +4,19 @@ description: >-
   Adds a labelled jurisdiction overlay on dates after the Legal for Cowork skill
   has answered: business-day and working-day definitions, local and regional
   public holidays, statutory rules for counting time, and where limitation
-  periods are found, for Australia (each state and territory), New Zealand and
-  Singapore.
+  periods are found, for Australia (each state and territory), New Zealand,
+  Singapore and Hong Kong.
   Computes candidate court and tribunal deadlines from verified rule and
   holiday tables. Use after extract-obligations-and-deadlines,
   build-case-chronology, summarize-legal-matters or identify-regulatory-gaps
-  when an Australian, New Zealand or Singapore pack is loaded; when the user asks "when is
+  when an Australian, New Zealand, Singapore or Hong Kong pack is loaded; when the user asks "when is
   the defence due", "when must we appeal" or "what is the limitation period";
-  or about business days, public holidays, Matariki, anniversary days or
-  Melbourne Cup Day in a deadline.
+  or about business days, public holidays, Matariki, anniversary days,
+  Melbourne Cup Day or typhoon and rainstorm closures in a deadline.
 license: Apache-2.0
 metadata:
   author: open-jx contributors
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # Dates and deadlines overlay (open-jx)
@@ -41,7 +41,7 @@ For each deadline, notice period or time limit in the original output:
    holidays could apply (the governing-law jurisdiction and the place of
    performance or notice).
 2. **Local holidays.** Use the pack's dated holiday table (`deadlines` section)
-   for those places, with its coverage dates and caveats, including part-state
+   for those places, with its coverage dates, caveats and contingent closures, including part-state
    or regional days (for example metropolitan-only days in Victoria, regional
    anniversary days in New Zealand, and bank-only holidays). If no table covers
    the place or the date, name the official holiday source instead. Never list
@@ -73,6 +73,9 @@ appeal or tribunal application) and gives the trigger date:
 3. Report its result exactly. `computed` → "Candidate date: <date> (<day>)"
    with the citation, the provisions applied and every warning.
    `identify_only` → name the rule and give the script's reason; give no date.
+   If the result lists `contingent_closures` (for example a typhoon or
+   rainstorm warning), report each one with the date: the table cannot know
+   whether such a closure happened.
 4. If scripts cannot run in this session, identify the rule and its citation
    and say no date was computed.
 5. Every candidate date carries: "Candidate only — the responsible lawyer must
