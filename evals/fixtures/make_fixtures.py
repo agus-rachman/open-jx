@@ -17,6 +17,7 @@ TFN = "123 456 782"
 IRD = "049-091-850"
 MEDICARE = "2953 71840 1"
 NRIC = "S9812381D"  # fictional, Singapore NRIC format
+HKID = "K394821(8)"  # fictional, HKID format with a valid check digit
 
 
 def doc(name: str, title: str, blocks: list):
@@ -257,13 +258,51 @@ def build():
         ("h", "Statement of claim filed 3 August 2026"), "High Court of New Zealand, Nelson Registry.",
     ])
 
-    # 16. Hong Kong services agreement (no pack).
+    # 15a. Malaysian services agreement (no pack).
+    doc("my_services_agreement.docx", "Services Agreement", [
+        "Parties: Klang Valley Data Sdn. Bhd. (Registration No. 202001012345) and Penang Analytics Sdn. Bhd. (Registration No. 201901054321).",
+        "18.1 This agreement is governed by the laws of Malaysia.",
+        ("h", "Execution"),
+        "Signed by Klang Valley Data Sdn. Bhd.: Director ______________",
+        "Signed by Penang Analytics Sdn. Bhd.: Director ______________  Name: [●]",
+    ])
+
+    # 16. Hong Kong services agreement: one director signs for a company with several directors.
     doc("hk_services_agreement.docx", "Services Agreement", [
         "Parties: Victoria Harbour Data Limited (CR No. 1234567) and Kowloon Analytics Limited (CR No. 7654321).",
+        "1.1 Business Day means a day (other than a Saturday, Sunday or general holiday) on which banks in Hong Kong are open for general business.",
+        "5.2 The Customer must pay each invoice within 10 Business Days after receipt.",
         "18.1 This agreement is governed by the laws of the Hong Kong Special Administrative Region.",
         ("h", "Execution"),
         "Signed by Victoria Harbour Data Limited: Director ______________",
         "Signed by Kowloon Analytics Limited: Director ______________  Name: [●]",
+    ])
+
+    # 16-hk-a. Hong Kong individual deed of guarantee signed electronically, no sealing wording.
+    doc("hk_individual_deed.docx", "Deed of Guarantee", [
+        "This deed is made on [●] 2026 by Chan Siu Ming of Hong Kong (the Guarantor) in favour of Peak Tram Finance Limited (CR No. 2345678) (the Lender).",
+        ("h", "1. Guarantee"),
+        "1.1 The Guarantor guarantees the obligations of Lantau Home Living Limited (CR No. 3456789) to the Lender.",
+        ("h", "8. Governing law"),
+        "8.1 This deed is governed by the laws of the Hong Kong Special Administrative Region.",
+        ("h", "Execution"),
+        "EXECUTED as a deed by the Guarantor by electronic signature:",
+        "Signature: /s/ Chan Siu Ming (electronic)  Name: Chan Siu Ming",
+        "Witness: Signature: ______________  Name: ______________",
+    ])
+
+    # 16-hk-b. Hong Kong services agreement with an HKID number in a schedule.
+    doc("hk_hkid_schedule.docx", "Services Agreement", [
+        "Parties: Victoria Harbour Data Limited (CR No. 1234567) (Customer) and Tsim Sha Tsui Systems Limited (CR No. 4567891) (Contractor).",
+        ("h", "3. Personnel"),
+        "3.1 The Contractor's key personnel are listed in Schedule 2.",
+        ("h", "15. Governing law"),
+        "15.1 This agreement is governed by the laws of Hong Kong.",
+        ("h", "Schedule 2 — Key personnel"),
+        ("table", [["Name", "Role", "HKID No."], ["Wong Ka Yan", "Project lead", HKID]]),
+        ("h", "Execution"),
+        "Signed for Victoria Harbour Data Limited by its director: ______________",
+        "Signed for Tsim Sha Tsui Systems Limited by its directors: ______________  ______________",
     ])
 
     # 16a. Singapore company deed: one director, empty witness box, UEN mismatch.

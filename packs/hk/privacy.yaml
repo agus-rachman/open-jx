@@ -1,0 +1,64 @@
+privacy_regimes:
+- id: hk.privacy.pdpo
+  observe: 'General privacy law: Personal Data (Privacy) Ordinance (Cap. 486) and its six Data Protection
+    Principles; applies to public and private data users.'
+  authority: Personal Data (Privacy) Ordinance (Cap. 486) Sch 1
+  source_url: https://www.elegislation.gov.hk/hk/cap486
+  status: in-force
+  verified: null
+  verified_by: null
+- id: hk.privacy.breach-voluntary
+  observe: 'Data breach: there is no statutory duty to notify; notification to the PCPD and to affected
+    individuals is voluntary and follows PCPD guidance. Mandatory notification was proposed in 2020 but
+    has not been enacted (position as at August 2026).'
+  authority: PCPD Guidance on Data Breach Handling; Cap. 486
+  source_url: https://www.pcpd.org.hk/
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Check for amending legislation before relying on this entry
+- id: hk.privacy.s33
+  observe: 'Cross-border transfer: s 33 restricts transfers outside Hong Kong but has never been brought
+    into operation; transfers are governed by the Data Protection Principles, and the PCPD''s model contractual
+    clauses (2022) are recommended, not mandatory.'
+  authority: Personal Data (Privacy) Ordinance (Cap. 486) s 33 (not in operation)
+  source_url: https://www.elegislation.gov.hk/hk/cap486
+  status: pending
+  verified: null
+  verified_by: null
+- id: hk.privacy.doxxing
+  observe: Disclosure of personal data without consent with intent or recklessness as to specified harm
+    is an offence (two tiers).
+  authority: Personal Data (Privacy) Ordinance (Cap. 486) s 64 (as amended by Ord. No. 32 of 2021, from
+    8 October 2021)
+  source_url: https://www.elegislation.gov.hk/hk/cap486
+  status: in-force
+  verified: null
+  verified_by: null
+- id: hk.privacy.hkid-code
+  observe: The document collects or copies HKID numbers or identity cards; the PCPD code sets when this
+    is permitted, and a departure from an approved code can be used as evidence of a contravention.
+  authority: PCPD Code of Practice on the Identity Card Number and other Personal Identifiers; Cap. 486
+    s 13
+  source_url: https://www.pcpd.org.hk/
+  status: guidance
+  verified: null
+  verified_by: null
+- id: hk.privacy.direct-marketing
+  observe: The document involves using personal data in direct marketing, which engages the notice and
+    consent requirements of Part 6A.
+  authority: Personal Data (Privacy) Ordinance (Cap. 486) pt 6A
+  source_url: https://www.elegislation.gov.hk/hk/cap486
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against e-Legislation
+- id: hk.privacy.critical-infrastructure
+  observe: A designated critical infrastructure operator has incident-reporting duties to the Commissioner
+    of Critical Infrastructure (Computer-system Security), separate from the PDPO (from 1 January 2026).
+  authority: Protection of Critical Infrastructures (Computer Systems) Ordinance (Cap. 653)
+  source_url: https://www.elegislation.gov.hk/hk/cap653
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Reporting periods to be confirmed

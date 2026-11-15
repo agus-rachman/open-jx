@@ -1,0 +1,29 @@
+courts_ai:
+- id: hk.ai.judiciary-guidelines
+  court: All Hong Kong courts and tribunals
+  instrument: Guidelines on the Use of Generative Artificial Intelligence for Judges and Judicial Officers
+    and Support Staff of the Hong Kong Judiciary (July 2024)
+  observe: The guidelines are addressed to judges and court staff, not to court users. They warn that
+    AI can invent cases, citations and quotations; judges may remind lawyers of their professional obligation
+    to verify AI-assisted research and citations, and may ask litigants in person what checks they made.
+    No Hong Kong rule restricting what court users may draft with AI was found; the user remains responsible
+    for every authority cited.
+  restricted_content: []
+  authority: Judiciary Guidelines on the Use of Generative AI (July 2024) paras 7-8, 14-16
+  source_url: https://www.judiciary.hk/doc/en/court_services_facilities/guidelines_on_the_use_of_generative_ai.pdf
+  status: guidance
+  verified: null
+  verified_by: null
+- id: hk.ai.court-user-guidelines
+  court: All Hong Kong courts and tribunals
+  instrument: Guidelines on the use of generative AI by legal practitioners and court users (in preparation)
+  observe: In April 2026 the Judiciary said it was drafting guidelines for legal practitioners and court
+    users and would consult the profession later in 2026. Check whether they have been issued before relying
+    on the absence of a court-user rule.
+  restricted_content: []
+  authority: Judiciary paper to the LegCo Panel on Administration of Justice and Legal Services (reported
+    14 April 2026)
+  source_url: https://www.judiciary.hk/
+  status: pending
+  verified: null
+  verified_by: null

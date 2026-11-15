@@ -1,0 +1,119 @@
+provenance:
+  source: Compiled for open-jx from the Government's general holidays announcement for 2026 and e-Legislation;
+    not yet verified by a Hong Kong-qualified reviewer, so the deadline script refuses every Hong Kong
+    computation.
+holiday_table:
+  table_id: hk
+  jurisdiction: HK
+  description: General holidays (other than Sundays) under the General Holidays Ordinance (Cap. 149),
+    as gazetted for 2026.
+  source_url: https://www.info.gov.hk/gia/general/202505/16/P2025051300353.htm
+  checked: '2026-11-15'
+  evidence:
+    state: pending-verification
+    method: Taken from the Government press release of 16 May 2025 on the 2026 general holidays; not yet
+      checked against the Gazette notice by a reviewer.
+  coverage:
+    from: '2026-01-01'
+    to: '2026-12-31'
+  holidays:
+  - '2026-01-01'
+  - '2026-02-17'
+  - '2026-02-18'
+  - '2026-02-19'
+  - '2026-04-03'
+  - '2026-04-04'
+  - '2026-04-06'
+  - '2026-04-07'
+  - '2026-05-01'
+  - '2026-05-25'
+  - '2026-06-19'
+  - '2026-07-01'
+  - '2026-09-26'
+  - '2026-10-01'
+  - '2026-10-19'
+  - '2026-12-25'
+  - '2026-12-26'
+  uncertain_windows: []
+  caveats:
+  - Every Sunday is a general holiday; the script also treats every Saturday as a non-business day. Whether
+    a Saturday counts depends on the rule applied; confirm.
+  - The 2027 general holidays were gazetted in May 2026 and are not yet in this table.
+  contingent_closures:
+  - id: hk.closure.typhoon-8
+    trigger: tropical cyclone warning signal No. 8 or above is in force
+    effect: court registries close and the governing rule may extend time to the next day the registry
+      is open
+    authority: Cap. 1 s 71; Cap. 62; RHC (Cap. 4A) O 3
+    source_url: https://www.elegislation.gov.hk/hk/cap1
+    status: in-force
+    note: Hours and provisions to be confirmed
+  - id: hk.closure.black-rainstorm
+    trigger: a black rainstorm warning is in force
+    effect: court registries close and the governing rule may extend time to the next day the registry
+      is open
+    authority: Cap. 1 s 71; Cap. 62; RHC (Cap. 4A) O 3
+    source_url: https://www.elegislation.gov.hk/hk/cap1
+    status: in-force
+    note: Hours and provisions to be confirmed
+  - id: hk.closure.extreme-conditions
+    trigger: the Government announces 'extreme conditions'
+    effect: court and registry operations may be suspended
+    authority: Judiciary announcements
+    source_url: https://www.judiciary.hk/
+    status: guidance
+    note: Legal effect on time limits to be confirmed
+court_rules:
+- table_id: hk-courts
+  jurisdiction: HK
+  forums:
+  - Court of First Instance of the High Court
+  - Court of Appeal of the High Court
+  holiday_table: hk
+  note: Seed rules for review. Every rule and provision is pending verification, so the script returns
+    identify_only for each.
+  computation_provisions:
+  - id: hk-igco-s71
+    citation: Interpretation and General Clauses Ordinance (Cap. 1) s 71
+    role: time_computation_and_rollover
+    summary: Excludes the first day; a period ending on a general holiday runs to the next day that is
+      not one. Effect of the 2016 amendment on weather days to be confirmed.
+    source_url: https://www.elegislation.gov.hk/hk/cap1
+    evidence: &id001
+      state: pending-verification
+      checked: '2026-11-15'
+  - id: hk-rhc-o3
+    citation: Rules of the High Court (Cap. 4A) O 3
+    role: time_computation_and_rollover
+    summary: Reckoning of time in High Court proceedings, including periods ending on days the Registry
+      is closed.
+    source_url: https://www.elegislation.gov.hk/hk/cap4A
+    evidence: *id001
+  period_rules:
+  - id: hk-rhc-aos-after-service
+    label: Acknowledgment of service of a writ served in Hong Kong
+    citation: Rules of the High Court (Cap. 4A) O 12 (period to be confirmed)
+    trigger: Service of the writ
+    period:
+      length: 14
+      unit: calendar_days
+    rollover: next_business_day
+    applies_provisions:
+    - hk-rhc-o3
+    source_url: https://www.elegislation.gov.hk/hk/cap4A
+    warnings:
+    - Whether the day of service is counted is to be confirmed.
+    evidence: *id001
+  - id: hk-rhc-defence
+    label: Defence after the time limited for acknowledging service
+    citation: Rules of the High Court (Cap. 4A) O 18 r 2 (period to be confirmed)
+    trigger: Expiry of the time limited for acknowledging service
+    period:
+      length: 28
+      unit: calendar_days
+    rollover: next_business_day
+    applies_provisions:
+    - hk-rhc-o3
+    source_url: https://www.elegislation.gov.hk/hk/cap4A
+    warnings: []
+    evidence: *id001

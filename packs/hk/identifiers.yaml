@@ -1,0 +1,50 @@
+personal:
+- id: hk.id.hkid
+  name: Hong Kong Identity Card (HKID) number
+  pattern_hint: one or two letters + 6 digits + a check digit (0-9 or A) in brackets, e.g. A123456(7);
+    near 'HKID', 'HK Identity Card' or 'ID card no.'
+  authority: Registration of Persons Ordinance (Cap. 177); PCPD Code of Practice on the Identity Card
+    Number and other Personal Identifiers
+  source_url: https://www.pcpd.org.hk/
+  status: in-force
+  note: The PCPD code limits when HKID numbers and copies of identity cards may be collected. Record the
+    field, never the number.
+  verified: null
+  verified_by: null
+- id: hk.id.passport
+  name: HKSAR passport number
+  pattern_hint: a letter (often H or K) + 8 digits, near 'passport'
+  authority: Immigration Department
+  source_url: https://www.immd.gov.hk/
+  status: in-force
+  note: Pattern to be confirmed
+  verified: null
+  verified_by: null
+- id: hk.id.travel-permit
+  name: Mainland travel permit or exit-entry permit number
+  pattern_hint: near 'Home Return Permit', 'Mainland Travel Permit' or 'One-way Permit'
+  authority: Immigration Department
+  source_url: https://www.immd.gov.hk/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: hk.id.mpf
+  name: MPF scheme member account number
+  pattern_hint: near 'MPF', 'member account' or 'scheme member no.'
+  authority: Mandatory Provident Fund Schemes Ordinance (Cap. 485)
+  source_url: https://www.mpfa.org.hk/
+  status: in-force
+  verified: null
+  verified_by: null
+organisational:
+- id: hk.org.cr
+  name: Company Registration (CR) number
+  format: usually 7 digits, e.g. CR No. 1234567
+  authority: Companies Registry
+  source_url: https://www.cr.gov.hk/
+- id: hk.org.br
+  name: Business Registration (BR) number
+  format: 8 digits, often followed by a branch suffix, e.g. 12345678-000
+  authority: Business Registration Ordinance (Cap. 310)
+  source_url: https://www.ird.gov.hk/
+privacy_context: []

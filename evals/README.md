@@ -14,8 +14,8 @@ in Microsoft Copilot Cowork:
 | Path | Purpose |
 | --- | --- |
 | `check_package.py` | Static checks on the built zip against the Copilot Cowork packaging rules. No tenant needed. |
-| `cases/cases.yaml` | 37 cases. 23 run side by side with Legal for Cowork across every Australian state and territory, the Commonwealth and New Zealand, plus a jurisdiction with no pack (Hong Kong), a conflict case and an injection case. 9 cover computed deadlines, fail-closed deadlines, citation routing, limitation and privacy. 5 cover Singapore: company and individual deeds, NRIC suppression, the court AI Guide and a fail-closed deadline. |
-| `cases/trigger.yaml` | 49 short prompts that test router selection only. |
+| `cases/cases.yaml` | 44 cases. 23 run side by side with Legal for Cowork across every Australian state and territory, the Commonwealth and New Zealand, plus a jurisdiction with no pack (Malaysia), a conflict case and an injection case. 9 cover computed deadlines, fail-closed deadlines, citation routing, limitation and privacy. 5 cover Singapore: company and individual deeds, NRIC suppression, the court AI Guide and a fail-closed deadline. 7 cover Hong Kong: s 127 company signing, an electronically signed individual deed, HKID suppression, a fail-closed deadline, typhoon and rainstorm business days, voluntary breach notification and the court AI note. |
+| `cases/trigger.yaml` | 54 short prompts that test router selection only. |
 | `fixtures/` | Synthetic `.docx` documents (fictional parties and planted fake identifiers) plus the generator script. |
 | `score.py` | `lint`, `sheet` and `score` commands. |
 | `rubric.md` | Reviewer rubric for the qualities a script can't judge. |
@@ -36,7 +36,7 @@ in Microsoft Copilot Cowork:
 1. **Build and check the package.**
    ```
    python tools/build_plugin.py
-   python evals/check_package.py dist/open-jx-0.1.0.zip
+   python evals/check_package.py dist/open-jx-0.1.2.zip
    python evals/score.py lint
    ```
 2. **Install it for testers.** Share the zip with the tester group (see
