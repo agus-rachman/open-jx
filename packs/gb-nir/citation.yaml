@@ -1,0 +1,22 @@
+citation:
+  inherit: gb
+  note: Use OSCOLA as set in the gb pack, with Northern Ireland conventions for Orders in Council and
+    Assembly Acts.
+rules:
+- id: gb-nir.cite.order
+  example: Limitation (Northern Ireland) Order 1989, SI 1989/1339 (NI 11)
+  observe: Cite Northern Ireland Orders in Council by title and year, with the SI number and NI number.
+  authority: OSCOLA 5th edn
+  source_url: https://www.law.ox.ac.uk/oscola
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb-nir.cite.neutral
+  example: '[2024] NIKB 12 (format only)'
+  observe: 'Neutral citations: NICA (Court of Appeal), NIKB (King''s Bench, NIQB before September 2022),
+    NICh, NIFam, NIMaster, NICC and NICty.'
+  authority: OSCOLA 5th edn; Judiciary NI practice
+  source_url: https://www.law.ox.ac.uk/oscola
+  status: guidance
+  verified: null
+  verified_by: null

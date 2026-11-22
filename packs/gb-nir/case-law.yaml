@@ -1,0 +1,47 @@
+publishers:
+- id: gb-nir.case.court-of-appeal
+  court_ids:
+  - NICA
+  court: Court of Appeal in Northern Ireland
+  publisher: Judiciary NI
+  url: https://www.judiciaryni.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb-nir.case.high-court
+  court_ids:
+  - NIKB
+  - NIQB
+  - NICh
+  - NIFam
+  - NIMaster
+  - NIComm
+  court: High Court of Justice in Northern Ireland
+  publisher: Judiciary NI
+  url: https://www.judiciaryni.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+  note: NIQB became NIKB in September 2022. Codes other than NICA, NIKB, NIQB and NICh to be confirmed.
+- id: gb-nir.case.other
+  court_ids:
+  - NICC
+  - NICty
+  - NIMag
+  court: Crown Court, county courts and magistrates' courts
+  publisher: Judiciary NI
+  url: https://www.judiciaryni.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Publication of lower-court decisions is selective.
+report_series:
+- series: NI
+  name: Northern Ireland Law Reports
+  resolve_via: gb-nir.case.court-of-appeal
+- series: NIJB
+  name: Northern Ireland Judgments Bulletin
+  resolve_via: gb-nir.case.high-court

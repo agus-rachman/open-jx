@@ -1,0 +1,121 @@
+provenance:
+  source: Compiled for open-jx from the Banking and Financial Dealings Act 1971 and the Civil Procedure
+    Rules; not yet verified by a reviewer, so the deadline script refuses every England and Wales computation.
+holiday_table:
+  table_id: england-and-wales
+  jurisdiction: England and Wales
+  description: Bank holidays in England and Wales under the Banking and Financial Dealings Act 1971 and
+    by proclamation, with Good Friday and Christmas Day.
+  source_url: https://www.gov.uk/bank-holidays
+  checked: '2026-11-15'
+  evidence:
+    state: pending-verification
+    method: Compiled from the pattern in the Banking and Financial Dealings Act 1971 sch 1 and the usual
+      proclaimed days; not yet checked against the official gov.uk bank holidays page by a reviewer.
+  coverage:
+    from: '2026-01-01'
+    to: '2027-12-31'
+  holidays:
+  - '2026-01-01'
+  - '2026-04-03'
+  - '2026-04-06'
+  - '2026-05-04'
+  - '2026-05-25'
+  - '2026-08-31'
+  - '2026-12-25'
+  - '2026-12-28'
+  - '2027-01-01'
+  - '2027-03-26'
+  - '2027-03-29'
+  - '2027-05-03'
+  - '2027-05-31'
+  - '2027-08-30'
+  - '2027-12-27'
+  - '2027-12-28'
+  uncertain_windows: []
+  caveats:
+  - Court offices also close on other days (for example over Christmas); confirm the court office was
+    open.
+  contingent_closures:
+  - id: gb-eaw.closure.proclamation
+    trigger: a special or substitute bank holiday is appointed by royal proclamation
+    effect: the day is a bank holiday and is not in this table until it is added
+    authority: Banking and Financial Dealings Act 1971 s 1(2)-(3)
+    source_url: https://www.gov.uk/bank-holidays
+    status: in-force
+court_rules:
+- table_id: eaw-courts
+  jurisdiction: England and Wales
+  forums:
+  - High Court of Justice
+  - County Court
+  - Court of Appeal (Civil Division)
+  holiday_table: england-and-wales
+  note: Seed rules for review. Every rule and provision is pending verification, so the script returns
+    identify_only for each. Deemed dates of service (CPR Part 6) are not modelled.
+  computation_provisions:
+  - id: eaw-cpr-2-8
+    citation: CPR r 2.8
+    role: time_computation_and_rollover
+    summary: Clear days; periods of 5 days or less exclude weekends, bank holidays, Christmas Day and
+      Good Friday; an act at a court office closed on the last day may be done on the next day it is open.
+    source_url: https://www.justice.gov.uk/courts/procedure-rules/civil
+    evidence: &id001
+      state: pending-verification
+      checked: '2026-11-15'
+  period_rules:
+  - id: cpr-aos-after-particulars
+    label: Acknowledgment of service
+    citation: CPR r 10.3(1)
+    trigger: Service of the particulars of claim (or of the claim form where it contains them)
+    period:
+      length: 14
+      unit: calendar_days
+    rollover: next_business_day
+    applies_provisions:
+    - eaw-cpr-2-8
+    source_url: https://www.justice.gov.uk/courts/procedure-rules/civil
+    warnings:
+    - Different periods apply to service out of the jurisdiction and to Part 8 claims.
+    evidence: *id001
+  - id: cpr-defence-after-particulars
+    label: Defence where no acknowledgment of service is filed
+    citation: CPR r 15.4(1)(a)
+    trigger: Service of the particulars of claim
+    period:
+      length: 14
+      unit: calendar_days
+    rollover: next_business_day
+    applies_provisions:
+    - eaw-cpr-2-8
+    source_url: https://www.justice.gov.uk/courts/procedure-rules/civil
+    warnings: []
+    evidence: *id001
+  - id: cpr-defence-after-aos
+    label: Defence where an acknowledgment of service is filed
+    citation: CPR r 15.4(1)(b)
+    trigger: Service of the particulars of claim
+    period:
+      length: 28
+      unit: calendar_days
+    rollover: next_business_day
+    applies_provisions:
+    - eaw-cpr-2-8
+    source_url: https://www.justice.gov.uk/courts/procedure-rules/civil
+    warnings:
+    - The parties may agree an extension of up to 28 days (r 15.5).
+    evidence: *id001
+  - id: cpr-appellants-notice
+    label: Appellant's notice
+    citation: CPR r 52.12(2)(b)
+    trigger: Date of the decision of the lower court (unless that court directs otherwise)
+    period:
+      length: 21
+      unit: calendar_days
+    rollover: next_business_day
+    applies_provisions:
+    - eaw-cpr-2-8
+    source_url: https://www.justice.gov.uk/courts/procedure-rules/civil
+    warnings:
+    - Different periods apply to particular appeals, including to the Supreme Court.
+    evidence: *id001

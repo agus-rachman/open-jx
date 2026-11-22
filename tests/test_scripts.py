@@ -91,11 +91,17 @@ class DeadlineScript(unittest.TestCase):
         self.assertIn("pending-verification", r["reason"])
         self.assertNotIn("candidate_date", r)
 
+    def test_england_and_wales_fails_closed_pending_verification(self):
+        r = compute("eaw-courts", "cpr-defence-after-aos", "2026-11-02")
+        self.assertEqual(r["status"], "identify_only")
+        self.assertIn("pending-verification", r["reason"])
+        self.assertNotIn("candidate_date", r)
+
     def test_every_table_lists(self):
         out = subprocess.run([sys.executable, str(COMPUTE), "--list"], capture_output=True, text=True, check=True)
         tables = json.loads(out.stdout)
         for t in ("nsw-courts", "vic-courts", "qld-courts", "wa-courts", "sa-courts", "tas-courts", "act-courts",
-                  "nt-courts", "cth-federal-courts", "art", "ncat", "vcat", "qcat", "hk-courts"):
+                  "nt-courts", "cth-federal-courts", "art", "ncat", "vcat", "qcat", "hk-courts", "eaw-courts"):
             self.assertIn(t, tables)
 
 
@@ -124,6 +130,43 @@ class CitationScript(unittest.TestCase):
         slr, slrr = parse("[2020] 2 SLR 1151", "[2005] 1 SLR(R) 1")
         self.assertEqual((slr["citation_type"], slr["route"]), ("reported", "sg.case.court-of-appeal"))
         self.assertEqual((slrr["citation_type"], slrr["route"]), ("reported", "sg.case.court-of-appeal"))
+
+    def test_two_word_courts_divisions_and_volumeless_reports(self):
+        pubs = {"publishers": [
+            {"id": "xx.case.ca", "court_ids": ["XXCA Civ", "XXCA Crim"], "court": "Example Court of Appeal",
+             "publisher": "Example", "url": "https://example.gov/ca", "access": "direct"},
+            {"id": "xx.case.hc", "court_ids": ["XXHC"], "court": "Example High Court",
+             "publisher": "Example", "url": "https://example.gov/hc", "access": "direct"}],
+            "report_series": [{"series": "XR", "name": "Example Reports", "resolve_via": "xx.case.ca"},
+                              {"series": "XLT", "name": "Example Law Times", "resolve_via": "xx.case.hc"}]}
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump(pubs, f)
+        out = subprocess.run([sys.executable, str(PARSE), "--publishers", f.name, "[2024] XXCA Civ 123",
+                              "[2025] XXHC 1383 (Admin)", "[2024] XR 1", "Smith v Jones 2024 XLT 55",
+                              "[2024] XXCA  Crim 9", "paid 2024 XYZ 100 units"],
+                             capture_output=True, text=True, check=True)
+        Path(f.name).unlink()
+        civ, admin, xr, xlt, crim, none = json.loads(out.stdout)
+        self.assertEqual((civ["citation_type"], civ["pack_entry"], civ["number"]), ("medium-neutral", "xx.case.ca", 123))
+        self.assertEqual((admin["pack_entry"], admin["number"], admin["division"]), ("xx.case.hc", 1383, "Admin"))
+        self.assertEqual((xr["citation_type"], xr["route"], xr["page"]), ("reported", "xx.case.ca", 1))
+        self.assertEqual((xlt["citation_type"], xlt["route"], xlt["year"]), ("reported", "xx.case.hc", 2024))
+        self.assertEqual(crim["pack_entry"], "xx.case.ca")
+        self.assertEqual(none["citation_type"], "unknown")
+
+    def test_uk_routes(self):
+        civ, admin, ac, ut, slt, csih, sheriff, nikb, hca = parse(
+            "[2024] EWCA Civ 123", "[2025] EWHC 1383 (Admin)", "[2024] AC 1", "[2024] UKUT 123 (IAC)",
+            "2024 SLT 123", "[2024] CSIH 12", "[2023] SC EDIN 4", "[2024] NIKB 12", "[2023] HCA 12")
+        self.assertEqual((civ["pack_entry"], civ["route"]), ("gb-eaw.case.court-of-appeal", "https://caselaw.nationalarchives.gov.uk/"))
+        self.assertEqual((admin["pack_entry"], admin["division"]), ("gb-eaw.case.high-court", "Admin"))
+        self.assertEqual((ac["citation_type"], ac["route"]), ("reported", "gb.case.uksc"))
+        self.assertEqual((ut["pack_entry"], ut["division"]), ("gb.case.tribunals", "IAC"))
+        self.assertEqual((slt["citation_type"], slt["route"]), ("reported", "gb-sct.case.court-of-session"))
+        self.assertEqual(csih["route"], "https://www.scotcourts.gov.uk/")
+        self.assertEqual(sheriff["pack_entry"], "gb-sct.case.sheriff")
+        self.assertEqual(nikb["route"], "https://www.judiciaryni.uk/")
+        self.assertEqual(hca["pack_entry"], "au.case.hca")
 
     def test_hong_kong_routes(self):
         cfi, ldt, cfar, hklrd = parse("[2026] HKCFI 123", "[2021] HKLdT 5", "(2020) 23 HKCFAR 1", "[2020] 1 HKLRD 1")

@@ -1,0 +1,104 @@
+entries:
+- id: gb-sct.exec.rowsa-writing
+  applies_to:
+  - individual
+  - company
+  - trust
+  observe: Writing is required for contracts and unilateral obligations relating to interests in land,
+    gratuitous unilateral obligations not undertaken in the course of business, trusts over the granter's
+    own property, and wills.
+  authority: Requirements of Writing (Scotland) Act 1995 s 1(2)
+  source_url: https://www.legislation.gov.uk/ukpga/1995/7/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-sct.exec.rowsa-subscription
+  applies_to:
+  - individual
+  - company
+  observe: A traditional document is subscribed by the granter (signed at the end of the last page); subscription
+    alone gives formal validity.
+  authority: Requirements of Writing (Scotland) Act 1995 ss 2 and 7
+  source_url: https://www.legislation.gov.uk/ukpga/1995/7/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-sct.exec.rowsa-self-proving
+  applies_to:
+  - individual
+  observe: A document is self-proving (probative) where the granter's subscription is attested by one
+    witness who signs, with the witness's name and address stated in the document or testing clause.
+  authority: Requirements of Writing (Scotland) Act 1995 s 3
+  source_url: https://www.legislation.gov.uk/ukpga/1995/7/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-sct.exec.rowsa-company
+  applies_to:
+  - company
+  observe: A company subscribes by a director, the secretary or an authorised person; the document is
+    self-proving where that signature is witnessed, or where it is signed by two directors, a director
+    and the secretary, or two authorised persons.
+  authority: Requirements of Writing (Scotland) Act 1995 sch 2 para 3; Companies Act 2006 s 48
+  source_url: https://www.legislation.gov.uk/ukpga/1995/7/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-sct.exec.no-deed-concept
+  applies_to:
+  - deed
+  observe: The document uses English deed wording ('executed as a deed', 'signed, sealed and delivered');
+    Scots law has no equivalent category and does not require consideration, so record the wording and
+    the signing method actually used.
+  authority: Scots common law; Requirements of Writing (Scotland) Act 1995
+  source_url: https://www.legislation.gov.uk/ukpga/1995/7/contents
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb-sct.exec.counterparts
+  applies_to:
+  - individual
+  - company
+  - electronic
+  observe: The document is executed in counterpart or delivered electronically (for example a signed copy
+    sent by email).
+  authority: Legal Writings (Counterparts and Delivery) (Scotland) Act 2015 ss 1 and 4
+  source_url: https://www.legislation.gov.uk/asp/2015/4/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-sct.exec.electronic
+  applies_to:
+  - electronic
+  observe: An electronic document that the Act requires to be written is authenticated by an advanced
+    electronic signature; it is self-proving only with a qualified electronic signature.
+  authority: Requirements of Writing (Scotland) Act 1995 pt 3; Electronic Documents (Scotland) Regulations
+    2014, SSI 2014/83
+  source_url: https://www.legislation.gov.uk/ukpga/1995/7/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk
+- id: gb-sct.exec.registration
+  applies_to:
+  - individual
+  - company
+  observe: A document is to be registered in the Land Register or the Books of Council and Session, which
+    generally require it to be self-proving.
+  authority: Requirements of Writing (Scotland) Act 1995 s 6; Land Registration etc. (Scotland) Act 2012
+  source_url: https://www.ros.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk
+- id: gb-sct.exec.poa
+  applies_to:
+  - attorney
+  observe: A continuing or welfare power of attorney is in writing, carries the prescribed certificate
+    and is registered with the Public Guardian.
+  authority: Adults with Incapacity (Scotland) Act 2000 ss 15-19
+  source_url: https://www.legislation.gov.uk/asp/2000/4/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk

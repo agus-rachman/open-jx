@@ -1,0 +1,125 @@
+entries:
+- id: gb.exec.s43-contracts
+  applies_to:
+  - company
+  observe: A company contract is made by the company in writing under its common seal, or on its behalf
+    by a person acting under its authority.
+  authority: Companies Act 2006 s 43
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.exec.s44-signing
+  applies_to:
+  - company
+  observe: Under the law of England and Wales or Northern Ireland, a company document is executed by affixing
+    the common seal, or by signature of two authorised signatories (directors or the secretary), or by
+    a director in the presence of a witness who attests the signature.
+  authority: Companies Act 2006 s 44(1)-(4)
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Scottish execution is governed by s 48 and the Requirements of Writing (Scotland) Act 1995 (see
+    gb-sct)
+- id: gb.exec.s44-multiple
+  applies_to:
+  - company
+  observe: A person signing for more than one company signs separately in each capacity.
+  authority: Companies Act 2006 s 44(6)
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.exec.s45-seal
+  applies_to:
+  - company
+  observe: The company has no common seal or does not use one; a seal is optional.
+  authority: Companies Act 2006 s 45(1)
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.exec.s46-deed
+  applies_to:
+  - company
+  - deed
+  observe: A company deed (England and Wales or Northern Ireland) is duly executed by the company and
+    delivered as a deed; delivery is presumed on execution unless a contrary intention is proved.
+  authority: Companies Act 2006 s 46
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb.exec.s47-attorney
+  applies_to:
+  - company
+  - attorney
+  observe: A company appoints an attorney to execute deeds or other documents on its behalf by an instrument
+    executed as a deed.
+  authority: Companies Act 2006 s 47
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk
+- id: gb.exec.llp
+  applies_to:
+  - partnership
+  observe: A limited liability partnership executes a document by two members, or by one member in the
+    presence of a witness, or under seal.
+  authority: Limited Liability Partnerships (Application of Companies Act 2006) Regulations 2009, SI 2009/1804,
+    reg 4
+  source_url: https://www.legislation.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk
+- id: gb.exec.overseas-company
+  applies_to:
+  - company
+  observe: An overseas company executes by its seal, by any manner permitted by the law of its place of
+    incorporation, or by a person with express or implied authority under that law.
+  authority: Overseas Companies (Execution of Documents and Registration of Charges) Regulations 2009,
+    SI 2009/1917
+  source_url: https://www.legislation.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk
+- id: gb.exec.e-signature
+  applies_to:
+  - electronic
+  observe: An electronic signature is relied on; it is admissible in evidence, and the Law Commission's
+    2019 statement of the law treats it as capable of executing a document, including a deed, where the
+    other formalities are met.
+  authority: Electronic Communications Act 2000 s 7; Law Commission, Electronic execution of documents
+    (Law Com No 386, 2019)
+  source_url: https://lawcom.gov.uk/project/electronic-execution-of-documents/
+  status: guidance
+  verified: null
+  verified_by: null
+  note: The Law Commission statement concerns England and Wales; registries (HM Land Registry, Registers
+    of Scotland) set their own acceptance rules
+- id: gb.exec.company-number
+  applies_to:
+  - company
+  observe: The company number and name in the parties clause match the signature block and the Companies
+    House register; an SC or NI prefix shows registration in Scotland or Northern Ireland.
+  authority: Companies Act 2006 ss 1066 and 82 (trading disclosures)
+  source_url: https://www.gov.uk/government/organisations/companies-house
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb.exec.stamp-duty
+  applies_to:
+  - company
+  - individual
+  observe: A transfer of shares on a stock transfer form may be chargeable with stamp duty within a fixed
+    period after execution.
+  authority: Stamp Act 1891; Finance Act 1999 sch 13
+  source_url: https://www.gov.uk/guidance/stamp-duty-on-shares
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Rate and period to be confirmed. Whether duty is payable is a counsel decision

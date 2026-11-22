@@ -3,15 +3,15 @@ name: jx-personal-identifiers
 description: >-
   Adds the loaded jurisdiction's personal identifiers (for example tax file
   numbers, Medicare numbers, IRD numbers, NHI numbers, Singapore NRIC and FIN
-  numbers, Hong Kong HKID numbers, driver licence and passport numbers) to the list of details that must never be reproduced, and
-  sets how company numbers (ACN, ABN, ARBN, NZBN, UEN, CR and BR numbers) are handled. Use with
+  numbers, Hong Kong HKID numbers, UK National Insurance and NHS numbers, driver licence and passport numbers) to the list of details that must never be reproduced, and
+  sets how company numbers (ACN, ABN, ARBN, NZBN, UEN, CR and BR numbers, Companies House numbers) are handled. Use with
   every Legal for Cowork skill once jx-router has loaded an Australian, New
-  Zealand, Singapore or Hong Kong pack, or when a document contains an
-  Australian, New Zealand, Singapore or Hong Kong personal identifier.
+  Zealand, Singapore, Hong Kong or UK pack, or when a document contains a
+  personal identifier from one of those jurisdictions.
 license: Apache-2.0
 metadata:
   author: open-jx contributors
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # Local personal identifiers (open-jx)

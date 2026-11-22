@@ -1,0 +1,14 @@
+courts_ai:
+- id: gb-sct.ai.none-identified
+  court: Court of Session, High Court of Justiciary and sheriff courts
+  instrument: No practice note on court users' use of generative AI was identified (15 November 2026)
+  observe: No Scottish practice note for court users was identified; the Lord President has spoken publicly
+    about AI in the courts and the Scottish Courts and Tribunals Service has an internal AI policy. Solicitors
+    and advocates remain responsible under their professional rules for the accuracy of every authority
+    cited. Check for a new practice note before filing.
+  restricted_content: []
+  authority: No instrument identified
+  source_url: https://judiciary.scot/
+  status: guidance
+  verified: null
+  verified_by: null

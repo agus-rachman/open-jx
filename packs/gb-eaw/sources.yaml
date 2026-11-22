@@ -1,0 +1,39 @@
+sources:
+- id: gb-eaw.src.cpr
+  name: Civil Procedure Rules and Practice Directions (Ministry of Justice)
+  url: https://www.justice.gov.uk/courts/procedure-rules/civil
+  type: court
+  rank: 1
+- id: gb-eaw.src.judiciary
+  name: Courts and Tribunals Judiciary
+  url: https://www.judiciary.uk/
+  type: court
+  rank: 1
+  note: Practice directions, court guides and judicial guidance.
+- id: gb-eaw.src.hmlr
+  name: HM Land Registry
+  url: https://www.gov.uk/government/organisations/land-registry
+  type: register
+  rank: 1
+  note: Practice guides on execution of deeds and electronic signatures.
+- id: gb-eaw.src.law-wales
+  name: Law Wales / Cyfraith Cymru
+  url: https://law.gov.wales/
+  type: legislation
+  rank: 2
+  note: Guide to Welsh law; the authoritative text is on legislation.gov.uk.
+- id: gb-eaw.src.sra
+  name: Solicitors Regulation Authority
+  url: https://www.sra.org.uk/
+  type: regulator
+  rank: 1
+- id: gb-eaw.src.bsb
+  name: Bar Standards Board
+  url: https://www.barstandardsboard.org.uk/
+  type: regulator
+  rank: 1
+- id: gb-eaw.src.cjc
+  name: Civil Justice Council
+  url: https://www.judiciary.uk/related-offices-and-bodies/advisory-bodies/cjc/
+  type: secondary
+  rank: 2

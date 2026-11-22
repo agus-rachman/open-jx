@@ -1,0 +1,21 @@
+personal:
+- id: gb-sct.id.chi
+  name: Community Health Index (CHI) number
+  pattern_hint: 10 digits starting with the date of birth (DDMMYY); near 'CHI'
+  authority: NHS Scotland
+  source_url: https://www.nhsinform.scot/
+  status: in-force
+  verified: null
+  verified_by: null
+organisational:
+- id: gb-sct.org.charity
+  name: Scottish charity number
+  format: SC + 6 digits, e.g. SC012345
+  authority: Charities and Trustee Investment (Scotland) Act 2005
+  source_url: https://www.oscr.org.uk/
+- id: gb-sct.org.title-number
+  name: Land Register of Scotland title number
+  format: county letters + digits, e.g. MID12345
+  authority: Land Registration etc. (Scotland) Act 2012
+  source_url: https://www.ros.gov.uk/
+privacy_context: []

@@ -1,0 +1,67 @@
+sources:
+- id: gb.src.legislation
+  name: legislation.gov.uk (The National Archives)
+  url: https://www.legislation.gov.uk/
+  type: legislation
+  rank: 1
+  consolidated_term: revised version (point in time)
+  note: 'Official revised legislation for the whole UK, including Acts of the Scottish Parliament, Senedd
+    Cymru and Northern Ireland Assembly. Check the ''changes to legislation'' banner: some revised text
+    is not up to date.'
+- id: gb.src.find-case-law
+  name: Find Case Law (The National Archives)
+  url: https://caselaw.nationalarchives.gov.uk/
+  type: case-law
+  rank: 1
+  note: Official publisher of judgments of the UK Supreme Court, Privy Council, courts of England and
+    Wales and UK tribunals since April 2022, with earlier material.
+- id: gb.src.uksc
+  name: The Supreme Court of the United Kingdom
+  url: https://www.supremecourt.uk/
+  type: court
+  rank: 1
+- id: gb.src.bailii
+  name: British and Irish Legal Information Institute (BAILII)
+  url: https://www.bailii.org/
+  type: case-law
+  rank: 2
+  note: Free secondary source for all UK jurisdictions, including older judgments.
+- id: gb.src.companies-house
+  name: Companies House
+  url: https://www.gov.uk/government/organisations/companies-house
+  type: register
+  rank: 1
+  note: Register of companies and LLPs for the whole UK.
+- id: gb.src.ico
+  name: Information Commissioner's Office
+  url: https://ico.org.uk/
+  type: regulator
+  rank: 1
+  note: The Data (Use and Access) Act 2025 provides for an Information Commission to replace the ICO;
+    confirm the current name.
+- id: gb.src.fca
+  name: Financial Conduct Authority
+  url: https://www.fca.org.uk/
+  type: regulator
+  rank: 1
+- id: gb.src.cma
+  name: Competition and Markets Authority
+  url: https://www.gov.uk/government/organisations/competition-and-markets-authority
+  type: regulator
+  rank: 1
+- id: gb.src.hmrc
+  name: HM Revenue and Customs
+  url: https://www.gov.uk/government/organisations/hm-revenue-customs
+  type: regulator
+  rank: 1
+- id: gb.src.gazette
+  name: The Gazette (London, Edinburgh and Belfast)
+  url: https://www.thegazette.co.uk/
+  type: register
+  rank: 1
+  note: Official public record for statutory notices.
+- id: gb.src.law-commission
+  name: Law Commission of England and Wales / Scottish Law Commission
+  url: https://lawcom.gov.uk/
+  type: secondary
+  rank: 2

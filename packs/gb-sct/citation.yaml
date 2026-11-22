@@ -1,0 +1,31 @@
+citation:
+  inherit: gb
+  note: Use OSCOLA as set in the gb pack, with Scottish conventions for reports and Acts of the Scottish
+    Parliament.
+rules:
+- id: gb-sct.cite.asp
+  example: Land Registration etc. (Scotland) Act 2012 (asp 5)
+  observe: Cite Acts of the Scottish Parliament with the asp number.
+  authority: OSCOLA 5th edn
+  source_url: https://www.law.ox.ac.uk/oscola
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb-sct.cite.reports
+  example: 2024 SLT 123 (format only)
+  observe: Scottish report series are cited by year without brackets (Session Cases SC, Scots Law Times
+    SLT, Justiciary Cases JC).
+  authority: OSCOLA 5th edn
+  source_url: https://www.law.ox.ac.uk/oscola
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb-sct.cite.neutral
+  example: '[2024] CSIH 12 (format only)'
+  observe: 'Neutral citations: CSOH and CSIH (Court of Session), HCJ and HCJAC (High Court of Justiciary),
+    SAC (Sheriff Appeal Court) and SC with a court code (sheriff courts).'
+  authority: OSCOLA 5th edn; Scottish Courts practice
+  source_url: https://www.law.ox.ac.uk/oscola
+  status: guidance
+  verified: null
+  verified_by: null

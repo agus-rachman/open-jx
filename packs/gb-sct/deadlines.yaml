@@ -1,0 +1,48 @@
+provenance:
+  source: Compiled for open-jx from the Banking and Financial Dealings Act 1971; not yet verified by a
+    reviewer. No Scottish court-rule table is installed, so the deadline script computes no Scottish date.
+holiday_table:
+  table_id: scotland
+  jurisdiction: Scotland
+  description: Bank holidays in Scotland under the Banking and Financial Dealings Act 1971 and by proclamation,
+    with Good Friday and Christmas Day.
+  source_url: https://www.gov.uk/bank-holidays
+  checked: '2026-11-15'
+  evidence:
+    state: pending-verification
+    method: Compiled from the pattern in the Banking and Financial Dealings Act 1971 sch 1 and the usual
+      proclaimed days; not yet checked against the official gov.uk bank holidays page by a reviewer.
+  coverage:
+    from: '2026-01-01'
+    to: '2027-12-31'
+  holidays:
+  - '2026-01-01'
+  - '2026-01-02'
+  - '2026-04-03'
+  - '2026-05-04'
+  - '2026-05-25'
+  - '2026-08-03'
+  - '2026-11-30'
+  - '2026-12-25'
+  - '2026-12-28'
+  - '2027-01-01'
+  - '2027-01-04'
+  - '2027-03-26'
+  - '2027-05-03'
+  - '2027-05-31'
+  - '2027-08-02'
+  - '2027-11-30'
+  - '2027-12-27'
+  - '2027-12-28'
+  uncertain_windows: []
+  caveats:
+  - Local and trades holidays set by councils are not included.
+  - Court holidays are set separately by the courts; confirm the court was open.
+  contingent_closures:
+  - id: gb-sct.closure.proclamation
+    trigger: a special or substitute bank holiday is appointed by royal proclamation
+    effect: the day is a bank holiday and is not in this table until it is added
+    authority: Banking and Financial Dealings Act 1971 s 1(2)-(3)
+    source_url: https://www.gov.uk/bank-holidays
+    status: in-force
+court_rules: []

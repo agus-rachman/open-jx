@@ -1,0 +1,14 @@
+courts_ai:
+- id: gb-nir.ai.none-identified
+  court: Court of Judicature of Northern Ireland and county courts
+  instrument: No practice direction on court users' use of generative AI was identified (15 November 2026)
+  observe: No Northern Ireland practice direction for court users was identified. The England and Wales
+    case law on fictitious AI-generated authorities (see gb-eaw) is likely to be cited; solicitors and
+    barristers remain responsible for the accuracy of every authority. Check for a new practice direction
+    before filing.
+  restricted_content: []
+  authority: No instrument identified
+  source_url: https://www.judiciaryni.uk/
+  status: guidance
+  verified: null
+  verified_by: null

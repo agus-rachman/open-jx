@@ -1,0 +1,99 @@
+business_day:
+- id: gb-eaw.cal.bd-cpr
+  observe: For service under the CPR, 'business day' means any day except Saturday, Sunday, a bank holiday,
+    Good Friday or Christmas Day.
+  authority: CPR r 6.2(b)
+  source_url: https://www.justice.gov.uk/courts/procedure-rules/civil
+  status: in-force
+  verified: null
+  verified_by: null
+time_computation:
+- id: gb-eaw.cal.cpr-2-8
+  observe: Periods in the CPR, practice directions and court orders are counted in clear days; in a period
+    of 5 days or less, Saturdays, Sundays, bank holidays, Christmas Day and Good Friday do not count;
+    where the court office is closed on the last day for doing an act there, it may be done on the next
+    day the office is open.
+  authority: CPR r 2.8
+  source_url: https://www.justice.gov.uk/courts/procedure-rules/civil
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-eaw.cal.month
+  observe: '''Month'' in a judgment, order, the CPR, a deed or a contract means a calendar month unless
+    the context shows otherwise.'
+  authority: CPR r 2.10; Law of Property Act 1925 s 61
+  source_url: https://www.justice.gov.uk/courts/procedure-rules/civil
+  status: in-force
+  verified: null
+  verified_by: null
+holidays:
+- id: gb-eaw.cal.holidays
+  observe: 'Bank holidays in England and Wales: New Year''s Day, Good Friday, Easter Monday, the early
+    May, spring and summer bank holidays, Christmas Day and Boxing Day, with substitute days when one
+    falls on a weekend.'
+  authority: Banking and Financial Dealings Act 1971 sch 1 and royal proclamation
+  source_url: https://www.gov.uk/bank-holidays
+  status: in-force
+  verified: null
+  verified_by: null
+limitation:
+- id: gb-eaw.cal.limitation-contract
+  observe: 'Candidate period for simple contract claims: 6 years from accrual of the cause of action.'
+  authority: Limitation Act 1980 s 5
+  source_url: https://www.legislation.gov.uk/ukpga/1980/58/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Candidate only; the applicable period is a counsel decision
+- id: gb-eaw.cal.limitation-tort
+  observe: 'Candidate period for tort claims: 6 years from accrual.'
+  authority: Limitation Act 1980 s 2
+  source_url: https://www.legislation.gov.uk/ukpga/1980/58/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-eaw.cal.limitation-specialty
+  observe: 'Actions on a specialty (including a deed): 12 years.'
+  authority: Limitation Act 1980 s 8
+  source_url: https://www.legislation.gov.uk/ukpga/1980/58/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-eaw.cal.limitation-pi
+  observe: 'Personal injury: 3 years from accrual or the date of knowledge, with a discretion to disapply.'
+  authority: Limitation Act 1980 ss 11, 14 and 33
+  source_url: https://www.legislation.gov.uk/ukpga/1980/58/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-eaw.cal.limitation-defamation
+  observe: 'Defamation and malicious falsehood: 1 year, with a discretion to disapply.'
+  authority: Limitation Act 1980 ss 4A and 32A
+  source_url: https://www.legislation.gov.uk/ukpga/1980/58/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-eaw.cal.limitation-latent
+  observe: 'Latent damage in negligence (not personal injury): 6 years from accrual or 3 years from knowledge,
+    with a 15-year longstop.'
+  authority: Limitation Act 1980 ss 14A-14B
+  source_url: https://www.legislation.gov.uk/ukpga/1980/58/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-eaw.cal.limitation-land
+  observe: 'Recovery of land: 12 years.'
+  authority: Limitation Act 1980 s 15
+  source_url: https://www.legislation.gov.uk/ukpga/1980/58/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Registered land follows the Land Registration Act 2002 sch 6
+- id: gb-eaw.cal.limitation-postponement
+  observe: Disability, fraud, concealment, mistake and acknowledgment or part payment may postpone or
+    extend a period; record as flags, never resolve.
+  authority: Limitation Act 1980 ss 28-32
+  source_url: https://www.legislation.gov.uk/ukpga/1980/58/contents
+  status: guidance
+  verified: null
+  verified_by: null

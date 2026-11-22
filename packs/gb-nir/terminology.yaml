@@ -1,0 +1,17 @@
+spelling: en-GB
+terms:
+- use: plaintiff / writ of summons
+  instead_of: claimant / claim form
+  note: Northern Ireland High Court procedure keeps the older terms; the CPR do not apply.
+- use: Order (Northern Ireland)
+  instead_of: Act (for Orders in Council)
+  note: Much Northern Ireland primary legislation is made by Order in Council.
+- use: Court of Judicature of Northern Ireland
+  instead_of: Supreme Court of Judicature
+  note: Renamed in 2009.
+- use: Northern Ireland
+  instead_of: Ireland / Ulster
+  note: The Republic of Ireland is a separate state and legal system.
+- use: industrial tribunal
+  instead_of: employment tribunal
+  note: Northern Ireland keeps the older name.

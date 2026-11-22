@@ -1,0 +1,79 @@
+business_day:
+- id: gb-nir.cal.bd-contract
+  observe: A business-day definition refers to London banks only; Northern Ireland has two extra bank
+    holidays (St Patrick's Day and the Battle of the Boyne), so record which place the definition names.
+  authority: Banking and Financial Dealings Act 1971 sch 1 para 3
+  source_url: https://www.gov.uk/bank-holidays
+  status: guidance
+  verified: null
+  verified_by: null
+time_computation:
+- id: gb-nir.cal.ia-1954
+  observe: For periods in Northern Ireland legislation, the day of the event from which a period runs
+    is excluded, and a period ending on a Sunday or public holiday runs to the next day that is neither.
+  authority: Interpretation Act (Northern Ireland) 1954 s 39
+  source_url: https://www.legislation.gov.uk/apni/1954/33/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk
+- id: gb-nir.cal.rcj
+  observe: Time in High Court proceedings is counted under the Rules of the Court of Judicature (Northern
+    Ireland) 1980, Order 3.
+  authority: Rules of the Court of Judicature (Northern Ireland) 1980, SR 1980/346, O 3
+  source_url: https://www.judiciaryni.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: No Northern Ireland court-rule table is installed
+holidays:
+- id: gb-nir.cal.holidays
+  observe: 'Bank holidays in Northern Ireland: the England and Wales days plus St Patrick''s Day (17 March)
+    and the Battle of the Boyne (12 July), with substitute days when one falls on a weekend.'
+  authority: Banking and Financial Dealings Act 1971 sch 1 para 3 and proclamation
+  source_url: https://www.gov.uk/bank-holidays
+  status: in-force
+  verified: null
+  verified_by: null
+limitation:
+- id: gb-nir.cal.limitation
+  observe: 'Candidate period for contract and tort claims: 6 years from accrual.'
+  authority: Limitation (Northern Ireland) Order 1989, SI 1989/1339 (NI 11), arts 4 and 6
+  source_url: https://www.legislation.gov.uk/nisi/1989/1339/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Candidate only; article numbers to be confirmed. The applicable period is a counsel decision
+- id: gb-nir.cal.limitation-pi
+  observe: 'Personal injury: 3 years from accrual or the date of knowledge, with a discretion to disapply.'
+  authority: Limitation (Northern Ireland) Order 1989 arts 7 and 50
+  source_url: https://www.legislation.gov.uk/nisi/1989/1339/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Article numbers to be confirmed
+- id: gb-nir.cal.limitation-defamation
+  observe: 'Defamation: 1 year, with a discretion to disapply.'
+  authority: Limitation (Northern Ireland) Order 1989 art 6(2)
+  source_url: https://www.legislation.gov.uk/nisi/1989/1339/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Article numbers to be confirmed
+- id: gb-nir.cal.limitation-specialty
+  observe: 'Actions on an instrument under seal and recovery of land: 12 years.'
+  authority: Limitation (Northern Ireland) Order 1989
+  source_url: https://www.legislation.gov.uk/nisi/1989/1339/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Article numbers to be confirmed
+- id: gb-nir.cal.limitation-postponement
+  observe: Disability, fraud, concealment, mistake and acknowledgment may postpone or extend a period;
+    record as flags, never resolve.
+  authority: Limitation (Northern Ireland) Order 1989 pt III
+  source_url: https://www.legislation.gov.uk/nisi/1989/1339/contents
+  status: guidance
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk

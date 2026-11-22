@@ -1,0 +1,51 @@
+publishers:
+- id: gb-eaw.case.court-of-appeal
+  court_ids:
+  - EWCA Civ
+  - EWCA Crim
+  court: Court of Appeal of England and Wales
+  publisher: Find Case Law
+  url: https://caselaw.nationalarchives.gov.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb-eaw.case.high-court
+  court_ids:
+  - EWHC
+  court: High Court of Justice
+  publisher: Find Case Law
+  url: https://caselaw.nationalarchives.gov.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+  note: 'The division follows the number in brackets: (KB), (QB), (Ch), (Comm), (Admin), (Fam), (TCC),
+    (Pat), (IPEC), (Admlty), (SCCO).'
+- id: gb-eaw.case.other
+  court_ids:
+  - EWCOP
+  - EWFC
+  - EWCC
+  - EWCR
+  court: Court of Protection, Family Court, County Court and Crown Court
+  publisher: Find Case Law
+  url: https://caselaw.nationalarchives.gov.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Publication of County Court and Crown Court decisions is selective.
+report_series:
+- series: QB
+  name: Law Reports, Queen's Bench Division
+  resolve_via: gb-eaw.case.high-court
+- series: KB
+  name: Law Reports, King's Bench Division
+  resolve_via: gb-eaw.case.high-court
+- series: Ch
+  name: Law Reports, Chancery Division
+  resolve_via: gb-eaw.case.high-court
+- series: Fam
+  name: Law Reports, Family Division
+  resolve_via: gb-eaw.case.high-court

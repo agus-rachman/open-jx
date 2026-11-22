@@ -138,6 +138,11 @@ draft for the deponent's confirmation and gives a verification checklist.
 `court_ids` are the medium neutral citation court identifiers, for example
 `HCA`, `NSWSC` or `NZSC`. An identifier may end in a bracketed capital letter,
 for example `SGHC(A)` or `SGCA(I)`; the citation parser accepts the same form.
+An identifier may also be two words, such as `EWCA Civ`. A division written
+after the number, as in `[2025] EWHC 1383 (Admin)`, is not part of the
+identifier: list `EWHC` and the parser reports the division separately. Report
+series cited without a volume (`[2024] AC 1`) or without brackets
+(`2024 SLT 123`) are matched against `report_series`.
 
 ## Status and review
 

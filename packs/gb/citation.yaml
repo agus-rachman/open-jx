@@ -1,0 +1,43 @@
+citation:
+  name: 'OSCOLA: The Oxford University Standard for Citation of Legal Authorities'
+  edition: 5th edn, 2026
+  publisher: Faculty of Law, University of Oxford (Hart Publishing)
+  url: https://www.law.ox.ac.uk/oscola
+  note: Court documents follow the relevant court's practice directions on citing authorities; reviewer
+    to confirm.
+rules:
+- id: gb.cite.legislation
+  example: Companies Act 2006, s 44
+  observe: Cite Acts by short title and year without a jurisdiction label, then the pinpoint (s, sch,
+    para).
+  authority: OSCOLA 5th edn
+  source_url: https://www.law.ox.ac.uk/oscola
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb.cite.neutral
+  example: '[2025] EWHC 1383 (Admin), [2025] 1 WLR 5147'
+  observe: Cite judgments from 2001 by neutral citation first, then the best report; no full stops in
+    abbreviations.
+  authority: OSCOLA 5th edn
+  source_url: https://www.law.ox.ac.uk/oscola
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb.cite.reports
+  example: '[2008] 1 AC 884'
+  observe: Prefer the Law Reports (AC, QB or KB, Ch, Fam), then the WLR, then the All ER; square brackets
+    where the year identifies the volume.
+  authority: OSCOLA 5th edn
+  source_url: https://www.law.ox.ac.uk/oscola
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb.cite.si
+  example: Civil Procedure Rules 1998, SI 1998/3132
+  observe: Cite statutory instruments by title, year and SI number.
+  authority: OSCOLA 5th edn
+  source_url: https://www.law.ox.ac.uk/oscola
+  status: guidance
+  verified: null
+  verified_by: null

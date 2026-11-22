@@ -1,5 +1,54 @@
 # Changelog
 
+## 0.1.3 — 2026-11-15
+
+Adds the United Kingdom as four draft seed packs (each version 0.1.0): `gb`
+(UK-wide), `gb-eaw` (England and Wales), `gb-sct` (Scotland) and `gb-nir`
+(Northern Ireland). None of their 122 entries is verified yet. The 2026–2027
+bank holiday tables and the seed Civil Procedure Rules periods are in the
+`pending-verification` state, so the deadline script refuses every UK
+computation until a reviewer verifies them.
+
+### UK packs
+
+- `gb`: Companies Act 2006 execution (ss 43–47) and governance (minutes,
+  written resolutions, interests, filing, identity verification), LLPs and
+  overseas companies, electronic signatures, UK GDPR breach notification and
+  the staged Data (Use and Access) Act 2025, identifiers (National Insurance,
+  NHS, UTR, driving licence, passport, Companies House personal code withheld;
+  company, VAT and FCA numbers matched), legislation.gov.uk, Find Case Law and
+  OSCOLA (5th edn).
+- `gb-eaw`: individuals' deeds (Law of Property (Miscellaneous Provisions) Act
+  1989), witnessing, Mercury signing, land contracts, guarantees, powers of
+  attorney, CPR time rules, Limitation Act 1980 periods, and four court AI
+  entries: the October 2025 judicial guidance, *Ayinde* [2025] EWHC 1383
+  (Admin), PD 57AC (trial witness statements in the witness's own words) and
+  the Civil Justice Council final report of 29 October 2026, whose declarations
+  for witness statements and expert reports are recommendations, not yet rules.
+- `gb-sct`: Requirements of Writing (Scotland) Act 1995 (subscription,
+  self-proving documents, companies), counterparts, electronic documents,
+  prescription, Scottish bank holidays and report citations. English deed
+  wording in a Scots-law document is flagged.
+- `gb-nir`: deeds under the 2005 Order, the Statute of Frauds (Ireland) 1695,
+  the Limitation (Northern Ireland) Order 1989 and Northern Ireland bank
+  holidays. "Irish law" alone is not treated as Northern Ireland.
+- Router: UK labels resolve to `gb` plus one of the three; "UK" alone loads
+  `gb` only.
+
+### Engine
+
+- `court_ids` may be two words (`EWCA Civ`, `SC EDIN`).
+- `parse_citation.py` reads two-word court identifiers, reports a division
+  written after the number (`[2025] EWHC 1383 (Admin)`), and recognises reports
+  cited without a volume (`[2024] AC 1`) or without brackets (`2024 SLT 123`).
+  New `--publishers` option.
+
+### Evals
+
+- 10 UK cases and 8 trigger prompts; 4 new fixtures; 3 new script tests.
+- Trigger `T33` (no pack) now asks about German law; `T62` checks that Irish
+  law does not load the Northern Ireland pack.
+
 ## 0.1.2 — 2026-11-15
 
 Adds Hong Kong. The `hk` pack is a draft seed (version 0.1.0): none of its 51

@@ -1,0 +1,52 @@
+provenance:
+  source: Compiled for open-jx from the Banking and Financial Dealings Act 1971; not yet verified by a
+    reviewer. No Northern Ireland court-rule table is installed, so the deadline script computes no Northern
+    Ireland date.
+holiday_table:
+  table_id: northern-ireland
+  jurisdiction: Northern Ireland
+  description: Bank holidays in Northern Ireland under the Banking and Financial Dealings Act 1971 and
+    by proclamation, with Good Friday and Christmas Day.
+  source_url: https://www.gov.uk/bank-holidays
+  checked: '2026-11-15'
+  evidence:
+    state: pending-verification
+    method: Compiled from the pattern in the Banking and Financial Dealings Act 1971 sch 1 and the usual
+      proclaimed days; not yet checked against the official gov.uk bank holidays page by a reviewer.
+  coverage:
+    from: '2026-01-01'
+    to: '2027-12-31'
+  holidays:
+  - '2026-01-01'
+  - '2026-03-17'
+  - '2026-04-03'
+  - '2026-04-06'
+  - '2026-05-04'
+  - '2026-05-25'
+  - '2026-07-13'
+  - '2026-08-31'
+  - '2026-12-25'
+  - '2026-12-28'
+  - '2027-01-01'
+  - '2027-03-17'
+  - '2027-03-26'
+  - '2027-03-29'
+  - '2027-05-03'
+  - '2027-05-31'
+  - '2027-07-12'
+  - '2027-08-30'
+  - '2027-12-27'
+  - '2027-12-28'
+  uncertain_windows: []
+  caveats:
+  - The Battle of the Boyne holiday is appointed by proclamation each year; 12 July 2026 is a Sunday,
+    so 13 July is listed.
+  - Court offices also close on other days; confirm the court office was open.
+  contingent_closures:
+  - id: gb-nir.closure.proclamation
+    trigger: a special or substitute bank holiday is appointed by royal proclamation
+    effect: the day is a bank holiday and is not in this table until it is added
+    authority: Banking and Financial Dealings Act 1971 s 1(2)-(3)
+    source_url: https://www.gov.uk/bank-holidays
+    status: in-force
+court_rules: []

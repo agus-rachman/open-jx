@@ -1,0 +1,63 @@
+entries:
+- id: gb-nir.exec.deed-individual
+  applies_to:
+  - individual
+  - deed
+  observe: A deed by an individual makes clear on its face that it is intended to be a deed, is signed
+    in the presence of a witness who attests the signature, and is delivered; sealing by individuals is
+    no longer required.
+  authority: Law Reform (Miscellaneous Provisions) (Northern Ireland) Order 2005, SI 2005/1452 (NI 7),
+    art 3
+  source_url: https://www.legislation.gov.uk/nisi/2005/1452/contents
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Article numbers to be confirmed
+- id: gb-nir.exec.company
+  applies_to:
+  - company
+  - deed
+  observe: A company document or deed governed by Northern Ireland law follows the Companies Act 2006
+    ss 44 and 46 (see the gb pack).
+  authority: Companies Act 2006 ss 44 and 46
+  source_url: https://www.legislation.gov.uk/ukpga/2006/46/contents
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-nir.exec.statute-of-frauds
+  applies_to:
+  - individual
+  - company
+  observe: A guarantee or a contract for the sale of land is in writing, or evidenced by a written note
+    or memorandum, signed by the party to be charged.
+  authority: Statute of Frauds (Ireland) 1695 s 2
+  source_url: https://www.legislation.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+- id: gb-nir.exec.poa
+  applies_to:
+  - attorney
+  - deed
+  observe: A power of attorney is executed as a deed; an enduring power of attorney follows the 1987 Order
+    and is registered with the High Court when the donor is losing capacity.
+  authority: Powers of Attorney Act (Northern Ireland) 1971; Enduring Powers of Attorney (Northern Ireland)
+    Order 1987
+  source_url: https://www.legislation.gov.uk/
+  status: in-force
+  verified: null
+  verified_by: null
+  note: Commencement of the lasting power of attorney provisions of the Mental Capacity Act (Northern
+    Ireland) 2016 to be confirmed
+- id: gb-nir.exec.land
+  applies_to:
+  - deed
+  - electronic
+  observe: A document is to be registered in the Land Registry or the Registry of Deeds, which set their
+    own execution and electronic-signature requirements.
+  authority: Land Registration Act (Northern Ireland) 1970
+  source_url: https://www.finance-ni.gov.uk/land-property-services-lps
+  status: guidance
+  verified: null
+  verified_by: null
+  note: pinpoint to be confirmed against legislation.gov.uk

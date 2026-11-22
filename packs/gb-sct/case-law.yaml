@@ -1,0 +1,52 @@
+publishers:
+- id: gb-sct.case.court-of-session
+  court_ids:
+  - CSOH
+  - CSIH
+  court: Court of Session (Outer and Inner House)
+  publisher: Scottish Courts and Tribunals Service
+  url: https://www.scotcourts.gov.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb-sct.case.justiciary
+  court_ids:
+  - HCJ
+  - HCJAC
+  court: High Court of Justiciary
+  publisher: Scottish Courts and Tribunals Service
+  url: https://www.scotcourts.gov.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb-sct.case.sheriff
+  court_ids:
+  - SAC
+  - SC EDIN
+  - SC GLA
+  - SC ABE
+  - SC DUN
+  court: Sheriff Appeal Court and sheriff courts
+  publisher: Scottish Courts and Tribunals Service
+  url: https://www.scotcourts.gov.uk/
+  access: direct
+  status: guidance
+  verified: null
+  verified_by: null
+  note: Sheriff court codes shown are examples; the full list is to be confirmed. SAC citations with (Civ)
+    or (Crim) before the number are not parsed.
+report_series:
+- series: SC
+  name: Session Cases
+  resolve_via: gb-sct.case.court-of-session
+- series: SLT
+  name: Scots Law Times
+  resolve_via: gb-sct.case.court-of-session
+- series: SCLR
+  name: Scottish Civil Law Reports
+  resolve_via: gb-sct.case.court-of-session
+- series: JC
+  name: Justiciary Cases
+  resolve_via: gb-sct.case.justiciary

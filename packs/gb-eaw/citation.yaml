@@ -1,0 +1,21 @@
+citation:
+  inherit: gb
+  note: 'Use OSCOLA as set in the gb pack. Neutral citations: UKSC, EWCA Civ, EWCA Crim, EWHC with the
+    division in brackets after the number, EWCOP, EWFC.'
+rules:
+- id: gb-eaw.cite.ewhc-division
+  example: '[2025] EWHC 1383 (Admin)'
+  observe: High Court neutral citations carry the division or court in brackets after the number.
+  authority: 'OSCOLA 5th edn; Practice Direction (Judgments: Neutral Citations) [2002] 1 WLR 346'
+  source_url: https://www.law.ox.ac.uk/oscola
+  status: guidance
+  verified: null
+  verified_by: null
+- id: gb-eaw.cite.welsh
+  example: Renting Homes (Wales) Act 2016 (anaw 1)
+  observe: Cite Acts of Senedd Cymru and Measures with their series abbreviation (asc, anaw, nawm).
+  authority: OSCOLA 5th edn
+  source_url: https://www.law.ox.ac.uk/oscola
+  status: guidance
+  verified: null
+  verified_by: null

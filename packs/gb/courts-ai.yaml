@@ -1,0 +1,13 @@
+courts_ai:
+- id: gb.ai.split
+  court: UK Supreme Court, Privy Council and UK-wide tribunals
+  instrument: No UK-wide instrument on court users' use of generative AI was identified (15 November 2026)
+  observe: No practice direction on generative AI for court users of the UK Supreme Court or UK-wide tribunals
+    was identified. Guidance and case law in England and Wales (see gb-eaw) are the nearest reference;
+    the person filing remains responsible for every authority cited.
+  restricted_content: []
+  authority: No instrument identified
+  source_url: https://www.supremecourt.uk/
+  status: guidance
+  verified: null
+  verified_by: null
