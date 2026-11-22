@@ -1,0 +1,230 @@
+From fb27d86df1125edf8a5b96fe6148df03190f35a6 Mon Sep 17 00:00:00 2001
+From: Agus Rachman <agus.rachman@outlook.com>
+Date: Sun, 15 Nov 2026 11:59:26 +1100
+Subject: [PATCH 4/4] Release 0.1.3 with the UK packs
+
+- build.config.json and every skill move to 0.1.3 (packs stay at 0.1.0)
+- CHANGELOG 0.1.3 section
+- Build and check commands point at dist/open-jx-0.1.3.zip
+
+Co-Authored-By: Claude Fable 5.2 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01MoX2CD8e32TheN9ftqzoZp
+---
+ CHANGELOG.md                                  | 49 +++++++++++++++++++
+ README.md                                     |  2 +-
+ build.config.json                             |  2 +-
+ evals/README.md                               |  2 +-
+ evals/check_package.py                        |  2 +-
+ plugin/skills/jx-court-ai-rules/SKILL.md      |  2 +-
+ plugin/skills/jx-dates-and-deadlines/SKILL.md |  2 +-
+ .../jx-execution-and-governance/SKILL.md      |  2 +-
+ plugin/skills/jx-new-pack/SKILL.md            |  2 +-
+ .../skills/jx-personal-identifiers/SKILL.md   |  2 +-
+ plugin/skills/jx-router/SKILL.md              |  2 +-
+ .../skills/jx-sources-and-citation/SKILL.md   |  2 +-
+ 12 files changed, 60 insertions(+), 11 deletions(-)
+
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index f56b0e8..72e4c9c 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,5 +1,54 @@
+ # Changelog
+ 
++## 0.1.3 — 2026-11-15
++
++Adds the United Kingdom as four draft seed packs (each version 0.1.0): `gb`
++(UK-wide), `gb-eaw` (England and Wales), `gb-sct` (Scotland) and `gb-nir`
++(Northern Ireland). None of their 122 entries is verified yet. The 2026–2027
++bank holiday tables and the seed Civil Procedure Rules periods are in the
++`pending-verification` state, so the deadline script refuses every UK
++computation until a reviewer verifies them.
++
++### UK packs
++
++- `gb`: Companies Act 2006 execution (ss 43–47) and governance (minutes,
++  written resolutions, interests, filing, identity verification), LLPs and
++  overseas companies, electronic signatures, UK GDPR breach notification and
++  the staged Data (Use and Access) Act 2025, identifiers (National Insurance,
++  NHS, UTR, driving licence, passport, Companies House personal code withheld;
++  company, VAT and FCA numbers matched), legislation.gov.uk, Find Case Law and
++  OSCOLA (5th edn).
++- `gb-eaw`: individuals' deeds (Law of Property (Miscellaneous Provisions) Act
++  1989), witnessing, Mercury signing, land contracts, guarantees, powers of
++  attorney, CPR time rules, Limitation Act 1980 periods, and four court AI
++  entries: the October 2025 judicial guidance, *Ayinde* [2025] EWHC 1383
++  (Admin), PD 57AC (trial witness statements in the witness's own words) and
++  the Civil Justice Council final report of 29 October 2026, whose declarations
++  for witness statements and expert reports are recommendations, not yet rules.
++- `gb-sct`: Requirements of Writing (Scotland) Act 1995 (subscription,
++  self-proving documents, companies), counterparts, electronic documents,
++  prescription, Scottish bank holidays and report citations. English deed
++  wording in a Scots-law document is flagged.
++- `gb-nir`: deeds under the 2005 Order, the Statute of Frauds (Ireland) 1695,
++  the Limitation (Northern Ireland) Order 1989 and Northern Ireland bank
++  holidays. "Irish law" alone is not treated as Northern Ireland.
++- Router: UK labels resolve to `gb` plus one of the three; "UK" alone loads
++  `gb` only.
++
++### Engine
++
++- `court_ids` may be two words (`EWCA Civ`, `SC EDIN`).
++- `parse_citation.py` reads two-word court identifiers, reports a division
++  written after the number (`[2025] EWHC 1383 (Admin)`), and recognises reports
++  cited without a volume (`[2024] AC 1`) or without brackets (`2024 SLT 123`).
++  New `--publishers` option.
++
++### Evals
++
++- 10 UK cases and 8 trigger prompts; 4 new fixtures; 3 new script tests.
++- Trigger `T33` (no pack) now asks about German law; `T62` checks that Irish
++  law does not load the Northern Ireland pack.
++
+ ## 0.1.2 — 2026-11-15
+ 
+ Adds Hong Kong. The `hk` pack is a draft seed (version 0.1.0): none of its 51
+diff --git a/README.md b/README.md
+index bc78b0c..205ce84 100644
+--- a/README.md
++++ b/README.md
+@@ -62,7 +62,7 @@ compatibility rules.
+ pip install pyyaml jsonschema pillow python-docx
+ python tools/validate_packs.py          # check packs
+ python tools/build_plugin.py            # build dist/open-jx-<version>.zip (+ a Claude plugin zip)
+-python evals/check_package.py dist/open-jx-0.1.2.zip
++python evals/check_package.py dist/open-jx-0.1.3.zip
+ python -m unittest discover -s tests     # bundled script tests
+ ```
+ 
+diff --git a/build.config.json b/build.config.json
+index 5c96d84..e3f2ef4 100644
+--- a/build.config.json
++++ b/build.config.json
+@@ -1,6 +1,6 @@
+ {
+   "plugin_name": "open-jx",
+-  "version": "0.1.2",
++  "version": "0.1.3",
+   "app_id": "f8a9bb81-3331-5dc9-a74b-7c4b31d30dc5",
+   "repo_url": "https://github.com/agus-rachman/open-jx",
+   "developer_name": "open-jx contributors",
+diff --git a/evals/README.md b/evals/README.md
+index 3360d25..e89bd01 100644
+--- a/evals/README.md
++++ b/evals/README.md
+@@ -36,7 +36,7 @@ in Microsoft Copilot Cowork:
+ 1. **Build and check the package.**
+    ```
+    python tools/build_plugin.py
+-   python evals/check_package.py dist/open-jx-0.1.2.zip
++   python evals/check_package.py dist/open-jx-0.1.3.zip
+    python evals/score.py lint
+    ```
+ 2. **Install it for testers.** Share the zip with the tester group (see
+diff --git a/evals/check_package.py b/evals/check_package.py
+index 9ddd07f..b0e38e3 100644
+--- a/evals/check_package.py
++++ b/evals/check_package.py
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env python3
+ """Static checks on the built Copilot Cowork package (no tenant needed).
+ 
+-    python evals/check_package.py dist/open-jx-0.1.2.zip
++    python evals/check_package.py dist/open-jx-0.1.3.zip
+ 
+ Mirrors the published Copilot Cowork plugin rules (manifest v1.28 root keys,
+ ASKILL-M001–M003, ASKILL-P001–P008, companion-file limits and path rules) and
+diff --git a/plugin/skills/jx-court-ai-rules/SKILL.md b/plugin/skills/jx-court-ai-rules/SKILL.md
+index 6862625..2471abf 100644
+--- a/plugin/skills/jx-court-ai-rules/SKILL.md
++++ b/plugin/skills/jx-court-ai-rules/SKILL.md
+@@ -16,7 +16,7 @@ description: >-
+ license: Apache-2.0
+ metadata:
+   author: open-jx contributors
+-  version: "0.1.2"
++  version: "0.1.3"
+ ---
+ 
+ # Court AI rules (open-jx)
+diff --git a/plugin/skills/jx-dates-and-deadlines/SKILL.md b/plugin/skills/jx-dates-and-deadlines/SKILL.md
+index 0d7c806..5ded990 100644
+--- a/plugin/skills/jx-dates-and-deadlines/SKILL.md
++++ b/plugin/skills/jx-dates-and-deadlines/SKILL.md
+@@ -16,7 +16,7 @@ description: >-
+ license: Apache-2.0
+ metadata:
+   author: open-jx contributors
+-  version: "0.1.2"
++  version: "0.1.3"
+ ---
+ 
+ # Dates and deadlines overlay (open-jx)
+diff --git a/plugin/skills/jx-execution-and-governance/SKILL.md b/plugin/skills/jx-execution-and-governance/SKILL.md
+index ed5998e..64e8f16 100644
+--- a/plugin/skills/jx-execution-and-governance/SKILL.md
++++ b/plugin/skills/jx-execution-and-governance/SKILL.md
+@@ -14,7 +14,7 @@ description: >-
+ license: Apache-2.0
+ metadata:
+   author: open-jx contributors
+-  version: "0.1.2"
++  version: "0.1.3"
+ ---
+ 
+ # Execution and governance overlay (open-jx)
+diff --git a/plugin/skills/jx-new-pack/SKILL.md b/plugin/skills/jx-new-pack/SKILL.md
+index 4a8991f..7f8975c 100644
+--- a/plugin/skills/jx-new-pack/SKILL.md
++++ b/plugin/skills/jx-new-pack/SKILL.md
+@@ -9,7 +9,7 @@ description: >-
+ license: Apache-2.0
+ metadata:
+   author: open-jx contributors
+-  version: "0.1.2"
++  version: "0.1.3"
+ ---
+ 
+ # Create or update a jurisdiction pack (open-jx)
+diff --git a/plugin/skills/jx-personal-identifiers/SKILL.md b/plugin/skills/jx-personal-identifiers/SKILL.md
+index 293c097..dbb5fc4 100644
+--- a/plugin/skills/jx-personal-identifiers/SKILL.md
++++ b/plugin/skills/jx-personal-identifiers/SKILL.md
+@@ -11,7 +11,7 @@ description: >-
+ license: Apache-2.0
+ metadata:
+   author: open-jx contributors
+-  version: "0.1.2"
++  version: "0.1.3"
+ ---
+ 
+ # Local personal identifiers (open-jx)
+diff --git a/plugin/skills/jx-router/SKILL.md b/plugin/skills/jx-router/SKILL.md
+index 0c0b3d7..e9c1f77 100644
+--- a/plugin/skills/jx-router/SKILL.md
++++ b/plugin/skills/jx-router/SKILL.md
+@@ -16,7 +16,7 @@ description: >-
+ license: Apache-2.0
+ metadata:
+   author: open-jx contributors
+-  version: "0.1.2"
++  version: "0.1.3"
+ ---
+ 
+ # Jurisdiction router (open-jx)
+diff --git a/plugin/skills/jx-sources-and-citation/SKILL.md b/plugin/skills/jx-sources-and-citation/SKILL.md
+index a8ed95e..27f70d5 100644
+--- a/plugin/skills/jx-sources-and-citation/SKILL.md
++++ b/plugin/skills/jx-sources-and-citation/SKILL.md
+@@ -13,7 +13,7 @@ description: >-
+ license: Apache-2.0
+ metadata:
+   author: open-jx contributors
+-  version: "0.1.2"
++  version: "0.1.3"
+ ---
+ 
+ # Official sources and citation (open-jx)
+-- 
+2.43.0
+

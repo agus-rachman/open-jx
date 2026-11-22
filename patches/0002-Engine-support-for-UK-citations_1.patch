@@ -1,0 +1,189 @@
+From cc4bcf27e64608c9744f8ec15b268fe31d9e0b01 Mon Sep 17 00:00:00 2001
+From: Agus Rachman <agus.rachman@outlook.com>
+Date: Sun, 15 Nov 2026 11:52:25 +1100
+Subject: [PATCH 2/4] Engine support for UK citations
+
+- Schema: court_ids may be two words (EWCA Civ, SC EDIN)
+- parse_citation.py: two-word court identifiers; a division after the
+  number is reported separately ([2025] EWHC 1383 (Admin)); report series
+  cited without a volume ([2024] AC 1) or without brackets (2024 SLT 123)
+  are matched against report_series; new --publishers option
+- Pack schema guide documents the forms; one new script test
+
+Co-Authored-By: Claude Fable 5.2 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01MoX2CD8e32TheN9ftqzoZp
+---
+ docs/PACK-SCHEMA.md                           |  5 ++
+ .../scripts/parse_citation.py                 | 53 +++++++++++++++++--
+ schema/pack.schema.json                       |  2 +-
+ tests/test_scripts.py                         | 23 ++++++++
+ 4 files changed, 78 insertions(+), 5 deletions(-)
+
+diff --git a/docs/PACK-SCHEMA.md b/docs/PACK-SCHEMA.md
+index cd7d327..b35500b 100644
+--- a/docs/PACK-SCHEMA.md
++++ b/docs/PACK-SCHEMA.md
+@@ -138,6 +138,11 @@ draft for the deponent's confirmation and gives a verification checklist.
+ `court_ids` are the medium neutral citation court identifiers, for example
+ `HCA`, `NSWSC` or `NZSC`. An identifier may end in a bracketed capital letter,
+ for example `SGHC(A)` or `SGCA(I)`; the citation parser accepts the same form.
++An identifier may also be two words, such as `EWCA Civ`. A division written
++after the number, as in `[2025] EWHC 1383 (Admin)`, is not part of the
++identifier: list `EWHC` and the parser reports the division separately. Report
++series cited without a volume (`[2024] AC 1`) or without brackets
++(`2024 SLT 123`) are matched against `report_series`.
+ 
+ ## Status and review
+ 
+diff --git a/plugin/skills/jx-sources-and-citation/scripts/parse_citation.py b/plugin/skills/jx-sources-and-citation/scripts/parse_citation.py
+index 2acba84..e9f71dc 100644
+--- a/plugin/skills/jx-sources-and-citation/scripts/parse_citation.py
++++ b/plugin/skills/jx-sources-and-citation/scripts/parse_citation.py
+@@ -5,7 +5,10 @@
+ # open-jx changes: the court and report-series maps are read from
+ # references/case-publishers.json (built from packs/*/case-law.yaml) and the route
+ # names the official publisher rather than a verification skill. Court identifiers
+-# may carry a bracketed suffix, e.g. SGHC(A) (open-jx 0.1.1).
++# may carry a bracketed suffix, e.g. SGHC(A) (open-jx 0.1.1). open-jx 0.1.3: court
++# identifiers may be two words (EWCA Civ, SC EDIN), a division after the number is
++# captured ([2025] EWHC 1383 (Admin)), and reports cited without a volume ([2024] AC 1)
++# or without brackets (2024 SLT 123) are recognised.
+ """Parse a case citation and report the official publisher route.
+ 
+ Offline helper: it parses citation text and maps the court identifier or
+@@ -22,8 +25,11 @@ import sys
+ from pathlib import Path
+ 
+ NEUTRAL = re.compile(
+-    r"\[(?P<year>1[89]\d\d|20\d\d)\]\s+(?P<court>(?:[A-Za-z][A-Za-z0-9]*[A-Za-z]|[A-Za-z]+)(?:\([A-Za-z]\))?)\s+(?P<number>\d+)"
++    r"\[(?P<year>1[89]\d\d|20\d\d)\]\s+(?P<court>(?:[A-Za-z][A-Za-z0-9]*[A-Za-z]|[A-Za-z]+)(?:\([A-Za-z]\))?(?:\s+[A-Za-z]+)?)\s+(?P<number>\d+)"
++    r"(?:\s+\((?P<division>[A-Za-z]+)\))?"
+ )
++# Reports cited by year alone, without brackets or a volume (Scottish series such as SC, SLT, JC).
++BARE_YEAR = re.compile(r"(?<![\[(\d])\b(?P<year>1[89]\d\d|20\d\d)\s+(?P<series>[A-Z][A-Za-z]*)\s+(?P<page>\d+)\b")
+ REPORTED = re.compile(
+     r"[(\[](?P<year>1[89]\d\d|20\d\d)[)\]]\s+(?P<volume>\d+)\s+(?P<series>[A-Z][A-Za-z ]*?(?:\([A-Z]\))?)\s+(?P<page>\d+)"
+ )
+@@ -55,8 +61,25 @@ def parse(text: str, courts: dict | None = None, series_map: dict | None = None)
+         courts, series_map = load_publishers()
+     neutral = NEUTRAL.search(text)
+     if neutral:
+-        court_id = neutral.group("court").upper()
++        court_id = " ".join(neutral.group("court").upper().split())
+         court = courts.get(court_id)
++        if court is None and court_id in series_map:
++            # A report series cited by year without a volume, e.g. [2024] AC 1.
++            series = series_map[court_id]
++            return {
++                "input": text.strip(),
++                "citation_type": "reported",
++                "year": matched_int(neutral, "year"),
++                "volume": None,
++                "series_id": neutral.group("court"),
++                "page": matched_int(neutral, "number"),
++                "series": series["name"],
++                "route": series["resolve_via"],
++                "note": (
++                    "reported citation: resolve to a medium-neutral citation at the "
++                    "official publisher before treating the decision as verified"
++                ),
++            }
+         record: dict[str, object] = {
+             "input": text.strip(),
+             "citation_type": "medium-neutral",
+@@ -64,6 +87,8 @@ def parse(text: str, courts: dict | None = None, series_map: dict | None = None)
+             "court_id": neutral.group("court"),
+             "number": matched_int(neutral, "number"),
+         }
++        if neutral.group("division"):
++            record["division"] = neutral.group("division")
+         if court is None:
+             record["route"] = None
+             record["note"] = f"unrecognised court identifier {court_id!r}"
+@@ -103,6 +128,24 @@ def parse(text: str, courts: dict | None = None, series_map: dict | None = None)
+             )
+         return record
+ 
++    bare = BARE_YEAR.search(text)
++    if bare and bare.group("series").upper() in series_map:
++        series = series_map[bare.group("series").upper()]
++        return {
++            "input": text.strip(),
++            "citation_type": "reported",
++            "year": matched_int(bare, "year"),
++            "volume": None,
++            "series_id": bare.group("series"),
++            "page": matched_int(bare, "page"),
++            "series": series["name"],
++            "route": series["resolve_via"],
++            "note": (
++                "reported citation: resolve to a medium-neutral citation at the "
++                "official publisher before treating the decision as verified"
++            ),
++        }
++
+     return {
+         "input": text.strip(),
+         "citation_type": "unknown",
+@@ -114,8 +157,10 @@ def parse(text: str, courts: dict | None = None, series_map: dict | None = None)
+ def main() -> int:
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("citation", nargs="+", help="citation text, for example '[2023] HCA 12'")
++    parser.add_argument("--publishers", type=Path, default=PUBLISHERS_FILE,
++                        help="publisher map (default: references/case-publishers.json)")
+     args = parser.parse_args()
+-    courts, series_map = load_publishers()
++    courts, series_map = load_publishers(args.publishers)
+     records = [parse(citation, courts, series_map) for citation in args.citation]
+     json.dump(records if len(records) > 1 else records[0], sys.stdout, indent=2)
+     sys.stdout.write("\n")
+diff --git a/schema/pack.schema.json b/schema/pack.schema.json
+index 87d4a0c..82f8e8f 100644
+--- a/schema/pack.schema.json
++++ b/schema/pack.schema.json
+@@ -828,7 +828,7 @@
+                 "type": "array",
+                 "items": {
+                   "type": "string",
+-                  "pattern": "^[A-Za-z0-9]+(\\([A-Z]\\))?$"
++                  "pattern": "^[A-Za-z0-9]+( [A-Za-z]+)?(\\([A-Z]\\))?$"
+                 }
+               },
+               "court": {
+diff --git a/tests/test_scripts.py b/tests/test_scripts.py
+index dd6288c..89c43ed 100644
+--- a/tests/test_scripts.py
++++ b/tests/test_scripts.py
+@@ -125,6 +125,29 @@ class CitationScript(unittest.TestCase):
+         self.assertEqual((slr["citation_type"], slr["route"]), ("reported", "sg.case.court-of-appeal"))
+         self.assertEqual((slrr["citation_type"], slrr["route"]), ("reported", "sg.case.court-of-appeal"))
+ 
++    def test_two_word_courts_divisions_and_volumeless_reports(self):
++        pubs = {"publishers": [
++            {"id": "xx.case.ca", "court_ids": ["XXCA Civ", "XXCA Crim"], "court": "Example Court of Appeal",
++             "publisher": "Example", "url": "https://example.gov/ca", "access": "direct"},
++            {"id": "xx.case.hc", "court_ids": ["XXHC"], "court": "Example High Court",
++             "publisher": "Example", "url": "https://example.gov/hc", "access": "direct"}],
++            "report_series": [{"series": "XR", "name": "Example Reports", "resolve_via": "xx.case.ca"},
++                              {"series": "XLT", "name": "Example Law Times", "resolve_via": "xx.case.hc"}]}
++        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
++            json.dump(pubs, f)
++        out = subprocess.run([sys.executable, str(PARSE), "--publishers", f.name, "[2024] XXCA Civ 123",
++                              "[2025] XXHC 1383 (Admin)", "[2024] XR 1", "Smith v Jones 2024 XLT 55",
++                              "[2024] XXCA  Crim 9", "paid 2024 XYZ 100 units"],
++                             capture_output=True, text=True, check=True)
++        Path(f.name).unlink()
++        civ, admin, xr, xlt, crim, none = json.loads(out.stdout)
++        self.assertEqual((civ["citation_type"], civ["pack_entry"], civ["number"]), ("medium-neutral", "xx.case.ca", 123))
++        self.assertEqual((admin["pack_entry"], admin["number"], admin["division"]), ("xx.case.hc", 1383, "Admin"))
++        self.assertEqual((xr["citation_type"], xr["route"], xr["page"]), ("reported", "xx.case.ca", 1))
++        self.assertEqual((xlt["citation_type"], xlt["route"], xlt["year"]), ("reported", "xx.case.hc", 2024))
++        self.assertEqual(crim["pack_entry"], "xx.case.ca")
++        self.assertEqual(none["citation_type"], "unknown")
++
+     def test_hong_kong_routes(self):
+         cfi, ldt, cfar, hklrd = parse("[2026] HKCFI 123", "[2021] HKLdT 5", "(2020) 23 HKCFAR 1", "[2020] 1 HKLRD 1")
+         self.assertEqual((cfi["citation_type"], cfi["pack_entry"]), ("medium-neutral", "hk.case.cfi"))
+-- 
+2.43.0
+

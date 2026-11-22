@@ -1,0 +1,45 @@
+From 599184f6539283ebc5ff0a70f08a999b5d7ab5b4 Mon Sep 17 00:00:00 2001
+From: Agus Rachman <agus.rachman@outlook.com>
+Date: Sun, 15 Nov 2026 11:52:00 +1100
+Subject: [PATCH 1/4] Move the English-law no-pack trigger to German law
+
+England and Wales is getting a pack, so trigger T33 needs a jurisdiction
+that stays pack-less. The jx-new-pack examples no longer name England
+and Wales.
+
+Co-Authored-By: Claude Fable 5.2 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01MoX2CD8e32TheN9ftqzoZp
+---
+ evals/cases/trigger.yaml           | 2 +-
+ plugin/skills/jx-new-pack/SKILL.md | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/evals/cases/trigger.yaml b/evals/cases/trigger.yaml
+index 41db425..2fe3f26 100644
+--- a/evals/cases/trigger.yaml
++++ b/evals/cases/trigger.yaml
+@@ -36,7 +36,7 @@ prompts:
+   - {id: T30, prompt: "Check the cross-references in this contract.", expect: none}
+   - {id: T31, prompt: "Summarise the redlines between these two drafts.", expect: none}
+   - {id: T32, prompt: "Is this Malaysian-law agreement ready to sign?", expect: no_pack}
+-  - {id: T33, prompt: "Is this English-law deed properly executed?", expect: no_pack}
++  - {id: T33, prompt: "Is this German-law agreement properly executed?", expect: no_pack}
+   - {id: T34, prompt: "Is this deed ready to sign?", expect: ask}
+   - {id: T35, prompt: "Draft minutes from this board meeting transcript.", expect: ask}
+   - {id: T36, prompt: "Review this Perth contractor agreement against our playbook.", expect: [au, au-wa]}
+diff --git a/plugin/skills/jx-new-pack/SKILL.md b/plugin/skills/jx-new-pack/SKILL.md
+index 9bdea55..4a8991f 100644
+--- a/plugin/skills/jx-new-pack/SKILL.md
++++ b/plugin/skills/jx-new-pack/SKILL.md
+@@ -2,7 +2,7 @@
+ name: jx-new-pack
+ description: >-
+   Helps a contributor create a new open-jx jurisdiction pack (for example
+-  Malaysia, India, England and Wales, or a Canadian province) or extend an
++  Malaysia, India, Ireland, or a Canadian province) or extend an
+   existing one, producing schema-valid YAML files ready for a pull request. Use
+   when the user asks to "add a jurisdiction to open-jx", "create a jurisdiction
+   pack", "contribute a pack for <country>", or "update the NSW pack".
+-- 
+2.43.0
+
